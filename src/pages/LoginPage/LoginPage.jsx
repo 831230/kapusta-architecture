@@ -1,15 +1,12 @@
 const LoginPage = () => {
   return (
     <>
-      <div>
-        <img src="" alt="logo_kapusta" />
-      </div>
       <div className="login-page-container">
         <div>
           <img src="" alt="kapusta-smart-finance-theme" />
         </div>
         <div>
-          <form action="">
+          <form action="" className="login-form">
             <input type="text" />
             <input type="text" />
             <button>Login</button>
