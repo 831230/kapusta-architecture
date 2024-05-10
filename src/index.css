@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.header-user-space{
+  display: flex;
+}
+
 .login-page-container{
   margin-top: 50px;
   display: flex;

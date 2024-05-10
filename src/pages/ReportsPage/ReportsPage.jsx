@@ -5,6 +5,7 @@ import Balance from "../../components/Balance/Balance";
 import CurrentPeriod from "../../components/CurrentPeriod/CurrentPeriod";
 import BalanceLabel from "../../components/BalanceLabel/BalanceLabel";
 import ReportsCategoriesNav from "../../components/ReportsCategoriesNav/ReportsCategoriesNav";
+import CategoryList from "../../components/CategoryList/CategoryList";
 import Chart from "../../components/Chart/Chart";
 
 const ReportsPage = () => {
@@ -18,6 +19,9 @@ const ReportsPage = () => {
       <div className="reports-content">
         <BalanceLabel/>
         <ReportsCategoriesNav/>
+      <div className="category-list">
+        <CategoryList/>
+      </div>
         <Chart/>
       </div>
     </>

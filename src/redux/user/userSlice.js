@@ -4,9 +4,13 @@ import { getUserData } from "./operations";
 
 const initialState = {
   loading: false,
+  token: null,
+  theme: "day",
   user: {
+    firstLogin: true,
     name: null,
-    email: null
+    email: null,
+    balance: "0",
   },
   isLoggedIn: true
 };

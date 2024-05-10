@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // HOOKS:
 import useAuth from "../../hooks/useAuth";
 
@@ -10,10 +12,13 @@ const Header = () => {
   const { isLoggedIn } = useAuth(); 
   return ( 
     <header>
-      <div><img src="" alt="logo_kapusta" /></div>
+      <Link to="/"><img src="" alt="logo_kapusta" /></Link>
       <ToggleTheme />
-      {isLoggedIn && <UserData/>}
-      {isLoggedIn && <ExitButton/>}
+      <div className="header-user-space">
+        {isLoggedIn && <UserData/>}
+        {isLoggedIn && <ExitButton/>}
+      </div>
+      
       
     </header>
    );
