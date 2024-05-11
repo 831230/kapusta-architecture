@@ -3,7 +3,7 @@ import { HeaderExitButton, HeaderExitButtonText, HeaderExitButtonMobile } from "
 import Modal from "../Modal/Modal";
 
 const ExitButton = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);

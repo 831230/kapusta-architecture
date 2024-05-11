@@ -47,8 +47,8 @@ export const HeaderUserContainer = styled.div`
 
 export const HeaderUserDivider = styled.div`
   width: 1px;
-  height: 36px;
-  flex-grow: 0;
+  height: 16px;
+
   margin: 0 19.5px;
   background-color: #e0e5eb;
 
