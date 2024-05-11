@@ -17,7 +17,7 @@ const ExitButton = () => {
         <HeaderExitButtonText>Exit</HeaderExitButtonText>
       </HeaderExitButton>
 
-      <HeaderExitButtonMobile>
+      <HeaderExitButtonMobile onClick={toggleModal}>
         <img src={logoutIcon} alt="Logout Icon" />
       </HeaderExitButtonMobile>
 
