@@ -13,7 +13,7 @@ export const HeaderExitButton = styled.button`
   }
 `;
 
-export const HeaderExitButtonText = styled.text`
+export const HeaderExitButtonText = styled.p`
   color: #52555f;
 
   font-size: 12px;
