@@ -1,18 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getUserData } from "./operations";
+import { login, getUserData } from "./operations";
 
 const initialState = {
   loading: false,
-  token: null,
+  accessToken: null,
   theme: "day",
-  user: {
+  userData: {
+    id: "",
+    email: "",
+    balance: null,
     firstLogin: true,
-    name: null,
-    email: null,
-    balance: "0",
+    transactions:[],
   },
-  isLoggedIn: true
+  isLoggedIn: false
 };
 
 const userSlice = createSlice({
@@ -20,20 +21,50 @@ const userSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(getUserData.pending, (state) => {
+      // =======================LOGIN============================
+      .addCase(login.pending, (state) => {
         state.loading = true;
-        state.isLoggedIn = false
+        state.isLoggedIn = false;
+        state.accessToken = null
       })
-      .addCase(getUserData.fulfilled, (state, action) => {
+      .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
-        state.isLoggedIn = true;
-        state.user.name = action.payload.name;
-        state.user.email = action.payload.email
+        if(action.payload.accessToken) {
+          state.accessToken = action.payload.accessToken;
+          state.isLoggedIn = true;
+          state.userData.id = action.payload.userData.id;
+          state.userData.email = action.payload.userData.email;
+          state.userData.balance = action.payload.userData.balance;
+          state.userData.firstLogin = action.payload.userData.firstLogin;
+          state.userData.transactions = action.payload.userData.transactions;
+        }
       })
-      .addCase(getUserData.rejected, (state) => {
+      .addCase(login.rejected, (state) => {
         state.loading = false;
-        state.isLoggedIn = false
+        state.isLoggedIn = false;
+        state.accessToken = null
       })
+      // ========================================================
+
+      // .addCase(getUserData.pending, (state) => {
+      //   state.loading = true;
+      //   state.isLoggedIn = false;
+      //   state.token = null
+      // })
+      // .addCase(getUserData.fulfilled, (state, action) => {
+      //   state.loading = false;
+      //   if(action.payload.token) {
+      //     state.token = action.payload.token;
+      //     state.isLoggedIn = true;
+      //     state.user.email = action.payload.email;
+      //     state.user.balance = action.payload.balance
+      //   }
+      // })
+      // .addCase(getUserData.rejected, (state) => {
+      //   state.loading = false;
+      //   state.isLoggedIn = false;
+      //   state.token = null
+      // })
   }
 });
 
