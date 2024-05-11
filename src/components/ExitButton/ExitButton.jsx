@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { HeaderExitButton, HeaderExitButtonText, HeaderExitButtonMobile } from "./ExitButtonStyles";
 import Modal from "../Modal/Modal";
 
+import logoutIcon from "./logout-icon.svg";
+
 const ExitButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -14,11 +16,9 @@ const ExitButton = () => {
       <HeaderExitButton onClick={toggleModal}>
         <HeaderExitButtonText>Exit</HeaderExitButtonText>
       </HeaderExitButton>
+
       <HeaderExitButtonMobile>
-        {/* Placeholder svg do podmianki */}
-        <svg width="16" height="16">
-          <rect width="16" height="16" stroke="gray" fill="gray" />
-        </svg>
+        <img src={logoutIcon} alt="Logout Icon" />
       </HeaderExitButtonMobile>
 
       <Modal modalText="Are you sure?" isOpen={isModalOpen} toggleModal={toggleModal} />

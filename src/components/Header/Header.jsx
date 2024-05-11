@@ -3,7 +3,8 @@ import { HeaderContainer, HeaderWrapper, HeaderLogoLink, HeaderUserContainer, He
 
 import useAuth from "../../hooks/useAuth";
 import ExitButton from "../ExitButton/ExitButton.jsx";
-import Modal from "../Modal/Modal.jsx";
+
+import logo from "./logo.svg";
 
 const Header = () => {
   const { isLoggedIn } = useAuth();
@@ -12,11 +13,8 @@ const Header = () => {
     <>
       <HeaderContainer>
         <HeaderWrapper>
-          {/* Placeholder svg do podmianki */}
           <HeaderLogoLink>
-            <svg width="90" height="31">
-              <rect width="90" height="31" stroke="orange" fill="orange" />
-            </svg>
+            <img src={logo} alt="Logo" />
           </HeaderLogoLink>
           {isLoggedIn && (
             <HeaderUserContainer>
