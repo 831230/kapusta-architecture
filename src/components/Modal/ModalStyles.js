@@ -33,6 +33,12 @@ export const ModalWrapper = styled.div`
   gap: 20px;
 
   box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+
+  @media screen and (max-width: 768px) {
+    right: 50%;
+    top: 30%;
+    transform: translate(50%, -50%);
+  }
 `;
 
 export const ModalText = styled.p`
