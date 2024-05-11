@@ -1,9 +1,13 @@
-import React from "react";
 import { ModalContainer, ModalWrapper, ModalText, ModalButtonContainer, ModalButton, ModalButtonText } from "./ModalStyles";
-import useAuth from "../../hooks/useAuth";
+
+import { useDispatch } from "react-redux";
+import { getUserData } from "../../redux/user/operations";
 
 const Modal = ({ modalText, isOpen, toggleModal }) => {
+  const dispatch = useDispatch();
+
   const handleUserLogout = () => {
+    dispatch(getUserData.pending());
     toggleModal();
   };
 

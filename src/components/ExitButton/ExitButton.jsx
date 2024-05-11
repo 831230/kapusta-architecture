@@ -9,10 +9,6 @@ const ExitButton = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleLogout = () => {
-    toggleModal();
-  };
-
   return (
     <>
       <HeaderExitButton onClick={toggleModal}>
