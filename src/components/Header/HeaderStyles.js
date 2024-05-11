@@ -59,18 +59,3 @@ export const HeaderUserDivider = styled.div`
     display: none;
   }
 `;
-
-export const HeaderExitIcon = styled.button`
-  display: none;
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-
-  width: 16px;
-  height: 16px;
-
-  @media screen and (max-width: 320px) {
-    display: block;
-  }
-`;

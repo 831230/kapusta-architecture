@@ -1,5 +1,5 @@
 import UserData from "../UserData/UserData.jsx";
-import { HeaderContainer, HeaderWrapper, HeaderLogoLink, HeaderUserContainer, HeaderExitIcon, HeaderUserDivider } from "./HeaderStyles.js";
+import { HeaderContainer, HeaderWrapper, HeaderLogoLink, HeaderUserContainer, HeaderUserDivider } from "./HeaderStyles.js";
 
 import useAuth from "../../hooks/useAuth";
 import ExitButton from "../ExitButton/ExitButton.jsx";
@@ -20,13 +20,7 @@ const Header = () => {
           <HeaderUserContainer>
             <UserData />
             <HeaderUserDivider />
-            <ExitButton />
-            <HeaderExitIcon>
-              {/* Placeholder svg do podmianki */}
-              <svg width="16" height="16">
-                <rect width="16" height="16" stroke="gray" fill="gray" />
-              </svg>
-            </HeaderExitIcon>
+            <ExitButton></ExitButton>
           </HeaderUserContainer>
         )}
       </HeaderWrapper>
