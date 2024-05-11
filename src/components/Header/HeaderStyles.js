@@ -5,6 +5,8 @@ export const HeaderContainer = styled.header`
   display: flex;
   width: 100%;
   justify-content: center;
+
+  background-color: #fff;
 `;
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -52,23 +54,6 @@ export const HeaderUserDivider = styled.div`
 
   position: absolute;
   right: 25px;
-
-  @media screen and (max-width: 320px) {
-    display: none;
-  }
-`;
-
-export const HeaderExitButton = styled.button`
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  font-size: 12px;
-  letter-spacing: 0.48px;
-
-  color: #52555f;
-  cursor: pointer;
-  border-bottom: 1px solid #52555f;
 
   @media screen and (max-width: 320px) {
     display: none;

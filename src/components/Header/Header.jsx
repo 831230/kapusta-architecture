@@ -1,15 +1,8 @@
 import UserData from "../UserData/UserData.jsx";
-import {
-  HeaderContainer,
-  HeaderWrapper,
-  HeaderLogoLink,
-  HeaderUserContainer,
-  HeaderExitButton,
-  HeaderExitIcon,
-  HeaderUserDivider,
-} from "./HeaderStyles.js";
+import { HeaderContainer, HeaderWrapper, HeaderLogoLink, HeaderUserContainer, HeaderExitIcon, HeaderUserDivider } from "./HeaderStyles.js";
 
 import useAuth from "../../hooks/useAuth";
+import ExitButton from "../ExitButton/ExitButton.jsx";
 
 const Header = () => {
   const { isLoggedIn } = useAuth();
@@ -27,7 +20,7 @@ const Header = () => {
           <HeaderUserContainer>
             <UserData />
             <HeaderUserDivider />
-            <HeaderExitButton>Exit</HeaderExitButton>
+            <ExitButton />
             <HeaderExitIcon>
               {/* Placeholder svg do podmianki */}
               <svg width="16" height="16">
