@@ -1,28 +1,29 @@
-import { ModalContainer, ModalWrapper, ModalText, ModalButtonContainer, ModalButton } from "./ModalStyles";
+import React from "react";
+import { ModalContainer, ModalWrapper, ModalText, ModalButtonContainer, ModalButton, ModalButtonText } from "./ModalStyles";
 import useAuth from "../../hooks/useAuth";
-import { useDispatch } from "react-redux";
-import { getUserData } from "../../redux/user/operations";
 
-const Modal = ({ modalText }) => {
-  const { isLoggedIn } = useAuth();
-  const dispatch = useDispatch();
-
+const Modal = ({ modalText, isOpen, toggleModal }) => {
   const handleUserLogout = () => {
-    dispatch(getUserData.pending());
+    toggleModal();
   };
 
-  console.log(isLoggedIn, "Modal");
   return (
-    <ModalContainer>
-      <ModalWrapper>
-        <ModalText>{modalText}</ModalText>
+    isOpen && (
+      <ModalContainer>
+        <ModalWrapper>
+          <ModalText>{modalText}</ModalText>
 
-        <ModalButtonContainer>
-          <ModalButton onClick={handleUserLogout}>Yes</ModalButton>
-          <ModalButton>No</ModalButton>
-        </ModalButtonContainer>
-      </ModalWrapper>
-    </ModalContainer>
+          <ModalButtonContainer>
+            <ModalButton onClick={handleUserLogout}>
+              <ModalButtonText>Yes</ModalButtonText>
+            </ModalButton>
+            <ModalButton onClick={toggleModal}>
+              <ModalButtonText>No</ModalButtonText>
+            </ModalButton>
+          </ModalButtonContainer>
+        </ModalWrapper>
+      </ModalContainer>
+    )
   );
 };
 

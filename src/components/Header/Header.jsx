@@ -27,8 +27,6 @@ const Header = () => {
           )}
         </HeaderWrapper>
       </HeaderContainer>
-
-      <Modal modalText={"Are You sure?"} />
     </>
   );
 };

@@ -30,11 +30,38 @@ export const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
+
+  box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
 `;
 
-export const ModalText = styled.p``;
+export const ModalText = styled.p`
+  margin: 0;
+`;
 
 export const ModalButtonContainer = styled.div`
   display: flex;
+  gap: 15px;
 `;
-export const ModalButton = styled.button``;
+export const ModalButton = styled.button`
+  color: #52555f;
+  background-color: #fff;
+
+  border: none;
+  padding: 10px;
+  width: 125px;
+
+  cursor: pointer;
+  border-radius: 10px;
+
+  &:hover {
+    color: #fff;
+    background-color: #ff751d;
+    transition: background-color 0.3s ease;
+  }
+`;
+export const ModalButtonText = styled.span`
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+`;
