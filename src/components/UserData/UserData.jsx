@@ -8,7 +8,7 @@ const UserData = () => {
     <HeaderUserData>
       {/* Placeholder img do podmianki z db*/}
       <HeaderUserIcon src="https://placehold.co/32x32" alt="User icon" />
-      <HeaderUserName>{userData.email ? userData.email : "User Email"}</HeaderUserName>
+      <HeaderUserName>{userData.email ? userData.email : "Email was not found"}</HeaderUserName>
     </HeaderUserData>
   );
 };
