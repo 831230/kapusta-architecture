@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { login, getUserData } from "./operations";
+import { login, logout, updateBalance } from "./operations";
 
 const initialState = {
-  loading: false,
+  loadingUser: false,
   accessToken: null,
   theme: "day",
   userData: {
@@ -19,16 +19,23 @@ const initialState = {
 const userSlice = createSlice({
   name: "user",
   initialState,
+  reducers: {
+    loadNewBalance: {
+      reducer: (state, action) => {
+        state.userData.balance = action.payload
+      }
+    }
+  },
   extraReducers: (builder) => {
     builder
       // =======================LOGIN============================
       .addCase(login.pending, (state) => {
-        state.loading = true;
+        state.loadingUser = true;
         state.isLoggedIn = false;
         state.accessToken = null
       })
       .addCase(login.fulfilled, (state, action) => {
-        state.loading = false;
+        state.loadingUser = false;
         if(action.payload.accessToken) {
           state.accessToken = action.payload.accessToken;
           state.isLoggedIn = true;
@@ -40,32 +47,45 @@ const userSlice = createSlice({
         }
       })
       .addCase(login.rejected, (state) => {
-        state.loading = false;
+        state.loadingUser = false;
         state.isLoggedIn = false;
         state.accessToken = null
       })
       // ========================================================
 
-      // .addCase(getUserData.pending, (state) => {
-      //   state.loading = true;
-      //   state.isLoggedIn = false;
-      //   state.token = null
-      // })
-      // .addCase(getUserData.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   if(action.payload.token) {
-      //     state.token = action.payload.token;
-      //     state.isLoggedIn = true;
-      //     state.user.email = action.payload.email;
-      //     state.user.balance = action.payload.balance
-      //   }
-      // })
-      // .addCase(getUserData.rejected, (state) => {
-      //   state.loading = false;
-      //   state.isLoggedIn = false;
-      //   state.token = null
-      // })
+      // ====================NEW BALANCE=========================
+      .addCase(updateBalance.pending, (state) => {
+        state.loadingUser = true;
+      })
+      .addCase(updateBalance.fulfilled, (state, action) => {
+        state.loadingUser = false;
+        state.userData.balance = action.payload.newBalance
+      })
+      .addCase(updateBalance.rejected, (state) => {
+        state.loadingUser = false;
+      })
+      // ========================================================
+
+      // ======================LOGOUT============================
+      .addCase(logout.pending, (state) => {
+        state.loadingUser = true;
+      })
+      .addCase(logout.fulfilled, (state, action) => {
+        state.loadingUser = false;
+        state.accessToken = null;
+        state.isLoggedIn = false;
+        state.userData.id = "";
+        state.userData.email = "";
+        state.userData.balance = null;
+        state.userData.firstLogin = true;
+        state.userData.transactions = [];
+      })
+      .addCase(logout.rejected, (state) => {
+        state.loadingUser = false;
+      })
+      // ========================================================
   }
 });
 
+export const {loadNewBalance} = userSlice.actions;
 export const userReducer = userSlice.reducer;

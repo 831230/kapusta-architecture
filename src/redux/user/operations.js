@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { user, loginResponse } from "../fakeDb";
+import { loginResponse, getNewBalance } from "../fakeDb";
 
 
 const login = createAsyncThunk(
@@ -9,7 +9,6 @@ const login = createAsyncThunk(
     const { email, password } = data;
     try {
       const res = loginResponse;
-      console.log(res);
       return res
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -17,17 +16,11 @@ const login = createAsyncThunk(
   }
 );
 
-const getUserData = createAsyncThunk(
-  "user/getUserData",
-  async (id, thunkAPI) => {
+const updateBalance = createAsyncThunk(
+  "user/newBalance",
+  async (data, thunkAPI) => {
     try {
-      const res = {
-        token: user.token,
-        email: user.email,
-        balance: user.balance,
-        firstLogin: user.firstLogin
-      };
-      // console.log(res);
+      const res = getNewBalance;
       return res
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -35,4 +28,17 @@ const getUserData = createAsyncThunk(
   }
 );
 
-export {getUserData, login} 
+const logout = createAsyncThunk(
+  "user/logout",
+  async (data, thunkAPI) => {
+    try {
+      const res = null;
+      return res
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+
+export {login, logout, updateBalance} 

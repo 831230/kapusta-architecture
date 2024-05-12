@@ -4,12 +4,12 @@ import { selectIsLoggedIn, selectUserData, selectLoading } from "../redux/user/s
 const useAuth = () => {
   const userData = useSelector(selectUserData); 
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const loading = useSelector(selectLoading);
+  const loadingUser = useSelector(selectLoading);
 
   return {
     userData,
     isLoggedIn,
-    loading
+    loadingUser
   }
 };
 

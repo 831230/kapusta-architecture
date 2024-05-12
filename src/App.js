@@ -16,8 +16,6 @@ const Income = lazy(() => import("./components/Income/Income.jsx"));
 const ReportsPage = lazy(() => import("./pages/ReportsPage/ReportsPage.jsx"));
 
 const App = () => {
-  const {userData, isLoggedIn} = useAuth(); 
-  console.log({userData, isLoggedIn});
   return ( 
     <>
       <Routes>
