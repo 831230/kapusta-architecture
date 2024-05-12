@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <HeaderContainer>
         <HeaderWrapper>
-          <HeaderLogoLink>
+          <HeaderLogoLink to to="/">
             <img src={logo} alt="Logo" />
           </HeaderLogoLink>
           {isLoggedIn && (
