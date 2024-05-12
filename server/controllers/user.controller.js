@@ -23,9 +23,14 @@ const create = async (req, res, next) => {
 
     const newUser = await User.create(req.body);
 
+const responseData = {
+      _id: newUser._id,
+      email: newUser.email,
+    };
+
     res.status(201).json({
       status: "success",
-      data: newUser,
+      data: responseData,
     });
   } catch (error) {
     console.error(error);
