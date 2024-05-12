@@ -60,9 +60,18 @@ const LoginForm = () => {
       !formData.email ||
       !formData.password
     ) {
-      dispatch(login(formData));
       setFormData({ email: "", password: "" });
     }
+  };
+
+  const onLogin = () => {
+    handleSubmit();
+    dispatch(login(formData));
+  };
+
+  const onSignup = () => {
+    handleSubmit();
+    dispatch(login(formData));
   };
 
   return (
@@ -80,7 +89,7 @@ const LoginForm = () => {
           <br /> after registering:
         </LoginSecondParagraph>
 
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <InputContainer>
             <Label
               required
@@ -132,8 +141,12 @@ const LoginForm = () => {
           </InputContainer>
 
           <GroupButton>
-            <ButtonLogin type="submit">Log in</ButtonLogin>
-            <ButtonSignup type="submit">Registration</ButtonSignup>
+            <ButtonLogin type="submit" onClick={onLogin}>
+              Log in
+            </ButtonLogin>
+            <ButtonSignup type="submit" onClick={onSignup}>
+              Registration
+            </ButtonSignup>
           </GroupButton>
         </Form>
       </LoginFormWrapper>

@@ -24,7 +24,7 @@ const LoginPage = () => {
         </SingleMainIcon>
       </LoginPageMobileBackground>
       <LoginPageBackground>
-        <BackgroundImage />
+        <BackgroundImage style={{ width: "100%" }} />
       </LoginPageBackground>
       <Box>
         <HomePageContent>
