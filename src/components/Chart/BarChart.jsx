@@ -17,6 +17,7 @@ const data = {
         "#FF751D",
         "#FFDAC0",
         "#FF751D",
+        "#FF751D",
       ],
       borderRadius: 10,
       barThickness: 38
