@@ -5,13 +5,15 @@ const morgan = require("morgan");
 const express = require("express");
 const app = express();
 
-
+const usersRouter = require("./routes/users.routes");
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
 app.use(morgan(formatsLogger));
 app.use(cors());
 app.use(express.json());
+
+app.use("/auth", usersRouter);
 
 app.get("/", (req, res) => {
   res.send("Musi diałać");
