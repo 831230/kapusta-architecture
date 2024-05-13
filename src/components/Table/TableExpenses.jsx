@@ -1,103 +1,105 @@
 import React, { useEffect } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { useSelector, useDispatch } from 'react-redux';
-import { IconButton } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import  { useDispatch }  from 'react-redux';
+import {
+  TransactionBox,
+  TableBox,
+  TableTitle,
+  TableTitleItem,
+  TableBodys,
+  SumCell
+} from './Table.styled';
+import useAuth from '../../hooks/useAuth';
+import useExpenses from '../../hooks/useExpenses';
+import useReports from '../../hooks/useReports';
+import { setNewExpense, deleteExpense, getExpenseStats } from '../../redux/expenses/operations';
 
-import {
-  selectExpenses,
-  setNewExpense,
-  selectExpensesLoading,
-} from '../../redux/expenses/selectors';
-import {
-  getExpenseStats,
-  deleteExpense,
-} from '../../redux/expenses/operations';
-import { selectIsLoggedIn, selectLoading } from '../../redux/user/selectors';
 
 function formatNegativeNumber(num) {
-  return `- ${num.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} UAH.`;
+  return `- ${num
+    .toFixed(2)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} UAH.`;
 }
 
 function formatDate(dateString) {
-  const date = new Date(dateString);
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  return `${day.toString().padStart(2, '0')}.${month.toString().padStart(2, '0')}.${year}`;
+  var date = new Date(dateString);
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+  return `${day.toString().padStart(2, '0')}.${month
+    .toString()
+    .padStart(2, '0')}.${year}`;
 }
 
-export default function TableExpenses() {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const loadingUser = useSelector(selectLoading);
-  const expensesList = useSelector(selectExpenses);
-  const loadingExpenses = useSelector(selectExpensesLoading);
+export default function DenseTable() {
+  const { isLoggedIn, loadingUser } = useAuth();
+  const { expensesList } = useExpenses();
+  const { loadingReports } = useReports();
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (isLoggedIn) {
-      dispatch(getExpenseStats());
+      dispatch(getExpenseStats()); 
     }
   }, [dispatch, isLoggedIn]);
 
+  
+
+
   const handleDelete = (id) => {
-    dispatch(deleteExpense({ transactionId: id }));
+    dispatch(deleteExpense(id))
+      .then(() => {
+       
+      })
+      .catch((error) => {
+        
+      });
   };
 
   const handleAdd = () => {
-    // Przykładowe użycie setNewExpense - dodanie nowego wydatku
+    
     const newExpenseData = {
       description: 'New Expense',
-      amount: 100, // Kwota
-      date: new Date(), // Data
-      category: 'Other' // Kategoria
+      amount: 100, 
+      date: new Date(), 
+      category: 'Other' 
     };
-    dispatch(setNewExpense(newExpenseData));
+    dispatch(setNewExpense(newExpenseData)); 
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-        <TableHead sx={{ '& th': { fontWeight: 700, textTransform: 'uppercase', backgroundColor: '#F5F6FB' } }}>
-          <TableRow>
-            <TableCell align="left">Date</TableCell>
-            <TableCell align="left">Description</TableCell>
-            <TableCell align="left">Category</TableCell>
-            <TableCell align="right">Sum</TableCell>
-            <TableCell align="left"></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {(loadingUser || loadingExpenses) ? (
-            <TableRow>
-              <TableCell colSpan={5} align="center">Loading...</TableCell>
-            </TableRow>
+    <TransactionBox>
+      <TableBox>
+        <TableTitle>
+          <TableTitleItem>Date</TableTitleItem>
+          <TableTitleItem>Description</TableTitleItem>
+          <TableTitleItem>Category</TableTitleItem>
+          <TableTitleItem>Sum</TableTitleItem>
+          <TableTitleItem></TableTitleItem>
+        </TableTitle>
+        <TableBodys>
+          {(loadingUser || loadingReports) ? (
+            <tr>
+              <td colSpan={5} align="center">Loading...</td>
+            </tr>
           ) : (
             expensesList.map((expense) => (
-              <TableRow key={expense._id}>
-                <TableCell>{formatDate(expense.date)}</TableCell>
-                <TableCell>{expense.description}</TableCell>
-                <TableCell>{expense.category}</TableCell>
-                <TableCell align="right" style={{ color: '#E7192E', fontWeight: 700 }}>
-                  {formatNegativeNumber(expense.amount)}
-                </TableCell>
-                <TableCell align="center">
-                  <IconButton aria-label="delete" onClick={() => handleDelete(expense._id)}>
-                    <DeleteIcon />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            ))
-          )}
-        </TableBody>
-      </Table>
-      <button onClick={handleAdd}>Add</button> {/* Przycisk do dodawania nowego wydatku */}
-    </TableContainer>
-  );
-}
+              <tr key={expense._id}>
+                <td>{formatDate(expense.date)}</td>
+                <td>{expense.description}</td>
+                <td>{expense.category}</td>
+                <SumCell isExpense={true}>{formatNegativeNumber(expense.amount)}</SumCell>
+                <td align="center">
+                    <svg width="24" onClick={() => handleDelete(expense._id)} style={{ cursor: 'pointer' }}>
+                    <use href="./images/svg/icons_function.svg#icon-Vector-4"></use>
+                  </svg>
+                    </td>
+                    </tr>
+                ))
+              )}
+            </TableBodys>
+              </TableBox>
+              <button onClick={handleAdd}>Add</button>
+        </TransactionBox>
+      );
+    }

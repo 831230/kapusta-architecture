@@ -9,7 +9,7 @@ const useIncomes = () => {
   const incomes = useSelector(selectIncomes);
   const incomesMonthStats = useSelector(selectMonthStats);
   const incomesLoading = useSelector(selectIncomesLoading);
-
+  
   return {
     incomes,
     incomesMonthStats,

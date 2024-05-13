@@ -12,7 +12,7 @@ import {
 } from "../../redux/incomes/operations";
 
 import ExpensesIncomeForm from "../ExpensesIncomeForm/ExpensesIncomeForm";
-import ExpensesIncomeTable from "../ExpensesIncomeTable/ExpensesIncomeTable";
+import TableIncome from "../Table/TableIncome";
 import ExpensesIncomeSummary from "../ExpensesIncomeSummary/ExpensesIncomeSummary";
 
 const Income = () => {
@@ -30,7 +30,7 @@ const Income = () => {
       <ExpensesIncomeForm callback={setNewIncome} actionType="income" />
 
       <div className="expenses-income">
-        <ExpensesIncomeTable callback={deleteIncome} />
+        <TableIncome callback={deleteIncome} />
         <ExpensesIncomeSummary incomesMonthStats={incomesMonthStats} />
       </div>
     </div>
