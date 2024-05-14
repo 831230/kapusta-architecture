@@ -25,7 +25,7 @@ const expensesSlice = createSlice({
       .addCase(getExpenseStats.rejected, (state) => {
         state.loadingExpenses = false;
       })
-      // ========================================================
+      // ======================================================== 
   }
 });
 
