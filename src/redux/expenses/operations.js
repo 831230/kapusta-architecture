@@ -48,6 +48,6 @@ const deleteExpense = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-);
+); 
 
 export {getExpenseStats, setNewExpense, deleteExpense}

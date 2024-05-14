@@ -9,7 +9,7 @@ import { getExpenseStats, setNewExpense, deleteExpense } from "../../redux/expen
 
 // COMPONENTS:
 import ExpensesIncomeForm from "../ExpensesIncomeForm/ExpensesIncomeForm";
-import ExpensesIncomeTable from "../ExpensesIncomeTable/ExpensesIncomeTable";
+import TableExpenses from "../Table/TableExpenses";
 import ExpensesIncomeSummary from "../ExpensesIncomeSummary/ExpensesIncomeSummary";
 
 const Expenses = () => {
@@ -26,7 +26,7 @@ const Expenses = () => {
       <h2>EXPENSES TAB</h2>
       <ExpensesIncomeForm callback={setNewExpense} actionType="expense"/>
       <div className="expenses-income">
-        <ExpensesIncomeTable callback={deleteExpense}/>
+        <TableExpenses callback={deleteExpense}/>
         <ExpensesIncomeSummary expensesMonthStats={expensesMonthStats}/>
       </div>
       
