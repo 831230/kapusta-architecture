@@ -1,80 +1,82 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #f2f5fc;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.header-user-space{
+.header-user-space {
   display: flex;
 }
 
-.login-page-container{
+.login-page-container {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.login-form{
+.login-form {
   display: flex;
   flex-direction: column;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-around;
 }
 
-.expenses-page__header{
+.expenses-page__header {
   display: flex;
   justify-content: space-around;
 }
 
-.expenses-income{
+.expenses-income {
   display: flex;
   justify-content: space-around;
 }
 
-.reports-header{
+.reports-header {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
 }
 
-.reports-content{
+.reports-content {
   text-align: center;
 }
 
-.balance-label{
+.balance-label {
   display: flex;
   justify-content: space-around;
 }
 
-.categories-nav{
+.categories-nav {
   text-align: center;
 }
 
-.category-list{
+.category-section {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.category-wrapper {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
+  padding: 20px;
 }
 
-.category{
-  width: 100px;
-  height: 150px;
-  border: 1px solid gray;
-  background-color: rgb(214, 218, 221);
-}
-
-.chart{
+.chart {
   margin: 40px auto;
   width: 300px;
   height: 300px;

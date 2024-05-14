@@ -22,9 +22,16 @@ const ReportsPage = () => {
   // console.log({ incomesReport, expensesReport });
   const dispatch = useDispatch();
 
+  const [currentView, setCurrentView] = useState("expenses");
+
   useEffect(() => {
     dispatch(getTransactionsData(currentPeriod));
   }, [dispatch, currentPeriod]);
+
+  const toggleView = () => {
+    setCurrentView(currentView === "expenses" ? "income" : "expenses");
+  };
+
   return (
     <>
       <div className="reports-header">
@@ -34,20 +41,19 @@ const ReportsPage = () => {
       </div>
       <div className="reports-content">
         <BalanceLabel />
-        <ReportsCategoriesNav />
-        <div className="category-list">
-          <CategoryList />
+        <div className="category-section">
+          <div className="category-wrapper">
+            <ReportsCategoriesNav currentView={currentView} toggleView={toggleView} />
+            <CategoryList currentView={currentView} />
+          </div>
         </div>
         <BarChart />
       </div>
     </>
-
   );
-}
+};
 
 export default ReportsPage;
-
-
 
 // import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
@@ -76,7 +82,7 @@ export default ReportsPage;
 //   useEffect(() => {
 //     dispatch(getTransactionsData(currentPeriod));
 //   }, [dispatch, currentPeriod]);
-//   return ( 
+//   return (
 //     <>
 //       <div className="reports-header">
 //         <Link to="/transactions/expenses">Main page</Link>
@@ -92,8 +98,8 @@ export default ReportsPage;
 //         <Chart/>
 //       </div>
 //     </>
-    
+
 //    );
 // }
- 
+
 // export default ReportsPage;
