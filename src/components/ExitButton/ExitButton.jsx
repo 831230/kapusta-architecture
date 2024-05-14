@@ -1,14 +1,29 @@
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { HeaderExitButton, HeaderExitButtonText, HeaderExitButtonMobile } from "./ExitButtonStyles";
+import Modal from "../Modal/Modal";
 
-// REDUX ACTIONS:
-import { logout } from "../../redux/user/operations";
+import logoutIcon from "./logout-icon.svg";
 
 const ExitButton = () => {
-  const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  return ( 
-    <button type="button" onClick={() => dispatch(logout())}>Exit</button>
-   );
-}
- 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  return (
+    <>
+      <HeaderExitButton onClick={toggleModal}>
+        <HeaderExitButtonText>Exit</HeaderExitButtonText>
+      </HeaderExitButton>
+
+      <HeaderExitButtonMobile onClick={toggleModal}>
+        <img src={logoutIcon} alt="Logout Icon" />
+      </HeaderExitButtonMobile>
+
+      <Modal modalText="Are you sure?" isOpen={isModalOpen} toggleModal={toggleModal} />
+    </>
+  );
+};
+
 export default ExitButton;
