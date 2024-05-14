@@ -1,4 +1,4 @@
-import { HeaderUserData, HeaderUserIcon, HeaderUserName } from "./UserDataStyles";
+import { HeaderUserData, HeaderUserIcon, HeaderUserName } from "./UserDataStyles.js";
 import useAuth from "../../hooks/useAuth";
 
 const UserData = () => {
