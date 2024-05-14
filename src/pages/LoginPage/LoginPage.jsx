@@ -1,36 +1,48 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-
-// REDUX ACTIONS:
-import { login } from "../../redux/user/operations";
+import {
+  Box,
+  HomePageContainer,
+  HomePageContent,
+  LoginPageBackground,
+  LoginPageMobileBackground,
+  Logo,
+  PairIcon,
+  SingleIcon,
+  SingleMainIcon,
+} from "./LoginPage.styles";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import { ReactComponent as LogoSVG } from "../../assets/Logo.svg";
+import { ReactComponent as BackgroundImage } from "../../assets/Background.svg";
+import { ReactComponent as PairKapusta } from "../../assets/SmallBackground.svg";
+import { ReactComponent as SingleKapusta } from "../../assets/singleKapusta.svg";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const data = { email, password };
-
-  const dispatch = useDispatch();
-
-  const loginUser = () => dispatch(login(data))
-
   return (
-    <>
-      <div className="login-page-container">
-        <div>
-          <img src="" alt="kapusta-smart-finance-theme" />
-        </div>
-        <div>
-          <form action="" className="login-form">
-            <input type="text" onChange={(e) => setEmail(e.target.value)} value={email}/>
-            <input type="text" onChange={(e) => setPassword(e.target.value)} value={password}/>
-            <button type="button" onClick={loginUser}>Login</button>
-            <button>Register</button>
-          </form>
-        </div>
-      </div>
-    </>
+    <HomePageContainer>
+      <LoginPageMobileBackground>
+        <SingleMainIcon>
+          <SingleKapusta />
+        </SingleMainIcon>
+      </LoginPageMobileBackground>
+      <LoginPageBackground>
+        <BackgroundImage style={{ width: "100%" }} />
+      </LoginPageBackground>
+      <Box>
+        <HomePageContent>
+          <Logo>
+            <LogoSVG />
+          </Logo>
+          <LoginForm />
+        </HomePageContent>
+      </Box>
+
+      <SingleIcon>
+        <SingleKapusta />
+      </SingleIcon>
+      <PairIcon>
+        <PairKapusta />
+      </PairIcon>
+    </HomePageContainer>
   );
-};
+}; 
 
 export default LoginPage;
