@@ -88,7 +88,9 @@ export default function DenseTable() {
                     onClick={() => handleDelete(expense._id)}
                     style={{ cursor: "pointer" }}
                   >
-                    <use href='./images/svg/icons_function.svg#icon-Vector-4'></use>
+
+                    <use href="./assets/icons_function.svg#icon-Vector-4"></use>
+
                   </svg>
                 </td>
               </tr>

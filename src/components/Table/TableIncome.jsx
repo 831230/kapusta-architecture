@@ -44,48 +44,53 @@ export default function IncomeTable() {
     dispatch(deleteIncome({ transactionId: id }));
   };
 
-  const handleAdd = () => {
-    const newIncomeData = {
-      description: "New Income",
-      amount: 100,
-      date: new Date(),
-      category: "Other",
-    };
-    dispatch(setNewIncome(newIncomeData));
-  };
-  return (
-    <TransactionBox>
-      <TableBox>
-        <thead>
-          <TableTitle>
-            <TableTitleItem>Date</TableTitleItem>
-            <TableTitleItem>Description</TableTitleItem>
-            <TableTitleItem>Category</TableTitleItem>
-            <TableTitleItem>Sum</TableTitleItem>
-            <TableTitleItem></TableTitleItem>
-          </TableTitle>
-        </thead>
-        <TableBodys>
-          {loadingUser || incomesLoading || loadingReports ? (
-            <tr>
-              <td colSpan={5} align='center'>
-                Loading...
-              </td>
-            </tr>
-          ) : (
-            incomes.map(income => (
-              <tr key={income.id}>
-                <td>{formatDate(income.date)}</td>
-                <td>{income.description}</td>
-                <td>{income.category}</td>
-                <SumCell>{formatPositiveNumber(income.amount)}</SumCell>
-                <td align='center'>
-                  <svg
-                    width='24'
-                    onClick={() => handleDelete(income._id)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <use href='./images/svg/icons_function.svg#icon-Vector-4'></use>
+
+    useEffect(() => {
+        if (isLoggedIn) {
+          dispatch(getIncomeStats());
+        }
+      }, [dispatch, isLoggedIn]);
+    
+      const handleDelete = (id) => {
+        dispatch(deleteIncome({ transactionId: id }));
+      };
+    
+      const handleAdd = () => {
+        const newIncomeData = {
+          description: 'New Income',
+          amount: 100, 
+          date: new Date(), 
+          category: 'Other' 
+        };
+        dispatch(setNewIncome(newIncomeData)); 
+      };
+      return (
+        <TransactionBox>
+          <TableBox>
+            <thead>
+              <TableTitle>
+                <TableTitleItem>Date</TableTitleItem>
+                <TableTitleItem>Description</TableTitleItem>
+                <TableTitleItem>Category</TableTitleItem>
+                <TableTitleItem>Sum</TableTitleItem>
+                <TableTitleItem></TableTitleItem>
+              </TableTitle>
+            </thead>
+            <TableBodys>
+              {(loadingUser || incomesLoading || loadingReports) ? (
+                <tr>
+                  <td colSpan={5} align="center">Loading...</td>
+                </tr>
+              ) : (
+                incomes.map((income) => (
+                  <tr key={income.id}>
+                    <td>{formatDate(income.date)}</td>
+                    <td>{income.description}</td>
+                    <td>{income.category}</td>
+                    <SumCell>{formatPositiveNumber(income.amount)}</SumCell>
+                    <td align="center">
+                    <svg width="24" onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
+                    <use href="./assets/icons_function.svg#icon-Vector-4"></use>
                   </svg>
                 </td>
               </tr>
