@@ -43,17 +43,6 @@ export default function IncomeTable() {
   const handleDelete = id => {
     dispatch(deleteIncome({ transactionId: id }));
   };
-
-
-    useEffect(() => {
-        if (isLoggedIn) {
-          dispatch(getIncomeStats());
-        }
-      }, [dispatch, isLoggedIn]);
-    
-      const handleDelete = (id) => {
-        dispatch(deleteIncome({ transactionId: id }));
-      };
     
       const handleAdd = () => {
         const newIncomeData = {
