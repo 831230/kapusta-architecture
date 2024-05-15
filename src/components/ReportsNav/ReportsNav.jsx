@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
+import { ReportsNavLink, ReportsNavText, ReportsNavIcon } from "./ReportsNavStyles";
+
+import reportsLogo from "./reportsLogo.svg";
 
 const ReportsNav = () => {
-  return ( 
-    <div className="reports-nav">
-      <Link to="/reports">Reports</Link>
-      <img src="" alt="reports-ico" />
-    </div>
-    
-   );
-}
- 
+  return (
+    <ReportsNavLink to="/reports">
+      <ReportsNavText>Reports</ReportsNavText>
+      <ReportsNavIcon src={reportsLogo} alt="Reports Icon" />
+    </ReportsNavLink>
+  );
+};
+
 export default ReportsNav;
