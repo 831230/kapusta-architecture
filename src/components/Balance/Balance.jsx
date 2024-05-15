@@ -1,9 +1,11 @@
 import {
+  BalanceContainer,
   BalanceForm,
   BalanceLabel,
   BalanceInput,
   BalanceButton,
 } from "./BalanceStyles";
+import BalanceModal from "../BalanceModal/BalanceModal";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
@@ -16,10 +18,8 @@ import useAuth from "../../hooks/useAuth";
 const Balance = () => {
   const form = useRef();
   const { userData } = useAuth();
-  let UserBalance = userData.balance;
-  if (UserBalance === null) {
-    UserBalance = 0;
-  }
+  let userBalance = userData.balance;
+
   const dispatch = useDispatch();
   let balanceValue;
 
@@ -31,18 +31,22 @@ const Balance = () => {
   };
 
   return (
-    <BalanceForm onSubmit={handleSubmit} ref={form}>
-      <BalanceLabel>Balance:</BalanceLabel>
-      <BalanceInput
-        type="number"
-        name="balance"
-        title="Please, enter your balance"
-        value={balanceValue}
-        placeholder={`${UserBalance}.00 USD`}
-        required
-      />
-      <BalanceButton type="submit">CONFIRM</BalanceButton>
-    </BalanceForm>
+    <BalanceContainer>
+      <BalanceForm onSubmit={handleSubmit} ref={form}>
+        <BalanceLabel>Balance:</BalanceLabel>
+        <BalanceInput
+          type="number"
+          step="0.01"
+          name="balance"
+          title="Please, enter your balance"
+          value={balanceValue}
+          placeholder={`${userBalance ? userBalance : "0.00"} USD`}
+          required
+        />
+        <BalanceButton type="submit">CONFIRM</BalanceButton>
+      </BalanceForm>
+      {!userBalance && <BalanceModal />}
+    </BalanceContainer>
   );
 };
 
