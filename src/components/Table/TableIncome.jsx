@@ -40,9 +40,7 @@ export default function IncomeTable() {
     }
   }, [dispatch, isLoggedIn]);
 
-  const handleDelete = id => {
-    dispatch(deleteIncome({ transactionId: id }));
-  };
+  
 
 
     useEffect(() => {
@@ -52,7 +50,9 @@ export default function IncomeTable() {
       }, [dispatch, isLoggedIn]);
     
       const handleDelete = (id) => {
-        dispatch(deleteIncome({ transactionId: id }));
+        dispatch(deleteIncome(id))
+        .then(() => {})
+        .catch(error => {});
       };
     
       const handleAdd = () => {
