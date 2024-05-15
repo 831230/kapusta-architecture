@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const SummaryBox = styled.div`
-  max-width: 213px;
+  min-width: 213px;
+  max-width: 230px;
 `;
 
 export const SummaryList = styled.ul`
