@@ -40,8 +40,6 @@ export default function IncomeTable() {
     }
   }, [dispatch, isLoggedIn]);
 
-  
-
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -54,6 +52,7 @@ export default function IncomeTable() {
         .then(() => {})
         .catch(error => {});
       };
+
     
       const handleAdd = () => {
         const newIncomeData = {
