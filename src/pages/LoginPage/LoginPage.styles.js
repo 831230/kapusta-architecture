@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const MediaMinWidth481px = css`
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+`;
 
 export const PairIcon = styled.div`
   display: none;
@@ -22,9 +28,7 @@ export const SingleIcon = styled.div`
   left: 35px;
   top: 767px;
 
-  @media screen and (min-width: 481px) {
-    display: none;
-  }
+  ${MediaMinWidth481px}
 `;
 
 export const Logo = styled.div`
@@ -86,7 +90,7 @@ export const LoginPageBackground = styled.div`
   @media screen and (min-width: 481px) {
     display: block;
     padding-top: 28px;
-    background: #f5f6fb;
+    background: var(--secondary-bg-color);
     border-radius: 0 0 0 55px;
     height: 582.5px;
   }
@@ -95,12 +99,10 @@ export const LoginPageMobileBackground = styled.div`
   display: block;
   height: 342px;
   width: 100%;
-  background: #f5f6fb;
+  background: var(--secondary-bg-color);
   border-radius: 0 0 0 55px;
 
-  @media screen and (min-width: 481px) {
-    display: none;
-  }
+  ${MediaMinWidth481px}
 `;
 
 export const SingleMainIcon = styled.div`
@@ -110,7 +112,5 @@ export const SingleMainIcon = styled.div`
   top: 160px;
   transform: rotate(180deg);
 
-  @media screen and (min-width: 481px) {
-    display: none;
-  }
+  ${MediaMinWidth481px}
 `;

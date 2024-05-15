@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+const BaseTextStyles = `
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+`;
+
+const BaseBackgroundStyles = `
+  background: var(--secondary-bg-color);
+`;
+
 export const SummaryBox = styled.div`
   min-width: 213px;
   max-width: 230px;
@@ -13,18 +26,10 @@ export const SummaryList = styled.ul`
 `;
 
 export const SummaryItem = styled.li`
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-
-  color: var(--text-gray);
-  background: var(--secondary-bg-color);
-
-  margin-bottom: 2px;
+  ${BaseTextStyles}
+  ${BaseBackgroundStyles}
   padding: 12px;
-
+  margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
 
@@ -34,17 +39,13 @@ export const SummaryItem = styled.li`
 `;
 
 export const SummaryTitle = styled.div`
-  font-family: "Roboto", sans-serif;
+  ${BaseTextStyles}
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-
   text-align: center;
   padding: 12px;
-  background: var(--secondary-bg-color);
-
+  ${BaseBackgroundStyles}
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border: 0 12 0 12;
 `;
