@@ -31,7 +31,7 @@ export const loginResponse = {
     ]
   }
 };
- 
+
 
 export const expenseStats = {
   userExpenses: [
@@ -47,6 +47,27 @@ export const expenseStats = {
       description: "Transaction's description 2",
       category: "Products",
       amount: 50,
+      date: "2024-05-26",
+    },
+    {
+      id: "507f1f77bcf86cd799439015",
+      description: "Transaction's description 3",
+      category: "Health",
+      amount: 450,
+      date: "2024-05-26",
+    },
+    {
+      id: "507f1f77bcf86cd799439016",
+      description: "Transaction's description 4",
+      category: "Other",
+      amount: 320,
+      date: "2024-05-26",
+    },
+    {
+      id: "507f1f77bcf86cd799439017",
+      description: "Transaction's description 5",
+      category: "Education",
+      amount: 1200,
       date: "2024-05-26",
     }
   ],
@@ -76,9 +97,9 @@ export const newExpense = {
   }
 }
 
-export const getNewBalance = {newBalance: 10000};
+export const getNewBalance = { newBalance: 10000 };
 
-export const removeExpense = {newBalance: 8500};
+export const removeExpense = { newBalance: 8500 };
 
 export const incomeStats = {
   userIncomes: [
@@ -148,4 +169,4 @@ export const transactionsData = {
   }
 }
 
-export const removeIncome = {newBalance: 7300};
+export const removeIncome = { newBalance: 7300 };

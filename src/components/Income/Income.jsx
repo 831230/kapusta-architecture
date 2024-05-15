@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
+//CSS
+import css from "../Expenses/Expenses.module.css"
+
 // REDUX HOOKS:
 import useIncomes from "../../hooks/useIncomes";
 
@@ -25,11 +28,9 @@ const Income = () => {
     dispatch(getIncomeStats());
   }, [dispatch]);
   return (
-    <div>
-      <h2>INCOME TAB</h2>
+    <div className={css.expensesIncomeContainer}>
       <ExpensesIncomeForm callback={setNewIncome} actionType="income" />
-
-      <div className="expenses-income">
+      <div className={css.expensesIncome}>
         <TableIncome callback={deleteIncome} />
         <ExpensesIncomeSummary incomesMonthStats={incomesMonthStats} />
       </div>

@@ -7,15 +7,11 @@ import {
   TableTitleItem,
   TableBodys,
   SumCell,
-} from "./Table.styled";
+} from "./TableStyles";
 import useAuth from "../../hooks/useAuth";
 import useExpenses from "../../hooks/useExpenses";
 import useReports from "../../hooks/useReports";
-import {
-  setNewExpense,
-  deleteExpense,
-  getExpenseStats,
-} from "../../redux/expenses/operations";
+import { setNewExpense, deleteExpense, getExpenseStats } from "../../redux/expenses/operations";
 
 function formatNegativeNumber(num) {
   return `- ${num
@@ -29,9 +25,7 @@ function formatDate(dateString) {
   var day = date.getDate();
   var month = date.getMonth() + 1;
   var year = date.getFullYear();
-  return `${day.toString().padStart(2, "0")}.${month
-    .toString()
-    .padStart(2, "0")}.${year}`;
+  return `${day.toString().padStart(2, "0")}.${month.toString().padStart(2, "0")}.${year}`;
 }
 
 export default function DenseTable() {
@@ -46,10 +40,10 @@ export default function DenseTable() {
     }
   }, [dispatch, isLoggedIn]);
 
-  const handleDelete = (id) => {
+  const handleDelete = id => {
     dispatch(deleteExpense(id))
       .then(() => {})
-      .catch((error) => {});
+      .catch(error => {});
   };
 
   const handleAdd = () => {
@@ -77,24 +71,26 @@ export default function DenseTable() {
         <TableBodys>
           {loadingUser || loadingReports ? (
             <tr>
-              <td colSpan={5} align="center">
+              <td colSpan={5} align='center'>
                 Loading...
               </td>
             </tr>
           ) : (
-            expenses.map((expense) => (
+            expenses.map(expense => (
               <tr key={expense.id}>
                 <td>{formatDate(expense.date)}</td>
                 <td>{expense.description}</td>
                 <td>{expense.category}</td>
                 <SumCell>{formatNegativeNumber(expense.amount)}</SumCell>
-                <td align="center">
+                <td align='center'>
                   <svg
-                    width="24"
+                    width='24'
                     onClick={() => handleDelete(expense._id)}
                     style={{ cursor: "pointer" }}
                   >
+
                     <use href="./assets/icons_function.svg#icon-Vector-4"></use>
+
                   </svg>
                 </td>
               </tr>
