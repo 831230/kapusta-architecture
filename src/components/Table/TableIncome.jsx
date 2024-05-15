@@ -40,9 +40,19 @@ export default function IncomeTable() {
     }
   }, [dispatch, isLoggedIn]);
 
-  const handleDelete = id => {
-    dispatch(deleteIncome({ transactionId: id }));
-  };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+          dispatch(getIncomeStats());
+        }
+      }, [dispatch, isLoggedIn]);
+    
+      const handleDelete = (id) => {
+        dispatch(deleteIncome(id))
+        .then(() => {})
+        .catch(error => {});
+      };
+
     
       const handleAdd = () => {
         const newIncomeData = {
