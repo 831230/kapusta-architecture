@@ -79,7 +79,7 @@ export default function IncomeTable() {
                     <SumCell>{formatPositiveNumber(income.amount)}</SumCell>
                     <td align="center">
                     <svg width="24" onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
-                    <use href="./images/svg/icons_function.svg#icon-Vector-4"></use>
+                    <use href="./assets/icons_function.svg#icon-Vector-4"></use>
                   </svg>
                     </td>
                   </tr>
