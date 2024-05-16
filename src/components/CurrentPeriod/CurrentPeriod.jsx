@@ -1,4 +1,4 @@
-import React from "react";
+import { CurrentPeriodButton, CurrentPeriodContainer, CurrentPeriodText } from "./CurrentPeriodStyles";
 
 const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
   const goToPreviousMonth = () => {
@@ -26,13 +26,13 @@ const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
   const monthName = months[month - 1];
 
   return (
-    <div className="current-period">
-      <button onClick={goToPreviousMonth}>Previous</button>
-      <h2>
+    <CurrentPeriodContainer>
+      <CurrentPeriodButton onClick={goToPreviousMonth}>Previous</CurrentPeriodButton>
+      <CurrentPeriodText>
         {monthName} {year}
-      </h2>
-      <button onClick={goToNextMonth}>Next</button>
-    </div>
+      </CurrentPeriodText>
+      <CurrentPeriodButton onClick={goToNextMonth}>Next</CurrentPeriodButton>
+    </CurrentPeriodContainer>
   );
 };
 
