@@ -1,7 +1,17 @@
 import styled from "styled-components";
+import vars from "../../styles/vars.css";
 
 export const SummaryBox = styled.div`
-  max-width: 213px;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media screen (max-width: 1024px);
+   {
+    width: 230px;
+  }
+
+  width: 213px;
 `;
 
 export const SummaryList = styled.ul`
@@ -12,7 +22,7 @@ export const SummaryList = styled.ul`
 `;
 
 export const SummaryItem = styled.li`
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font)
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -22,10 +32,10 @@ export const SummaryItem = styled.li`
   background: var(--secondary-bg-color);
 
   margin-bottom: 2px;
-  padding: 12px;
+  padding: 12px 0;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   &:last-child {
     border-bottom-right-radius: 15px;
@@ -33,7 +43,7 @@ export const SummaryItem = styled.li`
 `;
 
 export const SummaryTitle = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font)
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.02em;
@@ -45,5 +55,5 @@ export const SummaryTitle = styled.div`
 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border: 0 12 0 12;
+  // border: 0 12 0 12;
 `;

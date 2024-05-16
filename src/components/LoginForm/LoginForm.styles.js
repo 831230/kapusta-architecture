@@ -38,11 +38,11 @@ export const LoginFormWrapper = styled.div`
 `;
 
 export const LoginFirstParagraph = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: var( --primary-font)
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: var(--text-gray)
   text-align: center;
 
   @media screen and (max-width: 480px) {
@@ -55,7 +55,7 @@ export const LoginSecondParagraph = styled.div`
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: var(--text-gray)
   width: 258px;
 
   @media screen and (max-width: 480px) {
@@ -72,11 +72,11 @@ export const ButtonGoogle = styled.div`
   width: 119px;
   height: 40px;
   background: #f6f7fb;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.02em;
-  color: #000;
+  color: var(--text-black);
   box-shadow: 1px 2px 3px 0 rgba(170, 178, 197, 0.2);
 `;
 
@@ -95,7 +95,7 @@ export const Label = styled.label`
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #000;
+  color: var(--text-black);
   margin-bottom: 12px;
   text-align: start;
 
@@ -110,16 +110,27 @@ export const InputField = styled.input`
 
   background: #f6f7fb;
 
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.04em;
   color: #a6abb9;
+
+  /* Efekt hover */
+  &:hover {
+    background: #e0e3eb;
+  }
+
+  /* Efekt focus */
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+  }
 `;
 
 export const InputValidation = styled.span`
   text-align: start;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 0.04em;
@@ -153,6 +164,18 @@ export const ButtonLogin = styled.button`
   @media screen and (max-width: 480px) {
     width: 116px;
   }
+
+  /* Efekt hover */
+  &:hover {
+    background: #ff8c3b; /* zmiana koloru tła */
+    cursor: pointer; /* zmiana kursora */
+  }
+
+  /* Efekt focus */
+  &:focus {
+    outline: none; /* usuwa domyślny efekt outline */
+    box-shadow: 0 0 0 3px rgba(255, 117, 29, 0.5); /* dodaje cień */
+  }
 `;
 export const ButtonSignup = styled.button`
   background: #f5f6fb;
@@ -171,6 +194,18 @@ export const ButtonSignup = styled.button`
 
   @media screen and (max-width: 480px) {
     width: 116px;
+  }
+
+  /* Efekt hover */
+  &:hover {
+    background: #e8e9f3; /* zmiana koloru tła */
+    cursor: pointer; /* zmiana kursora */
+  }
+
+  /* Efekt focus */
+  &:focus {
+    outline: none; /* usuwa domyślny efekt outline */
+    box-shadow: 0 0 0 3px rgba(82, 85, 95, 0.5); /* dodaje cień */
   }
 `;
 
