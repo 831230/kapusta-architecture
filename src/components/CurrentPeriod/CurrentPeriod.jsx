@@ -1,4 +1,14 @@
-import { CurrentPeriodButton, CurrentPeriodContainer, CurrentPeriodText } from "./CurrentPeriodStyles";
+import {
+  CurrentPeriodButton,
+  CurrentPeriodContainer,
+  CurrentPeriodWrapper,
+  CurrentPeriodButtonIcon,
+  CurrentPeriodLabel,
+  CurrentPeriodDate,
+} from "./CurrentPeriodStyles";
+
+import leftIcon from "./left-icon.svg";
+import rightIcon from "./right-icon.svg";
 
 const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
   const goToPreviousMonth = () => {
@@ -27,11 +37,18 @@ const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
 
   return (
     <CurrentPeriodContainer>
-      <CurrentPeriodButton onClick={goToPreviousMonth}>Previous</CurrentPeriodButton>
-      <CurrentPeriodText>
-        {monthName} {year}
-      </CurrentPeriodText>
-      <CurrentPeriodButton onClick={goToNextMonth}>Next</CurrentPeriodButton>
+      <CurrentPeriodLabel>Current period:</CurrentPeriodLabel>
+      <CurrentPeriodWrapper>
+        <CurrentPeriodButton onClick={goToPreviousMonth}>
+          <CurrentPeriodButtonIcon src={leftIcon} />
+        </CurrentPeriodButton>
+        <CurrentPeriodDate>
+          {monthName} {year}
+        </CurrentPeriodDate>
+        <CurrentPeriodButton onClick={goToNextMonth}>
+          <CurrentPeriodButtonIcon src={rightIcon} />
+        </CurrentPeriodButton>
+      </CurrentPeriodWrapper>
     </CurrentPeriodContainer>
   );
 };
