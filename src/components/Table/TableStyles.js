@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const TableBox = styled.table`
   width: 746px;
   height: 400px;
-  // border-spacing: 0;
+  border-spacing: 0;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border: 2px solid black;
@@ -61,15 +61,16 @@ background-color: #FFFFFF;
 `;
 export const TableContainer = styled.tr`
 // width: 746px;
-// text-align: center;
-// width: calc(100% / 5);
+height: 40px;
+text-align: center;
+
 `
 
 export const TableContainerItem = styled.td`
 
-// height: 40px;
+
+// text-align: center;
 color: #52555F;
-// border-top: 2px solid;
 border-bottom: 2px solid;
 // border-left: 2px solid;
 border-color: #000000;
@@ -87,12 +88,13 @@ font-size: 14px;
 export const SumCell = styled.td`
 color: ${({ value }) => (value >= 0 ? '#407946' : '#E7192E')}; 
   font-weight: 700;
+  
 `;
 export const TrashButton = styled.button`
   width: 32px;
   height: 32px;
   border-bottom: 2px solid;
-  background-color: grey;
+  background-color: #F5F6FB;
   border-radius: 50%;
   border: none;
   cursor: pointer;
