@@ -7,6 +7,7 @@ export const BalanceForm = styled.form`
   justify-content: center;
   gap: 16px;
   background-color: #f2f5fc;
+  margin-bottom: 20px;
 `;
 
 export const BalanceLabel = styled.label`

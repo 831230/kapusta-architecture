@@ -1,14 +1,33 @@
+@import '../../styles/vars.css';
+
 .expensesIncomeContainer {
     background-color: var(--primary-bg-color);
+    padding: 30px;
     margin: 0 auto;
     max-width: 1098px;
     max-height: 579px;
     box-shadow: 0px 10px 60px 0px #AAB2C533;
     border-radius: 0px 30px 30px 30px;
-    padding: 30px;
+    box-sizing: border-box;
+    margin-top: 9px;
+
 }
 
 .expensesIncome {
     display: flex;
     justify-content: space-around;
+
+}
+
+@media screen and (max-width: 768px) {
+    .expensesIncomeContainer {
+        max-width: 704px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .expensesIncomeContainer {
+        width: 320px;
+    }
 }
