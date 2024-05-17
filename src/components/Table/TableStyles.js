@@ -1,46 +1,42 @@
 import styled from 'styled-components';
 
-export const TransactionBox = styled.div`
-  overflow: hidden;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  @media screen and (min-width: 1200px) {
-    width: 624px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 746px;
-    height: 400px;
-  }
-`;
 
 export const TableBox = styled.table`
-  width: 100%;
-  border: none;
+  // width: 746px;
+  // height: 400px;
   border-spacing: 0;
   border-collapse: collapse;
-  table-layout: fixed;
+  // border: 2px solid black;
+  // table-layout: fixed;
   @media screen and (min-width: 1200px) {
     width: 746px;
     height: 400px;
   }
 `;
-
-export const TableTitle = styled.tr``;
-
-export const TableTitleItem = styled.th`
-  width: calc(100% / 5);
+export const TableHead = styled.tr`
+border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: 40px;
+  width: calc(100% / 5);
+  border: 2px solid #000;
+`
+export const TableHeadItem = styled.td`
+color: #000000;
+font-weight: 700;
+// border: 2px solid #000;
   border-spacing: 0;
-  background-color: #f5f6fb;
+  font-size:12px;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
 `;
-
 export const TableBodys = styled.tbody`
-  display: block;
-  overflow-y: auto;
+background-color: #FFFFFF;
+  // display: block;
+  // overflow-y: auto;
   width: 746px;
-  max-height: 400px;
+  height: 380px;
+  border: 2px solid black;
+  text-align: center;
   ::-webkit-scrollbar {
     width: 6px;
     background-color: #f5f6fb;
@@ -50,8 +46,39 @@ export const TableBodys = styled.tbody`
     background-color: #ff751d;
   }
 `;
+export const TableContainer = styled.tr`
+// width: 746px;
+// text-align: center;
+`
+
+export const TableContainerItem = styled.td`
+
+// height: 40px;
+
+color: #52555F;
+border-top: 2px solid;
+border-bottom: 2px solid;
+border-color: #000000;
+position: relative;
+z-index: 0;
+// margin-right: 100px;
+font-size: 14px;
+  border-spacing: 0;
+  `;
+
+
+
+
 
 export const SumCell = styled.td`
-  align-right: ${(props) => (props.isExpense ? '#E7192E' : '#407946')};
+color: ${({ value }) => (value >= 0 ? '#407946' : '#E7192E')}; 
   font-weight: 700;
+`;
+
+export const StyledSVG = styled.svg`
+width: 18px;
+height: 18px;
+position: relative;
+  z-index: 2;
+  fill:black;
 `;

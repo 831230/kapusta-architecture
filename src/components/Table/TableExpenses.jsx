@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
-  TransactionBox,
   TableBox,
-  TableTitle,
-  TableTitleItem,
+  TableContainerItem,
+  TableHeadItem,
   TableBodys,
   SumCell,
+  StyledSVG,
+  TableHead,
+  TableContainer,
 } from "./TableStyles";
 import useAuth from "../../hooks/useAuth";
 import useExpenses from "../../hooks/useExpenses";
@@ -45,7 +47,7 @@ export default function DenseTable() {
       .then(() => {})
       .catch(error => {});
   };
-
+  
   const handleAdd = () => {
     const newExpenseData = {
       description: "New Expense",
@@ -57,48 +59,43 @@ export default function DenseTable() {
   };
 
   return (
-    <TransactionBox>
-      <TableBox>
-        <thead>
-          <TableTitle>
-            <TableTitleItem>Date</TableTitleItem>
-            <TableTitleItem>Description</TableTitleItem>
-            <TableTitleItem>Category</TableTitleItem>
-            <TableTitleItem>Sum</TableTitleItem>
-            <TableTitleItem></TableTitleItem>
-          </TableTitle>
-        </thead>
-        <TableBodys>
+  
+    <TableBox>
+    <TableHead>
+     
+      <TableHeadItem>Date</TableHeadItem>
+        <TableHeadItem>Description</TableHeadItem>
+        <TableHeadItem>Category</TableHeadItem>
+        <TableHeadItem>Sum</TableHeadItem>
+        <TableHeadItem></TableHeadItem>
+     
+    </TableHead>
+    <TableBodys>
           {loadingUser || loadingReports ? (
-            <tr>
-              <td colSpan={5} align='center'>
-                Loading...
-              </td>
-            </tr>
+            <TableContainerItem
+            colSpan={5} align="center">Loading...
+          </TableContainerItem>
           ) : (
             expenses.map(expense => (
-              <tr key={expense.id}>
-                <td>{formatDate(expense.date)}</td>
-                <td>{expense.description}</td>
-                <td>{expense.category}</td>
-                <SumCell>{formatNegativeNumber(expense.amount)}</SumCell>
-                <td align='center'>
-                  <svg
-                    width='24'
+              <TableContainer key={expense.id}>
+                <TableContainerItem>{formatDate(expense.date)}</TableContainerItem>
+                <TableContainerItem>{expense.description}</TableContainerItem>
+                <TableContainerItem>{expense.category}</TableContainerItem>
+                <TableContainerItem><SumCell>{formatNegativeNumber(expense.amount)}
+               
+                <StyledSVG
+                
                     onClick={() => handleDelete(expense._id)}
                     style={{ cursor: "pointer" }}
                   >
 
                     <use href="./assets/icons_function.svg#icon-Vector-4"></use>
 
-                  </svg>
-                </td>
-              </tr>
+                    </StyledSVG>
+                    </SumCell></TableContainerItem>
+              </TableContainer>
             ))
           )}
         </TableBodys>
-      </TableBox>
-      <button onClick={handleAdd}>Add</button>
-    </TransactionBox>
-  );
+      </TableBox>)
 }

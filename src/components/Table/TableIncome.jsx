@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
-import {
-  TransactionBox,
+import { 
+
   TableBox,
-  TableTitle,
-  TableTitleItem,
+  TableContainerItem,
+  TableHeadItem,
   TableBodys,
   SumCell,
+  StyledSVG,
+  TableHead,
+  TableContainer,
 } from "./TableStyles";
 import { useDispatch } from "react-redux";
 import useAuth from "../../hooks/useAuth";
@@ -34,11 +37,11 @@ export default function IncomeTable() {
   const { loadingReports } = useReports();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      dispatch(getIncomeStats());
-    }
-  }, [dispatch, isLoggedIn]);
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     dispatch(getIncomeStats());
+  //   }
+  // }, [dispatch, isLoggedIn]);
 
 
     useEffect(() => {
@@ -54,50 +57,55 @@ export default function IncomeTable() {
       };
 
     
-      const handleAdd = () => {
-        const newIncomeData = {
-          description: 'New Income',
-          amount: 100, 
-          date: new Date(), 
-          category: 'Other' 
-        };
-        dispatch(setNewIncome(newIncomeData)); 
-      };
+      // const handleAdd = () => {
+      //   const newIncomeData = {
+      //     description: 'New Income',
+      //     amount: 100, 
+      //     date: new Date(), 
+      //     category: 'Other' 
+      //   };
+      //   dispatch(setNewIncome(newIncomeData)); 
+      // };
       return (
-        <TransactionBox>
+      
           <TableBox>
-            <thead>
-              <TableTitle>
-                <TableTitleItem>Date</TableTitleItem>
-                <TableTitleItem>Description</TableTitleItem>
-                <TableTitleItem>Category</TableTitleItem>
-                <TableTitleItem>Sum</TableTitleItem>
-                <TableTitleItem></TableTitleItem>
-              </TableTitle>
-            </thead>
+            <TableHead>
+             
+              <TableHeadItem>Date</TableHeadItem>
+                <TableHeadItem>Description</TableHeadItem>
+                <TableHeadItem>Category</TableHeadItem>
+                <TableHeadItem>Sum</TableHeadItem>
+                <TableHeadItem></TableHeadItem>
+             
+            </TableHead>
             <TableBodys>
-              {(loadingUser || incomesLoading || loadingReports) ? (
-                <tr>
-                  <td colSpan={5} align="center">Loading...</td>
-                </tr>
-              ) : (
+              {(loadingUser || incomesLoading || loadingReports)
+                ?
+                (
+                <TableContainerItem
+                  colSpan={5} align="center">Loading...
+                </TableContainerItem>
+                )
+                :
+                (
                 incomes.map((income) => (
-                  <tr key={income.id}>
-                    <td>{formatDate(income.date)}</td>
-                    <td>{income.description}</td>
-                    <td>{income.category}</td>
-                    <SumCell>{formatPositiveNumber(income.amount)}</SumCell>
-                    <td align="center">
-                    <svg width="24" onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
+                  <TableContainer key={income.id}>
+                    <TableContainerItem>{formatDate(income.date)}</TableContainerItem>
+                    <TableContainerItem>{income.description}</TableContainerItem>
+                    <TableContainerItem>{income.category}</TableContainerItem>
+                    <TableContainerItem><SumCell value={income.amount}>{formatPositiveNumber(income.amount)}
+                    
+                    <StyledSVG  onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
                     <use href="./assets/icons_function.svg#icon-Vector-4"></use>
-                  </svg>
-                </td>
-              </tr>
+                  </StyledSVG>
+                  </SumCell></TableContainerItem>
+              </TableContainer>
             ))
-          )}
+                )
+        }
         </TableBodys>
-      </TableBox>
-      <button onClick={handleAdd}>Add</button>
-    </TransactionBox>
-  );
-}
+      </TableBox>)
+      // {/* <button onClick={handleAdd}>Add</button> */}
+    
+  
+};
