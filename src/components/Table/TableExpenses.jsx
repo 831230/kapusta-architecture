@@ -11,6 +11,7 @@ import {
   TableHead,
   TableContainer,
   TableHeadItem2,
+  TrashButton,
 } from "./TableStyles";
 import useAuth from "../../hooks/useAuth";
 import useExpenses from "../../hooks/useExpenses";
@@ -69,7 +70,7 @@ export default function DenseTable() {
         <TableHeadItem>Description</TableHeadItem>
         <TableHeadItem>Category</TableHeadItem>
         <TableHeadItem>Sum</TableHeadItem>
-        <TableHeadItem aria-hidden="true">xxxx</TableHeadItem>
+        <TableHeadItem2>xxxx</TableHeadItem2>
      
     </TableHead>
     <TableBodys>
@@ -85,15 +86,11 @@ export default function DenseTable() {
                 <TableContainerItem>{expense.category}</TableContainerItem>
                 <TableContainerItem><SumCell>{formatNegativeNumber(expense.amount)}</SumCell></TableContainerItem>
                
-                <TableContainerItem><StyledSVG value={expense.svg}
-                
-                    onClick={() => handleDelete(expense._id)}
-                    style={{ cursor: "pointer" }}
-                  >
-
-                    <use href= {trash + 'icon-Vector-4'}></use>
-
-                    </StyledSVG></TableContainerItem>
+                <TableContainerItem> <TrashButton onClick={handleDelete} style={{ cursor: 'pointer' }}>
+      <StyledSVG>
+        <use href={trash + 'icon-Vector-4'}></use>
+      </StyledSVG>
+    </TrashButton></TableContainerItem>
                     
               </TableContainer>
             ))
