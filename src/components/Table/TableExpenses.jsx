@@ -9,6 +9,7 @@ import {
   StyledSVG,
   TableHead,
   TableContainer,
+  TableHeadItem2,
 } from "./TableStyles";
 import useAuth from "../../hooks/useAuth";
 import useExpenses from "../../hooks/useExpenses";
@@ -48,15 +49,15 @@ export default function DenseTable() {
       .catch(error => {});
   };
   
-  const handleAdd = () => {
-    const newExpenseData = {
-      description: "New Expense",
-      amount: 100,
-      date: new Date(),
-      category: "Other",
-    };
-    dispatch(setNewExpense(newExpenseData));
-  };
+  // const handleAdd = () => {
+  //   const newExpenseData = {
+  //     description: "New Expense",
+  //     amount: 100,
+  //     date: new Date(),
+  //     category: "Other",
+  //   };
+  //   dispatch(setNewExpense(newExpenseData));
+//  }; 
 
   return (
   
@@ -67,7 +68,7 @@ export default function DenseTable() {
         <TableHeadItem>Description</TableHeadItem>
         <TableHeadItem>Category</TableHeadItem>
         <TableHeadItem>Sum</TableHeadItem>
-        <TableHeadItem></TableHeadItem>
+        <TableHeadItem aria-hidden="true">xxxx</TableHeadItem>
      
     </TableHead>
     <TableBodys>
@@ -81,9 +82,9 @@ export default function DenseTable() {
                 <TableContainerItem>{formatDate(expense.date)}</TableContainerItem>
                 <TableContainerItem>{expense.description}</TableContainerItem>
                 <TableContainerItem>{expense.category}</TableContainerItem>
-                <TableContainerItem><SumCell>{formatNegativeNumber(expense.amount)}
+                <TableContainerItem><SumCell>{formatNegativeNumber(expense.amount)}</SumCell></TableContainerItem>
                
-                <StyledSVG
+                <TableContainerItem><StyledSVG
                 
                     onClick={() => handleDelete(expense._id)}
                     style={{ cursor: "pointer" }}
@@ -91,8 +92,8 @@ export default function DenseTable() {
 
                     <use href="./assets/icons_function.svg#icon-Vector-4"></use>
 
-                    </StyledSVG>
-                    </SumCell></TableContainerItem>
+                    </StyledSVG></TableContainerItem>
+                    
               </TableContainer>
             ))
           )}

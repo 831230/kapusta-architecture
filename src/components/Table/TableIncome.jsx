@@ -9,6 +9,7 @@ import {
   StyledSVG,
   TableHead,
   TableContainer,
+  TableHeadItem2,
 } from "./TableStyles";
 import { useDispatch } from "react-redux";
 import useAuth from "../../hooks/useAuth";
@@ -75,7 +76,7 @@ export default function IncomeTable() {
                 <TableHeadItem>Description</TableHeadItem>
                 <TableHeadItem>Category</TableHeadItem>
                 <TableHeadItem>Sum</TableHeadItem>
-                <TableHeadItem></TableHeadItem>
+                <TableHeadItem aria-hidden="true">xxxx</TableHeadItem>
              
             </TableHead>
             <TableBodys>
@@ -93,19 +94,19 @@ export default function IncomeTable() {
                     <TableContainerItem>{formatDate(income.date)}</TableContainerItem>
                     <TableContainerItem>{income.description}</TableContainerItem>
                     <TableContainerItem>{income.category}</TableContainerItem>
-                    <TableContainerItem><SumCell value={income.amount}>{formatPositiveNumber(income.amount)}
+                    <TableContainerItem><SumCell value={income.amount}>{formatPositiveNumber(income.amount)}</SumCell></TableContainerItem>
                     
-                    <StyledSVG  onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
+                    <TableContainerItem><StyledSVG value={income.svg} onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
                     <use href="./assets/icons_function.svg#icon-Vector-4"></use>
-                  </StyledSVG>
-                  </SumCell></TableContainerItem>
+                  </StyledSVG></TableContainerItem>
+                  
               </TableContainer>
             ))
                 )
         }
         </TableBodys>
       </TableBox>)
-      // {/* <button onClick={handleAdd}>Add</button> */}
+     
     
   
 };
