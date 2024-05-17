@@ -74,8 +74,8 @@ color: #52555F;
 border-bottom: 2px solid;
 // border-left: 2px solid;
 border-color: #000000;
-// position: relative;
-// z-index: 0;
+position: relative;
+z-index: 0;
 // margin-right: 100px;
 font-size: 14px;
   border-spacing: 0;
@@ -104,7 +104,7 @@ export const TrashButton = styled.button`
 export const StyledSVG = styled.svg`
 width: 18px;
 height: 18px;
-position: absolute;
+position: relative;
   z-index: 2;
   fill:black;
 `;
