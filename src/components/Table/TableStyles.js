@@ -67,28 +67,24 @@ text-align: center;
 `
 
 export const TableContainerItem = styled.td`
-
-
-// text-align: center;
+text-align: center;
 color: #52555F;
 border-bottom: 2px solid;
-// border-left: 2px solid;
 border-color: #000000;
 position: relative;
 z-index: 0;
-// margin-right: 100px;
 font-size: 14px;
   border-spacing: 0;
   `;
 
-
+  
 
 
 
 export const SumCell = styled.td`
 color: ${({ value }) => (value >= 0 ? '#407946' : '#E7192E')}; 
   font-weight: 700;
-  
+  padding-left: 20px;
 `;
 export const TrashButton = styled.button`
   width: 32px;
