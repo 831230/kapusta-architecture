@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import trash from '../../assets/icons_function.svg';
 import {
   TableBox,
   TableContainerItem,
@@ -84,13 +85,13 @@ export default function DenseTable() {
                 <TableContainerItem>{expense.category}</TableContainerItem>
                 <TableContainerItem><SumCell>{formatNegativeNumber(expense.amount)}</SumCell></TableContainerItem>
                
-                <TableContainerItem><StyledSVG
+                <TableContainerItem><StyledSVG value={expense.svg}
                 
                     onClick={() => handleDelete(expense._id)}
                     style={{ cursor: "pointer" }}
                   >
 
-                    <use href="./assets/icons_function.svg#icon-Vector-4"></use>
+                    <use href= {trash + 'icon-Vector-4'}></use>
 
                     </StyledSVG></TableContainerItem>
                     

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import trash from '../../assets/icons_function.svg';
 import { 
 
   TableBox,
@@ -9,6 +10,7 @@ import {
   StyledSVG,
   TableHead,
   TableContainer,
+  TrashButton,
   TableHeadItem2,
 } from "./TableStyles";
 import { useDispatch } from "react-redux";
@@ -76,7 +78,7 @@ export default function IncomeTable() {
                 <TableHeadItem>Description</TableHeadItem>
                 <TableHeadItem>Category</TableHeadItem>
                 <TableHeadItem>Sum</TableHeadItem>
-                <TableHeadItem aria-hidden="true">xxxx</TableHeadItem>
+                <TableHeadItem2 >xxxx</TableHeadItem2>
              
             </TableHead>
             <TableBodys>
@@ -96,9 +98,11 @@ export default function IncomeTable() {
                     <TableContainerItem>{income.category}</TableContainerItem>
                     <TableContainerItem><SumCell value={income.amount}>{formatPositiveNumber(income.amount)}</SumCell></TableContainerItem>
                     
-                    <TableContainerItem><StyledSVG value={income.svg} onClick={() => handleDelete(income._id)} style={{ cursor: 'pointer' }}>
-                    <use href="./assets/icons_function.svg#icon-Vector-4"></use>
-                  </StyledSVG></TableContainerItem>
+                    <TableContainerItem> <TrashButton onClick={handleDelete} style={{ cursor: 'pointer' }}>
+      <StyledSVG>
+        <use href={trash + 'icon-Vector-4'}></use>
+      </StyledSVG>
+    </TrashButton></TableContainerItem>
                   
               </TableContainer>
             ))
