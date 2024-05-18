@@ -18,7 +18,7 @@
 }
 
 .BalanceInput {
-    background-color: #f2f5fc;
+    background-color: var(--background-color);
     border: 2px solid #ffffff;
     border-radius: 16px;
     font-size: 12px;
@@ -40,7 +40,7 @@
 }
 
 .BalanceButton {
-    background-color: #f2f5fc;
+    background-color: var(--background-color);
     border: 2px solid #ffffff;
     border-radius: 16px;
     color: rgba(82, 85, 95, 0.7);

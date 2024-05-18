@@ -2,14 +2,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getTransactionsData } from "../../redux/reports/operators";
 import useReports from "../../hooks/useReports";
-import {
-  BalanceLabelWrapper,
-  BalanceLabelContainer,
-  BalanceLabelParagraph,
-  BalanceLabelSpanGreen,
-  BalanceLabelSpanRed,
-  BalanceLabelSeparator,
-} from "./BalanceLabelStyles";
+
+//CSS
+import css from "./BalanceLabel.module.css"
 
 const BalanceLabel = () => {
   const { incomesReport, expensesReport } = useReports();
@@ -21,22 +16,27 @@ const BalanceLabel = () => {
   }, [dispatch]);
 
   return (
-    <BalanceLabelContainer>
-      <BalanceLabelWrapper>
-        <BalanceLabelParagraph>
+    <div className={css.BalanceLabelContainer}>
+      <div className={css.BalanceLabelWrapper}>
+        <p className={css.BalanceLabelParagraph}>
           Expenses:{" "}
-          <BalanceLabelSpanGreen>
-            - {expensesReport.total}
-          </BalanceLabelSpanGreen>{" "}
-          USD
-        </BalanceLabelParagraph>
-        <BalanceLabelSeparator></BalanceLabelSeparator>
-        <BalanceLabelParagraph>
+          <span>
+            <span className={css.BalanceLabelSpanGreen}>
+              - {expensesReport.total}
+            </span>{" "}
+            <span>USD</span>
+          </span>
+        </p>
+        <div className={css.BalanceLabelSeparator}></div>
+        <p className={css.BalanceLabelParagraph}>
           Income:{" "}
-          <BalanceLabelSpanRed>+ {incomesReport.total}</BalanceLabelSpanRed> USD
-        </BalanceLabelParagraph>
-      </BalanceLabelWrapper>
-    </BalanceLabelContainer>
+          <span>
+            <span className={css.BalanceLabelSpanRed}>+ {incomesReport.total}</span>
+            <span> USD</span>
+          </span>
+        </p>
+      </div>
+    </div>
   );
 };
 
