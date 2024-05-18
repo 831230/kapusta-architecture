@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HeaderExitButton, HeaderExitButtonText, HeaderExitButtonMobile } from "./ExitButtonStyles";
-import Modal from "../Modal/Modal";
+import LogoutModal from "../LogoutModal/LogoutModal";
 
 import logoutIcon from "./logout-icon.svg";
 
@@ -21,7 +21,7 @@ const ExitButton = () => {
         <img src={logoutIcon} alt="Logout Icon" />
       </HeaderExitButtonMobile>
 
-      <Modal modalText="Are you sure?" isOpen={isModalOpen} toggleModal={toggleModal} />
+      <LogoutModal modalText="Are you sure?" isOpen={isModalOpen} toggleModal={toggleModal} />
     </>
   );
 };
