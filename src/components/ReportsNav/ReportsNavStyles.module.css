@@ -7,7 +7,7 @@
 }
 
 .reportsNavText {
-  color: #52555f;
+  color: var(--text-gray);
   font-size: 12px;
   letter-spacing: 0.48px;
 }

@@ -18,7 +18,7 @@
 }
 
 .reportsCategoriesNavView {
-  color: #000;
+  color: var(--text-black);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.28px;
