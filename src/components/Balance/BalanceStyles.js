@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const BalanceContainer = styled.div`
+  display: flex;
+  height: 116px;
+`;
+
 export const BalanceForm = styled.form`
   display: flex;
   flex-direction: row;
@@ -10,15 +15,14 @@ export const BalanceForm = styled.form`
 `;
 
 export const BalanceLabel = styled.label`
-  font-family: "Roboto", sans-serif;
   text-align: center;
   font-size: 12px;
+  letter-spacing: 0.48px;
   font-weight: 500;
   color: rgba(82, 85, 95, 0.7);
 `;
 
 export const BalanceInput = styled.input`
-  font-family: "roboto" sans-serif;
   text-align: center;
   width: 125px;
   height: 40px;
