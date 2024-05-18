@@ -8,6 +8,7 @@
   display: flex;
   gap: 10px;
   justify-content: space-between;
+  align-items: center;
 
   cursor: pointer;
 }
@@ -33,4 +34,30 @@
 }
 .ExpensesIncomeFormDateInput::-webkit-calendar-picker-indicator {
   display: none;
+}
+.ExpensesIncomeFormInputContainer {
+  display: flex;
+}
+.ExpensesIncomeFormInputDesc,
+.ExpensesIncomeFormInputCategory,
+.ExpensesIncomeFormInputValue {
+  border: none;
+  outline: none;
+  background: none;
+
+  color: var(--text-gray);
+  font-size: 12px;
+  letter-spacing: 0.24px;
+  font-weight: 900;
+
+  padding: 10px;
+}
+.ExpensesIncomeFormInputDesc::placeholder,
+.ExpensesIncomeFormInputCategory::placeholder,
+.ExpensesIncomeFormInputValue::placeholder {
+  color: var(--description-color);
+  font-size: 12px;
+  letter-spacing: 0.24px;
+
+  font-weight: 400;
 }
