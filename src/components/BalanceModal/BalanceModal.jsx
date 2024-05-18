@@ -1,11 +1,7 @@
-import {
-  ModalWindow,
-  Backdrop,
-  ModalText,
-  ModalTitle,
-} from "./BalanceModalStyles";
+import { useState } from "react";
 
-import { useEffect, useState } from "react";
+//CSS 
+import css from "./BalanceModal.module.css"
 
 const BalanceModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -22,14 +18,14 @@ const BalanceModal = () => {
 
   return (
     isModalOpen && (
-      <Backdrop onClick={handleBackdropClick}>
-        <ModalWindow>
-          <ModalTitle>
+      <div className={css.Backdrop} onClick={handleBackdropClick}>
+        <div className={css.ModalWindow}>
+          <p className={css.ModalTitle}>
             Hello! To get started, enter the current balance of your account!
-          </ModalTitle>
-          <ModalText>You can't spend money until you have it</ModalText>
-        </ModalWindow>
-      </Backdrop>
+          </p>
+          <p className={css.ModalText}>You can't spend money until you have it</p>
+        </div>
+      </div>
     )
   );
 };
