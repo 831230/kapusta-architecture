@@ -1,7 +1,9 @@
+
 const userService = require("../services/user.service");
 const { userValidation } = require("../helpers/validation");
 
 const register = async (req, res, next) => {
+
   const { error } = userValidation.validate(req.body);
 
   if (error) {
@@ -13,7 +15,9 @@ const register = async (req, res, next) => {
 
   try {
     const { email } = req.body;
+
     const existingUser = await userService.getUserByEmail(email);
+
     if (existingUser) {
       return res.status(409).json({
         status: "error",
@@ -21,9 +25,11 @@ const register = async (req, res, next) => {
       });
     }
 
+
     const newUser = await userService.createUser(req.body);
 
     const responseData = {
+
       _id: newUser._id,
       email: newUser.email,
     };
@@ -65,4 +71,5 @@ const login = async (req, res, next) => {
 module.exports = {
   register,
   login,
+
 };
