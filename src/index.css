@@ -22,6 +22,8 @@ code {
   align-items: center;
 }
 
+
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -34,7 +36,31 @@ header {
 
 .expenses-page__header {
   display: flex;
-  justify-content: space-around;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  width: 1098px;
+  margin: 0 auto;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  gap: 300px
+}
+
+@media screen and (max-width: 768px) {
+  .expenses-page__header {
+    gap: 0;
+    justify-content: space-between;
+    width: var(--container-width-tablet);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .expenses-page__header {
+    gap: 1.5rem;
+    flex-direction: column-reverse;
+    width: var(--container-width-phone);
+  }
+
 }
 
 .expenses-income {
@@ -64,6 +90,7 @@ header {
     align-items: center;
   }
 }
+
 .reports-content {
   text-align: center;
 }
@@ -84,6 +111,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .category-wrapper {
   background-color: #fff;
   border-radius: 30px;
