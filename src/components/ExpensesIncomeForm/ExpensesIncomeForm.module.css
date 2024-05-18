@@ -29,8 +29,6 @@
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.48px;
   font-weight: 900;
-
-  pointer-events: none;
 }
 .ExpensesIncomeFormDateInput::-webkit-calendar-picker-indicator {
   display: none;

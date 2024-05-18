@@ -1,30 +1,23 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import styles from './ExpensesIncomeForm.module.css';
 import calendar from '../../assets/calendar.svg';
 
 const ExpensesIncomeForm = ({ callback, actionType }) => {
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(new Date().toLocaleDateString('sv-SE'));
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
   const [options, setOptions] = useState(['Category 1', 'Category 2', 'Category 3']);
 
   const dispatch = useDispatch();
-  const dateInputRef = useRef(null);
 
   useEffect(() => {
-    setDate(getTodayDate());
+    setDate(new Date().toLocaleDateString('sv-SE'));
   }, []);
-
-  const getTodayDate = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  };
 
   const sendNewExpenseIncome = () => {
     const data = { date, description, category, amount };
@@ -32,20 +25,16 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
     dispatch(callback(data));
   };
 
-  const handleCalendarClick = () => {
-    dateInputRef.current.showPicker();
-  };
-
   return (
     <form className={styles.ExpensesIncomeForm} action="">
-      <div className={styles.ExpensesIncomeFormDateContainer} onClick={handleCalendarClick}>
+      <div className={styles.ExpensesIncomeFormDateContainer}>
         <img className={styles.ExpensesIncomeFormDateIcon} src={calendar} alt="calendar icon" />
-        <input
-          ref={dateInputRef}
+
+        <DatePicker
+          selected={new Date(date)}
+          onChange={(date) => setDate(date.toLocaleDateString('sv-SE'))}
+          dateFormat="yyyy.MM.dd"
           className={styles.ExpensesIncomeFormDateInput}
-          type="date"
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
         />
       </div>
 
