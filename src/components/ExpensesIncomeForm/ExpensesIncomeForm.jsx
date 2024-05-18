@@ -9,6 +9,7 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
+  const [options, setOptions] = useState(['Category 1', 'Category 2', 'Category 3']);
 
   const dispatch = useDispatch();
   const dateInputRef = useRef(null);
@@ -56,13 +57,19 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
-        <input
+
+        <select
           className={styles.ExpensesIncomeFormInputCategory}
-          type="text"
-          placeholder="Product category"
           onChange={(e) => setCategory(e.target.value)}
           value={category}
-        />
+        >
+          <option value="">Select category</option>
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
         <input
           className={styles.ExpensesIncomeFormInputValue}
           type="number"
