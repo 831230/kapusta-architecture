@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import styles from './ExpensesIncomeForm.module.css';
@@ -13,6 +13,10 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
   const dispatch = useDispatch();
   const dateInputRef = useRef(null);
 
+  useEffect(() => {
+    setDate(getTodayDate());
+  }, []);
+
   const getTodayDate = () => {
     const today = new Date();
     const year = today.getFullYear();
@@ -23,7 +27,6 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
 
   const sendNewExpenseIncome = () => {
     const data = { date, description, category, amount };
-
     console.log(data);
     dispatch(callback(data));
   };
