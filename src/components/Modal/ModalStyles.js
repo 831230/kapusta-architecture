@@ -1,16 +1,63 @@
 import styled from "styled-components";
 
+export const SpeechBubbleContainer = styled.div`
+  position: relative;
+  
+
+  color: #000;
+  background: #1D346A;
+  // background: linear-gradient(155deg, #1d346a 0%, #031634 100%);
+  //   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+ background-image: linear-gradient(to bottom right, #1D346A, #031634);
+
+
+  border-radius: 30px;
+width: 288px;
+height: 152px;
+  
+
+  :after {
+        content: "";
+    position: absolute;
+      border-style: solid;
+     display: block;
+    width: 0;
+    top: -15px;
+    right: 210px;
+    bottom: auto;
+    left: auto;
+    border-width: 0 15px 15px;
+    border-color: #1D346A transparent;
+}
+  }
+`;
+
+export const SpeechBubbleWrapper = styled.div`
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+
+  line-height: 20px;
+  line-height: 1.42857;
+  color: #fff;
+
+  & > :first-child {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  & > :last-child {
+    font-weight: 350;
+    font-size: 12px;
+    line-height: 16px;
+    line-height: 1.33333;
+  }
+`;
+
 export const ModalContainer = styled.div`
-  position: fixed;
-
-  right: 0;
-  top: 0;
-
-  background-color: rgba(0, 0, 0, 0.5);
-
-  width: 100%;
-  height: 100%;
-  z-index: 999;
+  position: relative;
+  width: fit-content;
 `;
 
 export const ModalWrapper = styled.div`

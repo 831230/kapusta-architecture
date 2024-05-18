@@ -86,7 +86,7 @@ export const LoginPageBackground = styled.div`
   @media screen and (min-width: 481px) {
     display: block;
     padding-top: 28px;
-    background: #f5f6fb;
+    background: var(--secondary-bg-color);
     border-radius: 0 0 0 55px;
     height: 582.5px;
   }
@@ -95,7 +95,7 @@ export const LoginPageMobileBackground = styled.div`
   display: block;
   height: 342px;
   width: 100%;
-  background: #f5f6fb;
+  background: var(--secondary-bg-color);
   border-radius: 0 0 0 55px;
 
   @media screen and (min-width: 481px) {
