@@ -1,14 +1,7 @@
-import {
-  CurrentPeriodButton,
-  CurrentPeriodContainer,
-  CurrentPeriodWrapper,
-  CurrentPeriodButtonIcon,
-  CurrentPeriodLabel,
-  CurrentPeriodDate,
-} from "./CurrentPeriodStyles";
-
+import React from "react";
 import leftIcon from "./left-icon.svg";
 import rightIcon from "./right-icon.svg";
+import styles from "./CurrentPeriodStyles.module.css";
 
 const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
   const goToPreviousMonth = () => {
@@ -36,20 +29,20 @@ const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
   const monthName = months[month - 1];
 
   return (
-    <CurrentPeriodContainer>
-      <CurrentPeriodLabel>Current period:</CurrentPeriodLabel>
-      <CurrentPeriodWrapper>
-        <CurrentPeriodButton onClick={goToPreviousMonth}>
-          <CurrentPeriodButtonIcon src={leftIcon} />
-        </CurrentPeriodButton>
-        <CurrentPeriodDate>
+    <div className={styles.currentPeriodContainer}>
+      <h2 className={styles.currentPeriodLabel}>Current period:</h2>
+      <div className={styles.currentPeriodWrapper}>
+        <button className={styles.currentPeriodButton} onClick={goToPreviousMonth}>
+          <img src={leftIcon} alt="Previous month" className={styles.currentPeriodButtonIcon} />
+        </button>
+        <p className={styles.currentPeriodDate}>
           {monthName} {year}
-        </CurrentPeriodDate>
-        <CurrentPeriodButton onClick={goToNextMonth}>
-          <CurrentPeriodButtonIcon src={rightIcon} />
-        </CurrentPeriodButton>
-      </CurrentPeriodWrapper>
-    </CurrentPeriodContainer>
+        </p>
+        <button className={styles.currentPeriodButton} onClick={goToNextMonth}>
+          <img src={rightIcon} alt="Next month" className={styles.currentPeriodButtonIcon} />
+        </button>
+      </div>
+    </div>
   );
 };
 
