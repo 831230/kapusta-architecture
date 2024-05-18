@@ -1,6 +1,6 @@
 import React from "react";
-import arrowLeft from "./arrow-left.svg";
-import arrowRight from "./arrow-right.svg";
+import arrowLeft from "../../assets/arrow-left.svg";
+import arrowRight from "../../assets/arrow-right.svg";
 import styles from "./ReportsCategoriesNavStyles.module.css";
 
 const ReportsCategoriesNav = ({ currentView, toggleView }) => {

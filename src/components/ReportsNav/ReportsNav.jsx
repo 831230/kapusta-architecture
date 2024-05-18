@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import reportsLogo from "./reportsLogo.svg";
+import reportsLogo from "../../assets/reportsLogo.svg";
 import styles from "./ReportsNavStyles.module.css";
 
 const ReportsNav = () => {

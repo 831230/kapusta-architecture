@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LogoutModal from "../LogoutModal/LogoutModal";
-import logoutIcon from "./logout-icon.svg";
+import logoutIcon from "../../assets/logout-icon.svg";
 import styles from "./ExitButtonStyles.module.css";
 
 const ExitButton = () => {

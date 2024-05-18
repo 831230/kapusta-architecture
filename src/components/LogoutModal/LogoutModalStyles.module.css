@@ -32,6 +32,11 @@
     transform: translate(50%, -50%);
   }
 }
+@media screen and (max-width: 320px) {
+  .logoutModalWrapper {
+    width: 300px;
+  }
+}
 
 .logoutModalText {
   margin: 0;
