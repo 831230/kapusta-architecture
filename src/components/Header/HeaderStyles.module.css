@@ -1,0 +1,64 @@
+.headerContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1280px;
+  padding: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .headerWrapper {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .headerWrapper {
+    width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.headerLogoLink {
+  width: 90px;
+  height: 31px;
+}
+
+.headerUserContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+@media screen and (max-width: 320px) {
+  .headerUserContainer {
+    gap: 16px;
+  }
+}
+
+.headerUserDivider {
+  width: 1px;
+  height: 16px;
+  margin: 0 19.5px;
+  background-color: #e0e5eb;
+  position: absolute;
+  right: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .headerUserDivider {
+    display: none;
+  }
+}
