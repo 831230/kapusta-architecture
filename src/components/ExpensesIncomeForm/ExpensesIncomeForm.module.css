@@ -1,0 +1,35 @@
+.ExpensesIncomeForm {
+  display: flex;
+
+  width: 1034px;
+}
+.ExpensesIncomeFormDateContainer {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.ExpensesIncomeFormDateIcon {
+}
+.ExpensesIncomeFormDateInput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+
+  color: var(--text-gray);
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.48px;
+  font-weight: 900;
+
+  pointer-events: none;
+}
+.ExpensesIncomeFormDateInput::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
