@@ -52,7 +52,7 @@
   width: 1px;
   height: 16px;
   margin: 0 19.5px;
-  background-color: var(--header-divider-color);
+  background-color: #e0e5eb;
   position: absolute;
   right: 25px;
 }
