@@ -1,15 +1,15 @@
-import { HeaderUserData, HeaderUserIcon, HeaderUserName } from "./UserDataStyles.js";
+import React from "react";
 import useAuth from "../../hooks/useAuth";
+import styles from "./UserDataStyles.module.css";
 
 const UserData = () => {
   const { userData } = useAuth();
 
   return (
-    <HeaderUserData>
-      {/* Placeholder img do podmianki z db*/}
-      <HeaderUserIcon src="https://placehold.co/32x32" alt="User icon" />
-      <HeaderUserName>{userData.email ? userData.email : "Email was not found"}</HeaderUserName>
-    </HeaderUserData>
+    <div className={styles.headerUserData}>
+      <img src="https://placehold.co/32x32" alt="User icon" className={styles.headerUserIcon} />
+      <p className={styles.headerUserName}>{userData.email ? userData.email : "Email was not found"}</p>
+    </div>
   );
 };
 

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { HeaderExitButton, HeaderExitButtonText, HeaderExitButtonMobile } from "./ExitButtonStyles";
-import Modal from "../Modal/Modal";
-
-import logoutIcon from "./logout-icon.svg";
+import LogoutModal from "../LogoutModal/LogoutModal";
+import logoutIcon from "../../assets/logout-icon.svg";
+import styles from "./ExitButtonStyles.module.css";
 
 const ExitButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,15 +12,15 @@ const ExitButton = () => {
 
   return (
     <>
-      <HeaderExitButton onClick={toggleModal}>
-        <HeaderExitButtonText>Exit</HeaderExitButtonText>
-      </HeaderExitButton>
+      <button className={styles.headerExitButton} onClick={toggleModal}>
+        <p className={styles.headerExitButtonText}>Exit</p>
+      </button>
 
-      <HeaderExitButtonMobile onClick={toggleModal}>
+      <button className={styles.headerExitButtonMobile} onClick={toggleModal}>
         <img src={logoutIcon} alt="Logout Icon" />
-      </HeaderExitButtonMobile>
+      </button>
 
-      <Modal modalText="Are you sure?" isOpen={isModalOpen} toggleModal={toggleModal} />
+      <LogoutModal modalText="Are you sure?" isOpen={isModalOpen} toggleModal={toggleModal} />
     </>
   );
 };
