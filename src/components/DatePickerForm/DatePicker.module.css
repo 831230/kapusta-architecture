@@ -65,10 +65,10 @@
 .react-datepicker__day--in-range
 {
 	background-color: #007bff;
-	color: #fff;
+	color: var(--text-white);
 }
 .react-datepicker__day--keyboard-selected
 {
 	background-color: #007bff;
-	color: #fff;
+	color: var(--text-white);
 }
