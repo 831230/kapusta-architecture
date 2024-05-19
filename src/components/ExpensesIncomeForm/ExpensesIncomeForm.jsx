@@ -40,7 +40,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
     }),
     menu: (provided) => ({
       ...provided,
-      zIndex: 5,
+      zIndex: 10,
     }),
   };
 
