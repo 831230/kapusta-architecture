@@ -5,6 +5,8 @@ import Select from 'react-select';
 
 import styles from './ExpensesIncomeForm.module.css';
 
+import calculator from '../../assets/calculator.svg';
+
 const categoryOptions = [
   { value: 'products', label: 'Products' },
   { value: 'alcohol', label: 'Alcohol' },
@@ -32,6 +34,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
       ...provided,
       zIndex: 5,
       height: '50px',
+      border: 'none',
       borderColor: state.isFocused ? '#FF751D' : provided.borderColor,
       '&:hover': {
         borderColor: '#FF751D',
@@ -65,7 +68,17 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           styles={customSelectStyles}
         />
 
-        <input type="number" placeholder="0,00" onChange={(e) => setAmount(e.target.value)} value={amount} />
+        <div className={styles.ExpensesIncomeFormInputValueContainer}>
+          <input
+            className={styles.ExpensesIncomeFormInputValue}
+            type="number"
+            placeholder="0,00"
+            onChange={(e) => setAmount(e.target.value)}
+            value={amount}
+            min="0"
+          />
+          <img className={styles.ExpensesIncomeFormInputValueIcon} src={calculator} alt="calculator icon" />
+        </div>
       </div>
       <button type="button" onClick={sendNewExpenseIncome}>
         Input
