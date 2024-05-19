@@ -4,6 +4,8 @@
   width: 1034px;
 }
 .ExpensesIncomeFormDateContainer {
+  width: 130px;
+
   position: relative;
   display: flex;
   gap: 10px;
