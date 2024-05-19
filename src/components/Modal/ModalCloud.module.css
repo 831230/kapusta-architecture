@@ -6,6 +6,8 @@
   border-radius: 30px;
   width: 288px;
   height: 152px;
+
+  z-index: 1000;
 }
 
 .speechBubbleContainer::after {
