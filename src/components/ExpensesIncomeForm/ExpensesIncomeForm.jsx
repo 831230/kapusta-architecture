@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import CreateDatePicker from "../DatePickerForm/DatePicker";
 
 const ExpensesIncomeForm = ({callback, actionType}) => {
   const [date, setDate] = useState("");
@@ -13,10 +14,10 @@ const ExpensesIncomeForm = ({callback, actionType}) => {
     const data = { date, description, category, amount };
     dispatch(callback(data))
   }
-
+  
   return (
     <form action="">
-      <input type="date" onChange={(e) => setDate(e.target.value)} value={date}/>
+      <CreateDatePicker onDateChange={setDate} />
       <input type="text" placeholder="Product description" onChange={(e) => setDescription(e.target.value)} value={description}/>
       <input type="text" placeholder="Product category" onChange={(e) => setCategory(e.target.value)} value={category}/>
       <input type="number" placeholder="0,00" onChange={(e) => setAmount(e.target.value)} value={amount}/>
