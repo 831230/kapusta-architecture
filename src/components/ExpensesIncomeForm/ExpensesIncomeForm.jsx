@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Select from 'react-select'; // Import react-select library
+import Select from 'react-select';
 
 import styles from './ExpensesIncomeForm.module.css';
 import calendar from '../../assets/calendar.svg';
 
 const ExpensesIncomeForm = ({ callback, actionType }) => {
-  const [date, setDate] = useState(new Date().toLocaleDateString('sv-SE')); // Initialize with current date in desired format
+  const [date, setDate] = useState(new Date().toLocaleDateString('sv-SE'));
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
@@ -16,12 +16,12 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
     { value: 'Category 1', label: 'Category 1' },
     { value: 'Category 2', label: 'Category 2' },
     { value: 'Category 3', label: 'Category 3' },
-  ]); // Update options format for react-select
+  ]);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setDate(new Date().toLocaleDateString('sv-SE')); // Update date format when component mounts
+    setDate(new Date().toLocaleDateString('sv-SE'));
   }, []);
 
   const sendNewExpenseIncome = () => {
@@ -37,7 +37,7 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
 
         <DatePicker
           selected={new Date(date)}
-          onChange={(date) => setDate(date.toLocaleDateString('sv-SE'))} // Format date before setting in state
+          onChange={(date) => setDate(date.toLocaleDateString('sv-SE'))}
           dateFormat="yyyy.MM.dd"
           className={styles.ExpensesIncomeFormDateInput}
         />
@@ -53,7 +53,7 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
         />
 
         <Select
-          className={styles.ExpensesIncomeFormInputCategory}
+          className={styles.ExpensesIncomeFormInputSelectCategory}
           options={options}
           onChange={(selectedOption) => setCategory(selectedOption.value)}
           value={options.find((option) => option.value === category)}
