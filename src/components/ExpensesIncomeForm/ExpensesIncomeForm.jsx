@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import CreateDatePicker from "../DatePickerForm/DatePicker";
+
 import Select from "react-select";
+
 
 import styles from "./ExpensesIncomeForm.module.css";
 
@@ -31,7 +33,6 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
     }
 
     const data = { date, description, category, amount };
-    console.log(data);
     dispatch(callback(data));
 
     clearFormFields();

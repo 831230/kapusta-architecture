@@ -30,7 +30,9 @@
 	margin: 0;
 	outline: none;
 	padding: 0;
+
 width: 74px;
+
 }
 .CalendarInput::placeholder
 {
