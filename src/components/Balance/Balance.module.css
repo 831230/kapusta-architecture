@@ -1,12 +1,12 @@
 @import '../../styles/vars.css';
 
 .BalanceForm {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+
 }
 
 .BalanceLabel {

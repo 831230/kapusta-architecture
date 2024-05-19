@@ -1,37 +1,35 @@
 .headerExitButton {
-  border: none;
   background: none;
-  padding: 0;
-  margin: 0;
+  border: none;
   cursor: pointer;
-}
-
-@media screen and (max-width: 320px) {
-  .headerExitButton {
-    display: none;
-  }
+  margin: 0;
+  padding: 0;
 }
 
 .headerExitButtonText {
+  border-bottom: 1px solid var(--text-gray);
   color: var(--text-gray);
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   letter-spacing: 0.48px;
-  border-bottom: 1px solid var(--text-gray);
-  font-family: "Roboto", sans-serif;
 }
 
 .headerExitButtonMobile {
-  display: none;
-  border: none;
   background: none;
-  padding: 0;
-  margin: 0;
-  width: 16px;
+  border: none;
+  display: none;
   height: 16px;
+  margin: 0;
+  padding: 0;
+  width: 16px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 576px) {
   .headerExitButtonMobile {
     display: block;
+  }
+
+  .headerExitButton {
+    display: none;
   }
 }

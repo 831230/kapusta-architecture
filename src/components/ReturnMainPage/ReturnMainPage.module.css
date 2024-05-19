@@ -1,30 +1,36 @@
 @import '../../styles/vars.css';
 
-.returnLink
-{
+.returnLink {
 	align-items: center;
 	display: flex;
-	margin-bottom: 25px;
 	text-decoration: none;
 }
-.returnText
-{
+
+.returnText {
 	color: var(--text-gray);
 	font-size: 12px;
 	font-weight: 400;
 	letter-spacing: 0.04em;
 	line-height: 14px;
 	padding-left: 16px;
+	display: block;
 }
-@media screen and (max-width: 768px)
-{
-	.returnText
-	{
+
+@media screen and (max-width: 576px) {
+	.returnText {
 		display: none;
 	}
+
+	.returnLink {
+		align-content: start;
+		left: 1rem;
+		order: 3;
+		position: absolute;
+		top: -1rem;
+	}
 }
-.returnIcon
-{
+
+.returnIcon {
 	height: 24px;
 	width: 24px;
 }
