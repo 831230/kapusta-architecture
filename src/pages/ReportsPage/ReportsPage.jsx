@@ -15,6 +15,7 @@ import BalanceLabel from "../../components/BalanceLabel/BalanceLabel";
 import ReportsCategoriesNav from "../../components/ReportsCategoriesNav/ReportsCategoriesNav";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import BarChart from "../../components/Chart/BarChart";
+import ReturnMainpage from "../../components/ReturnMainPage/ReturnMainPage";
 
 const ReportsPage = () => {
   const [currentPeriod, setCurrentPeriod] = useState(() => {
@@ -38,7 +39,8 @@ const ReportsPage = () => {
   return (
     <>
       <div className="reports-header">
-        <Link to="/transactions/expenses">Main page</Link>
+      <ReturnMainpage />
+        {/* <Link to="/transactions/expenses">Main page</Link> */}
         <Balance />
         <CurrentPeriod currentPeriod={currentPeriod} setCurrentPeriod={setCurrentPeriod} />
       </div>
