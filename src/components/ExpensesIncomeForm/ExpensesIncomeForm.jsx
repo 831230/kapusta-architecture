@@ -7,11 +7,6 @@ import styles from './ExpensesIncomeForm.module.css';
 
 import calculator from '../../assets/calculator.svg';
 
-const categoryOptions = [
-  { value: 'products', label: 'Products' },
-  { value: 'alcohol', label: 'Alcohol' },
-];
-
 const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   const [date, setDate] = useState('');
   const [description, setDescription] = useState('');
@@ -20,15 +15,35 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
 
   const dispatch = useDispatch();
 
-  const sendNewExpenseIncome = () => {
+  const categoryOptions = categories
+    ? categories
+    : [
+        { value: 'products', label: 'Products' },
+        { value: 'alcohol', label: 'Alcohol' },
+      ];
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (!date || !description || !category || !amount) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
     const data = { date, description, category, amount };
     console.log(data);
     dispatch(callback(data));
+
+    setDate('');
+    setDescription('');
+    setCategory('');
+    setAmount('');
   };
 
   const handleCategoryChange = (selectedOption) => {
     setCategory(selectedOption ? selectedOption.value : '');
   };
+
   const customSelectStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -48,7 +63,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   };
 
   return (
-    <form className={styles.ExpensesIncomeForm} action="">
+    <form className={styles.ExpensesIncomeForm} onSubmit={handleFormSubmit}>
       <CreateDatePicker onDateChange={setDate} />
 
       <div className={styles.ExpensesIncomeFormInputContainer}>
@@ -58,6 +73,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           placeholder="Product description"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
+          required
         />
         <Select
           className={styles.ExpensesIncomeFormInputSelectCategory}
@@ -66,6 +82,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           value={categoryOptions.find((option) => option.value === category)}
           placeholder="Product Category"
           styles={customSelectStyles}
+          required
         />
 
         <div className={styles.ExpensesIncomeFormInputValueContainer}>
@@ -76,13 +93,14 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
             onChange={(e) => setAmount(e.target.value)}
             value={amount}
             min="0"
+            required
           />
           <img className={styles.ExpensesIncomeFormInputValueIcon} src={calculator} alt="calculator icon" />
         </div>
       </div>
 
       <div className={styles.ExpensesIncomeFormButtonContainer}>
-        <button className={styles.ExpensesIncomeFormButtonInput} type="button" onClick={sendNewExpenseIncome}>
+        <button className={styles.ExpensesIncomeFormButtonInput} type="submit">
           Input
         </button>
         <button className={styles.ExpensesIncomeFormButtonClear} type="button">
