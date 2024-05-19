@@ -1,0 +1,30 @@
+@import '../../styles/vars.css';
+
+.returnLink {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+.returnText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: var(--text-gray);
+  padding-left: 16px;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .returnText {
+    display: none;
+  }
+}
+
+.returnIcon {
+  width: 24px;
+  height: 24px;
+}
