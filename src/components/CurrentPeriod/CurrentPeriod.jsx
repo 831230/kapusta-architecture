@@ -1,6 +1,6 @@
 import React from "react";
-import leftIcon from "./left-icon.svg";
-import rightIcon from "./right-icon.svg";
+import leftIcon from "../../assets/arrow-left.svg"
+import rightIcon from "../../assets/arrow-right.svg";
 import styles from "./CurrentPeriodStyles.module.css";
 
 const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {

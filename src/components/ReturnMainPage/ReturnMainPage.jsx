@@ -6,12 +6,12 @@ import styles from './ReturnMainPage.module.css';
 
 const ReturnMainpage = () => {
   return (
-    
-      <Link to="/transactions/expenses" className={styles.returnLink}>
+
+    <Link to="/transactions/expenses" className={styles.returnLink}>
       <img src={arrowLeft} alt="Reports Icon" className={styles.returnIcon} />
       <p className={styles.returnText}>Main Page</p>
-      </Link>
-    
+    </Link>
+
   );
 };
 

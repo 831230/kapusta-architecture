@@ -40,7 +40,7 @@ const ReportsPage = () => {
   return (
     <>
       <div className="reports-header">
-      <ReturnMainpage />
+        <ReturnMainpage />
         <Balance />
         <CurrentPeriod currentPeriod={currentPeriod} setCurrentPeriod={setCurrentPeriod} />
       </div>

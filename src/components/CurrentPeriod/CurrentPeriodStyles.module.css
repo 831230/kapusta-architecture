@@ -1,26 +1,26 @@
 .currentPeriodContainer {
-  width: 136px;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 136px;
 }
 
 .currentPeriodWrapper {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   gap: 5px;
+  justify-content: center;
 }
 
 .currentPeriodButton {
-  border: none;
+  align-items: center;
   background: none;
-  padding: 0;
+  border: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  padding: 0;
 }
 
 .currentPeriodButtonIcon {
@@ -30,18 +30,18 @@
 .currentPeriodLabel {
   color: #52555f;
   font-size: 12px;
-  letter-spacing: 0.48px;
   font-weight: 400;
-  text-align: center;
+  letter-spacing: 0.48px;
   margin: 0;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .currentPeriodDate {
   color: #000;
   font-size: 14px;
-  letter-spacing: 0.28px;
   font-weight: 700;
-  text-align: center;
+  letter-spacing: 0.28px;
   margin: 0;
+  text-align: center;
 }

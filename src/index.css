@@ -61,6 +61,12 @@ header {
     width: var(--container-width-phone);
   }
 
+  .reports-header {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    position: relative;
+  }
+
 }
 
 .expenses-income {
@@ -73,22 +79,10 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  margin: 30px auto;
+  margin: 40px auto;
 
   max-width: 1034px;
 
-  @media (max-width: 768px) {
-    max-width: 704px;
-  }
-
-  @media (max-width: 320px) {
-    margin: 0;
-    max-width: 208px;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .reports-content {
