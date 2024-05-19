@@ -19,14 +19,12 @@
 
 @media screen and (max-width: 768ppx) {
     .ChartContainer {
-        max-height: 600px;
         max-width: 300px;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
     .ChartContainer {
-        max-height: 496px;
         max-width: 280px;
     }
 }

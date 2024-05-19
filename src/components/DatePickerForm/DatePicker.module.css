@@ -1,26 +1,25 @@
 @import '../../styles/vars.css';
 
 
-.CalendarBlock
-{
+.CalendarBlock {
 	align-items: center;
 	display: flex;
 }
-.Label
-{
+
+.Label {
 	align-items: center;
 	cursor: pointer;
 	display: flex;
 }
-.CalendarIcon
-{
+
+.CalendarIcon {
 	align-items: center;
 	display: flex;
 	justify-content: center;
 	margin-right: 8px;
 }
-.CalendarInput
-{
+
+.CalendarInput {
 	background: none;
 	border: none;
 	color: vars(--text-gray);
@@ -30,48 +29,47 @@
 	margin: 0;
 	outline: none;
 	padding: 0;
-
-width: 74px;
+	width: 74px;
 
 }
-.CalendarInput::placeholder
-{
+
+.CalendarInput::placeholder {
 	color: vars(--text-gray);
 }
-.react-datepicker__input-container
-{
+
+.react-datepicker__input-container {
 	display: inline-block;
 }
-.react-datepicker
-{
+
+.react-datepicker {
 	font-family: Arial, sans-serif;
 }
-.react-datepicker__header
-{
+
+.react-datepicker__header {
 	background-color: #f8f9fa;
 	border-bottom: none;
 }
+
 .react-datepicker__current-month,
 .react-datepicker-time__header,
-.react-datepicker-year-header
-{
+.react-datepicker-year-header {
 	color: #343a40;
 }
+
 .react-datepicker__day-name,
 .react-datepicker__day,
-.react-datepicker__time-name
-{
+.react-datepicker__time-name {
 	color: #343a40;
 }
+
 .react-datepicker__day--selected,
 .react-datepicker__day--in-selecting-range,
-.react-datepicker__day--in-range
-{
+.react-datepicker__day--in-range {
 	background-color: #007bff;
 	color: var(--text-white);
 }
-.react-datepicker__day--keyboard-selected
-{
+
+.react-datepicker__day--keyboard-selected {
 	background-color: #007bff;
 	color: var(--text-white);
 }
