@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -8,7 +8,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .header-user-space {
@@ -21,8 +21,6 @@ code {
   justify-content: space-around;
   align-items: center;
 }
-
-
 
 .login-form {
   display: flex;
@@ -43,7 +41,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   align-content: center;
-  gap: 300px
+  gap: 300px;
 }
 
 @media screen and (max-width: 768px) {
@@ -60,6 +58,7 @@ header {
     flex-direction: column-reverse;
     width: var(--container-width-phone);
   }
+
 
   .reports-header {
     flex-direction: column-reverse;

@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import CreateDatePicker from "../DatePickerForm/DatePicker";
 
-const ExpensesIncomeForm = ({callback, actionType}) => {
+import Select from "react-select";
+
+
+import styles from "./ExpensesIncomeForm.module.css";
+
+import calculator from "../../assets/calculator.svg";
+
+const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -10,19 +17,101 @@ const ExpensesIncomeForm = ({callback, actionType}) => {
 
   const dispatch = useDispatch();
 
-  const sendNewExpenseIncome = () => {
+  const categoryOptions = categories
+    ? categories
+    : [
+        { value: "products", label: "Products" },
+        { value: "alcohol", label: "Alcohol" },
+      ];
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (!date || !description || !category || !amount) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
     const data = { date, description, category, amount };
-    dispatch(callback(data))
-  }
-  
+    dispatch(callback(data));
+
+    clearFormFields();
+  };
+
+  const handleCategoryChange = (selectedOption) => {
+    setCategory(selectedOption ? selectedOption.value : "");
+  };
+
+  const customSelectStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      zIndex: 5,
+      height: "50px",
+      border: "none",
+      borderColor: state.isFocused ? "#000000" : provided.borderColor,
+      "&:hover": {
+        borderColor: "#000000",
+      },
+      boxShadow: state.isFocused ? "0 0 0 1px #000000" : provided.boxShadow,
+    }),
+    menu: (provided) => ({
+      ...provided,
+      zIndex: 10,
+    }),
+  };
+
+  const clearFormFields = () => {
+    setDate("");
+    setDescription("");
+    setCategory("");
+    setAmount("");
+  };
+
   return (
-    <form action="">
+    <form className={styles.ExpensesIncomeForm} onSubmit={handleFormSubmit}>
       <CreateDatePicker onDateChange={setDate} />
-      <input type="text" placeholder="Product description" onChange={(e) => setDescription(e.target.value)} value={description}/>
-      <input type="text" placeholder="Product category" onChange={(e) => setCategory(e.target.value)} value={category}/>
-      <input type="number" placeholder="0,00" onChange={(e) => setAmount(e.target.value)} value={amount}/>
-      <button type="button" onClick={sendNewExpenseIncome}>Input</button>
-      <button>Clear</button>
+
+      <div className={styles.ExpensesIncomeFormInputContainer}>
+        <input
+          className={styles.ExpensesIncomeFormInputDesc}
+          type="text"
+          placeholder="Product description"
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+          required
+        />
+        <Select
+          className={styles.ExpensesIncomeFormInputSelectCategory}
+          options={categoryOptions}
+          onChange={handleCategoryChange}
+          value={categoryOptions.find((option) => option.value === category)}
+          placeholder="Product Category"
+          styles={customSelectStyles}
+          required
+        />
+
+        <div className={styles.ExpensesIncomeFormInputValueContainer}>
+          <input
+            className={styles.ExpensesIncomeFormInputValue}
+            type="number"
+            placeholder="0,00"
+            onChange={(e) => setAmount(e.target.value)}
+            value={amount}
+            min="0"
+            required
+          />
+          <img className={styles.ExpensesIncomeFormInputValueIcon} src={calculator} alt="calculator icon" />
+        </div>
+      </div>
+
+      <div className={styles.ExpensesIncomeFormButtonContainer}>
+        <button className={styles.ExpensesIncomeFormButtonInput} type="submit">
+          Input
+        </button>
+        <button className={styles.ExpensesIncomeFormButtonClear} type="button" onClick={clearFormFields}>
+          Clear
+        </button>
+      </div>
     </form>
   );
 };
