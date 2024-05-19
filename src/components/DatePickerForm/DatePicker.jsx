@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-import { CalendarBlock, CalendarIcon, Label, CalendarInput } from './DatePickerStyles';
+import styles from './DatePicker.module.css';
+import calendar from '../../assets/calendar.svg'
 
 export default function CreateDatePicker({ onDateChange }) {
     const [startDate, setStartDate] = useState(new Date());
@@ -12,23 +13,21 @@ export default function CreateDatePicker({ onDateChange }) {
     }, [onDateChange, startDate]);
   
     return (
-      <CalendarBlock>
-        <Label htmlFor="date" data-for="date">
-          <CalendarIcon>
-          <svg width="20" height="18">
-      <use href="./assets/icons_function.svg#icon-calendar"></use>
-      </svg>
-          </CalendarIcon>
+      <div className={styles.CalendarBlock}>
+        <label className={styles.Label} htmlFor="date" data-for="date">
+          
+          <img src={calendar} alt="Reports Icon" className={styles.CalendarIcon} />
+          
           <DatePicker
             id="date"
-            as={CalendarInput}
+            className={styles.CalendarInput}
             selected={startDate}
             onChange={date => {
               setStartDate(date);
             }}
             dateFormat="dd.MM.yyyy"
           />
-        </Label>
-      </CalendarBlock>
+        </label>
+      </div>
     );
-  }
+  };
