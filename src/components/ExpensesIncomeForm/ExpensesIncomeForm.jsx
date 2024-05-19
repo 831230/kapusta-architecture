@@ -35,11 +35,11 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
       zIndex: 5,
       height: '50px',
       border: 'none',
-      borderColor: state.isFocused ? '#FF751D' : provided.borderColor,
+      borderColor: state.isFocused ? '#000000' : provided.borderColor,
       '&:hover': {
-        borderColor: '#FF751D',
+        borderColor: '#000000',
       },
-      boxShadow: state.isFocused ? '0 0 0 1px #FF751D' : provided.boxShadow,
+      boxShadow: state.isFocused ? '0 0 0 1px #000000' : provided.boxShadow,
     }),
     menu: (provided) => ({
       ...provided,
@@ -80,10 +80,15 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           <img className={styles.ExpensesIncomeFormInputValueIcon} src={calculator} alt="calculator icon" />
         </div>
       </div>
-      <button type="button" onClick={sendNewExpenseIncome}>
-        Input
-      </button>
-      <button>Clear</button>
+
+      <div className={styles.ExpensesIncomeFormButtonContainer}>
+        <button className={styles.ExpensesIncomeFormButtonInput} type="button" onClick={sendNewExpenseIncome}>
+          Input
+        </button>
+        <button className={styles.ExpensesIncomeFormButtonClear} type="button">
+          Clear
+        </button>
+      </div>
     </form>
   );
 };
