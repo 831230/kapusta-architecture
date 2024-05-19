@@ -48,9 +48,11 @@
 }
 .ExpensesIncomeFormInputValue {
   width: 120px;
+  height: 50px;
+
   border: none;
-  outline: none;
   background: none;
+  outline-offset: -2px;
 
   color: var(--description-color);
   font-size: 18px;
@@ -62,9 +64,13 @@
   border-left: none;
   border-radius: 0 16px 16px 0;
 }
+.ExpensesIncomeFormInputValue::focus {
+  outline: 2px solid #007bff;
+}
 .ExpensesIncomeFormInputValueIcon {
   position: absolute;
   right: 0;
+  padding-right: 20px;
 }
 
 input[type='number']::-webkit-outer-spin-button,
