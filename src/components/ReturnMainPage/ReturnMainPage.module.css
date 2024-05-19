@@ -1,29 +1,30 @@
 @import '../../styles/vars.css';
 
-.returnLink {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-  text-decoration: none;
+.returnLink
+{
+	align-items: center;
+	display: flex;
+	margin-bottom: 25px;
+	text-decoration: none;
 }
-
-.returnText {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.04em;
-  color: var(--text-gray);
-  padding-left: 16px;
-  
+.returnText
+{
+	color: var(--text-gray);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0.04em;
+	line-height: 14px;
+	padding-left: 16px;
 }
-
-@media screen and (max-width: 768px) {
-  .returnText {
-    display: none;
-  }
+@media screen and (max-width: 768px)
+{
+	.returnText
+	{
+		display: none;
+	}
 }
-
-.returnIcon {
-  width: 24px;
-  height: 24px;
+.returnIcon
+{
+	height: 24px;
+	width: 24px;
 }
