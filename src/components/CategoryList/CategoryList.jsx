@@ -1,7 +1,8 @@
 import useReports from "../../hooks/useReports.js";
 import { useState, useEffect } from "react";
 
-import { CategoryContainer, CategoryWrapper, CategoryTotalText, CategoryIcon, CategoryLabel } from "./CategoryListStyles";
+//CSS
+import css from './CategoryList.module.css'
 
 const CategoryList = ({ currentView }) => {
   const [categoryData, setCategoryData] = useState([]);
@@ -61,20 +62,22 @@ const CategoryList = ({ currentView }) => {
   }, [currentView, incomesReport, expensesReport]);
 
   return (
-    <CategoryContainer>
+    <div className={css.CategoryContainer}>
       {loading ? (
         // Placeholder do zamiany na jakis spinner/loader
         <div>Loading...</div>
       ) : (
         categoryData.map((category, index) => (
-          <CategoryWrapper key={index}>
-            <CategoryTotalText>{category.total}</CategoryTotalText>
-            <CategoryIcon src="https://placehold.co/58x56" alt="Products-img" />
-            <CategoryLabel>{category.category}</CategoryLabel>
-          </CategoryWrapper>
+          <li className={css.CategoryWrapper} key={index}>
+            <p className={css.CategoryTotalText}>{category.total}</p>
+            <svg className={css.CategoryIcon} width="58" height="56">
+              <rect width="58" height="56" fill="grey" />
+            </svg>
+            <p className={css.CategoryLabel}>{category.category}</p>
+          </li>
         ))
       )}
-    </CategoryContainer>
+    </div>
   );
 };
 

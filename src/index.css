@@ -116,6 +116,8 @@ header {
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
+  width: 100%;
+  max-width: 1034px;
 }
 
 .chart {
