@@ -2,6 +2,8 @@
   display: flex;
 
   width: 1034px;
+
+  margin-bottom: 60px;
 }
 
 .ExpensesIncomeFormInputContainer {
