@@ -1,16 +1,15 @@
-import { SpeechBubbleContainer, SpeechBubbleWrapper } from "./ModalStyles";
+import React from 'react';
+import styles from './ModalCloud.module.css';
 
 const ModalCloud = () => {
   return (
     <>
-      <SpeechBubbleContainer>
-        <SpeechBubbleWrapper>
-          <p>
-            Hello! To get started, enter the current balance of your account!
-          </p>
+      <div className={styles.speechBubbleContainer}>
+        <div className={styles.speechBubbleWrapper}>
+          <p>Hello! To get started, enter the current balance of your account!</p>
           <p>You can't spend money until you have it :)</p>
-        </SpeechBubbleWrapper>
-      </SpeechBubbleContainer>
+        </div>
+      </div>
     </>
   );
 };
