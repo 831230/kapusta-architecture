@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 1280px) {
   .ExpensesIncomeForm {
-    width: 704px;
+    max-width: 704px;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -83,10 +83,22 @@
   border-radius: 0 16px 16px 0;
 }
 
+@media screen and (max-width: 768px) {
+  .ExpensesIncomeFormInputValue {
+    max-width: 127px;
+    padding-right: 20px;
+  }
+}
+
 .ExpensesIncomeFormInputValueIcon {
   position: absolute;
   right: 0;
   padding-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  .ExpensesIncomeFormInputValueIcon {
+    padding: 0;
+  }
 }
 
 input[type='number']::-webkit-outer-spin-button,
