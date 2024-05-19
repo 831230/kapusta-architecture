@@ -1,32 +1,32 @@
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import CreateDatePicker from '../DatePickerForm/DatePicker';
-import Select from 'react-select';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import CreateDatePicker from "../DatePickerForm/DatePicker";
+import Select from "react-select";
 
-import styles from './ExpensesIncomeForm.module.css';
+import styles from "./ExpensesIncomeForm.module.css";
 
-import calculator from '../../assets/calculator.svg';
+import calculator from "../../assets/calculator.svg";
 
 const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
-  const [date, setDate] = useState('');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('');
-  const [amount, setAmount] = useState('');
+  const [date, setDate] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [amount, setAmount] = useState("");
 
   const dispatch = useDispatch();
 
   const categoryOptions = categories
     ? categories
     : [
-        { value: 'products', label: 'Products' },
-        { value: 'alcohol', label: 'Alcohol' },
+        { value: "products", label: "Products" },
+        { value: "alcohol", label: "Alcohol" },
       ];
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
     if (!date || !description || !category || !amount) {
-      alert('Please fill out all required fields.');
+      alert("Please fill out all required fields.");
       return;
     }
 
@@ -34,32 +34,36 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
     console.log(data);
     dispatch(callback(data));
 
-    setDate('');
-    setDescription('');
-    setCategory('');
-    setAmount('');
+    clearFormFields();
   };
 
   const handleCategoryChange = (selectedOption) => {
-    setCategory(selectedOption ? selectedOption.value : '');
+    setCategory(selectedOption ? selectedOption.value : "");
   };
 
   const customSelectStyles = {
     control: (provided, state) => ({
       ...provided,
       zIndex: 5,
-      height: '50px',
-      border: 'none',
-      borderColor: state.isFocused ? '#000000' : provided.borderColor,
-      '&:hover': {
-        borderColor: '#000000',
+      height: "50px",
+      border: "none",
+      borderColor: state.isFocused ? "#000000" : provided.borderColor,
+      "&:hover": {
+        borderColor: "#000000",
       },
-      boxShadow: state.isFocused ? '0 0 0 1px #000000' : provided.boxShadow,
+      boxShadow: state.isFocused ? "0 0 0 1px #000000" : provided.boxShadow,
     }),
     menu: (provided) => ({
       ...provided,
       zIndex: 10,
     }),
+  };
+
+  const clearFormFields = () => {
+    setDate("");
+    setDescription("");
+    setCategory("");
+    setAmount("");
   };
 
   return (
@@ -103,7 +107,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
         <button className={styles.ExpensesIncomeFormButtonInput} type="submit">
           Input
         </button>
-        <button className={styles.ExpensesIncomeFormButtonClear} type="button">
+        <button className={styles.ExpensesIncomeFormButtonClear} type="button" onClick={clearFormFields}>
           Clear
         </button>
       </div>
