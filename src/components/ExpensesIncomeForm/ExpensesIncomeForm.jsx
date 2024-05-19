@@ -21,19 +21,23 @@ const ExpensesIncomeForm = ({ callback, actionType }) => {
   return (
     <form className={styles.ExpensesIncomeForm} action="">
       <CreateDatePicker onDateChange={setDate} />
-      <input
-        type="text"
-        placeholder="Product description"
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-      />
-      <input
-        type="text"
-        placeholder="Product category"
-        onChange={(e) => setCategory(e.target.value)}
-        value={category}
-      />
-      <input type="number" placeholder="0,00" onChange={(e) => setAmount(e.target.value)} value={amount} />
+
+      <div className={styles.ExpensesIncomeFormInputContainer}>
+        <input
+          className={styles.ExpensesIncomeFormInputDesc}
+          type="text"
+          placeholder="Product description"
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+        />
+        <input
+          type="text"
+          placeholder="Product category"
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+        />
+        <input type="number" placeholder="0,00" onChange={(e) => setAmount(e.target.value)} value={amount} />
+      </div>
       <button type="button" onClick={sendNewExpenseIncome}>
         Input
       </button>
