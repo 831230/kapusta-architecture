@@ -1,46 +1,40 @@
-import styled from 'styled-components';
-
-export const TransactionBox = styled.div`
-  overflow: hidden;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  @media screen and (min-width: 1200px) {
-    width: 624px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 746px;
-    height: 400px;
-  }
-`;
+import styled from "styled-components";
 
 export const TableBox = styled.table`
-  width: 100%;
-  border: none;
+  margin-top: 40px;
+  width: 746px;
   border-spacing: 0;
-  border-collapse: collapse;
-  table-layout: fixed;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border: 2px solid #f5f6fb;
+  border-bottom: none;
+  background: #f5f6fb;
   @media screen and (min-width: 1200px) {
-    width: 746px;
-    height: 400px;
+    // width: 746px;
+    // height: 400px;
   }
 `;
 
-export const TableTitle = styled.tr``;
-
-export const TableTitleItem = styled.th`
-  width: calc(100% / 5);
+export const TableHead = styled.tr`
   height: 40px;
-  border-spacing: 0;
-  background-color: #f5f6fb;
+`;
+
+export const TableHeadItem = styled.td`
+  color: #000000;
+  font-weight: 700;
+  width: ${(props) => props.$width};
+  text-align: center;
+  font-size: 12px;
   text-transform: uppercase;
-  text-align: left;
+`;
+
+export const TableHeadItem2 = styled.td`
+  display: none;
 `;
 
 export const TableBodys = styled.tbody`
-  display: block;
-  overflow-y: auto;
-  width: 746px;
-  max-height: 400px;
+  background-color: #fff;
+  text-align: center;
   ::-webkit-scrollbar {
     width: 6px;
     background-color: #f5f6fb;
@@ -51,7 +45,43 @@ export const TableBodys = styled.tbody`
   }
 `;
 
-export const SumCell = styled.td`
-  align-right: ${(props) => (props.isExpense ? '#E7192E' : '#407946')};
+export const TableContainer = styled.tr`
+  height: 40px;
+`;
+
+export const TableContainerItem = styled.td`
+  height: 40px;
+  text-align: center;
+  text-align: ${(props) => props.$textAlign};
+  padding-left: ${(props) => props.$paddingLeft};
+  color: #52555f;
+  border-bottom: 2px solid;
+  border-color: #f5f6fb;
+  font-size: 12px;
+`;
+
+export const SumCell = styled.span`
+  color: ${({ value }) => (value >= 0 ? "#407946" : "#E7192E")};
   font-weight: 700;
+  padding-left: 20px;
+`;
+
+export const TrashButton = styled.button`
+  width: 32px;
+  height: 32px;
+  border-bottom: 2px solid;
+  background-color: #f5f6fb;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+`;
+
+export const StyledImg = styled.img`
+  width: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 2;
+  fill: black;
 `;

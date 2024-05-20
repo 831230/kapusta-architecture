@@ -60,7 +60,18 @@
 }
 
 @media screen and (max-width: 576px) {
+<<<<<<< category-icons-svg
   .CategoryWrapper {
     max-width: 75px;
   }
 }
+=======
+    .CategoryWrapper {
+        max-width: 75px;
+    }
+
+    .CategoryContainer {
+        border-bottom: 1px solid var(--border-category)
+    }
+}
+>>>>>>> development-new
