@@ -1,0 +1,64 @@
+@media screen and (max-width: 480px)
+{
+	.SummaryBox
+	{
+		display: none;
+	}
+}
+@media screen and (max-width: 1024px)
+{
+	.SummaryBox
+	{
+		width: 230px;
+	}
+}
+.SummaryBox
+{
+	width: 213px;
+}
+.SummaryList
+{
+	list-style: none;
+	margin: 0;
+	margin-top: 4px;
+	padding: 0;
+}
+.SummaryItem
+{
+	background: var(--secondary-bg-color);
+	color: var(--text-gray);
+	display: flex;
+	font-family: var(--primary-font);
+	font-size: 12px;
+	font-weight: 400;
+	justify-content: space-between;
+	letter-spacing: 0.04em;
+	margin-bottom: 2px;
+	padding: 12px;
+	text-transform: uppercase;
+}
+.SummaryItem div:nth-child(1)
+{
+	text-align: left;
+}
+.SummaryItem div:nth-child(2)
+{
+	text-align: right;
+}
+.SummaryItem:last-child
+{
+	border-bottom-right-radius: 15px;
+}
+.SummaryTitle
+{
+	background: var(--secondary-bg-color);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	font-family: var(--primary-font);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	padding: 12px;
+	text-align: center;
+	text-transform: uppercase;
+}
