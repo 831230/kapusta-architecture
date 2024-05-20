@@ -1,0 +1,57 @@
+@import '../../styles/vars.css';
+
+.BalanceLabelContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.BalanceLabelWrapper {
+    align-items: center;
+    background-color: var(--primary-bg-color);
+    border-radius: 25px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 32px;
+    width: 1034px;
+}
+
+.BalanceLabelParagraph {
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.41px;
+}
+
+.BalanceLabelSpanGreen {
+    color: var(--text-green);
+}
+
+.BalanceLabelSpanRed {
+    color: var(--text-red);
+}
+
+.BalanceLabelSeparator {
+    border-left: solid 2px #e0e5eb;
+    height: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .BalanceLabelParagraph {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .BalanceLabelWrapper {
+        height: 85px;
+    }
+
+    .BalanceLabelSeparator {
+        border-left: solid 1px #e0e5eb;
+        height: 70px;
+    }
+}

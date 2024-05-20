@@ -1,8 +1,10 @@
 import { Chart } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { ChartContainer } from "./BarChart.styles"
 import { expenseStats } from '../../redux/fakeDb'
+
+//CSS 
+import css from "./BarChart.module.css"
 
 Chart.register(ChartDataLabels)
 const test = expenseStats.userExpenses;
@@ -31,7 +33,7 @@ const data = {
 
 const BarChart = () => {
   return (
-    <ChartContainer>
+    <div className={css.ChartContainer}>
       <Bar
         data={data}
         options={{
@@ -77,7 +79,7 @@ const BarChart = () => {
         }
         }
       />
-    </ChartContainer>
+    </div>
   );
 };
 

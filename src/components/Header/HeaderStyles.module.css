@@ -1,61 +1,64 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-
-export const HeaderContainer = styled.header`
+.headerContainer {
   display: flex;
   width: 100%;
   justify-content: center;
+  background-color: var(--primary-bg-color);
+}
 
-  background-color: #fff;
-`;
-export const HeaderWrapper = styled.div`
+.headerWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 1280px;
-
   padding: 12px;
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .headerWrapper {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
-  @media screen and (max-width: 320px) {
+}
+
+@media screen and (max-width: 320px) {
+  .headerWrapper {
     width: 320px;
     padding-left: 20px;
     padding-right: 20px;
   }
-`;
+}
 
-export const HeaderLogoLink = styled(Link)`
+.headerLogoLink {
   width: 90px;
   height: 31px;
-`;
+}
 
-export const HeaderUserContainer = styled.div`
+.headerUserContainer {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
+}
 
-  @media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) {
+  .headerUserContainer {
     gap: 16px;
   }
-`;
+}
 
-export const HeaderUserDivider = styled.div`
+.headerUserDivider {
   width: 1px;
   height: 16px;
-
   margin: 0 19.5px;
   background-color: #e0e5eb;
-
   position: absolute;
   right: 25px;
+}
 
-  @media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
+  .headerUserDivider {
     display: none;
   }
-`;
+}

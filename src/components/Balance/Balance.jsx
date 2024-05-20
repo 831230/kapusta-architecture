@@ -1,9 +1,4 @@
-import {
-  BalanceForm,
-  BalanceLabel,
-  BalanceInput,
-  BalanceButton,
-} from "./BalanceStyles";
+import BalanceModal from "../BalanceModal/BalanceModal";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
@@ -13,13 +8,14 @@ import { updateBalance } from "../../redux/user/operations";
 // REDUX HOOKS:
 import useAuth from "../../hooks/useAuth";
 
+//CSS:
+import css from "./Balance.module.css"
+
 const Balance = () => {
   const form = useRef();
   const { userData } = useAuth();
-  let UserBalance = userData.balance;
-  if (UserBalance === null) {
-    UserBalance = 0;
-  }
+  let userBalance = userData.balance;
+
   const dispatch = useDispatch();
   let balanceValue;
 
@@ -31,18 +27,24 @@ const Balance = () => {
   };
 
   return (
-    <BalanceForm onSubmit={handleSubmit} ref={form}>
-      <BalanceLabel>Balance:</BalanceLabel>
-      <BalanceInput
-        type="number"
-        name="balance"
-        title="Please, enter your balance"
-        value={balanceValue}
-        placeholder={`${UserBalance}.00 USD`}
-        required
-      />
-      <BalanceButton type="submit">CONFIRM</BalanceButton>
-    </BalanceForm>
+    <div className={css.BalanceContainer}>
+      <form className={css.BalanceForm} onSubmit={handleSubmit} ref={form}>
+        <label className={css.BalanceLabel}>Balance:</label>
+        <div className={css.wrapper}>
+          <input className={css.BalanceInput}
+            type="number"
+            step="0.01"
+            name="balance"
+            title="Please, enter your balance"
+            value={balanceValue}
+            placeholder={`${userBalance ? userBalance : "0.00"} USD`}
+            required
+          />
+          <button className={css.BalanceButton} type="submit">CONFIRM</button>
+        </div>
+      </form>
+      {!userBalance && <BalanceModal />}
+    </div>
   );
 };
 

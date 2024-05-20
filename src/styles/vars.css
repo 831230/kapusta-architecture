@@ -1,6 +1,7 @@
 :root {
   --primary-bg-color: #FFFFFF;
   --secondary-bg-color: #F5F6FB;
+  --background-color: #f2f5fc;
   --text-white: #FFFFFF;
   --text-black: #000000;
   --text-green: #407946;
@@ -11,7 +12,8 @@
   --description-color: #C7CCDC;
   --active-link-bg: #FEFEFE;
   --not-active-link-bg: #FAFBFD;
-
+  --button-input: #FF751D;
+  
   --text-with-opacity: rgba(82, 85, 95, 0.7);
   --text-shadow: none;
   --box-shadow: 0px 10px 60px 0px #AAB2C533;
@@ -20,5 +22,6 @@
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 
   --primary-font: 'Roboto', sans-serif;
-
+  --container-width: 1098px;
+  --container-width-tablet: 709px;
 }

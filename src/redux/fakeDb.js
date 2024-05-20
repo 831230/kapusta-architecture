@@ -11,7 +11,7 @@ export const loginResponse = {
   userData: {
     id: "507f1f77bcf86cd799439012",
     email: "zenio@mail.com",
-    balance: 5000,
+    balance: 0,
     firstLogin: true,
     transactions: [
       {

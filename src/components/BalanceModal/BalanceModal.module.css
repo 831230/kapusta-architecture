@@ -1,0 +1,64 @@
+@import '../../styles/vars.css';
+
+.Backdrop {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+.ModalWindow {
+  background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
+  border-radius: 30px;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  left: 52%;
+  max-height: 163px;
+  max-width: 280px;
+  padding: 25px 10px 40px 29px;
+  position: relative;
+  top: 160px;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.ModalWindow:before {
+  border-bottom: 16px solid #1d346a;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  content: '';
+  height: 0;
+  left: 20%;
+  position: absolute;
+  top: -9%;
+  width: 0;
+}
+
+.ModalTitle {
+  color: var(--text-white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  margin-bottom: 20px;
+}
+
+.ModalText {
+  color: var(--text-white);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+@media screen and (max-width: 768px) {
+  .ModalWindow {
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ModalWindow {
+    left: 50%;
+    top: 33%;
+  }
+}

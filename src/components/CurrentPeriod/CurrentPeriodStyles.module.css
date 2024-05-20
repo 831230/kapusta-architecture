@@ -1,0 +1,47 @@
+.currentPeriodContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 136px;
+}
+
+.currentPeriodWrapper {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.currentPeriodButton {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.currentPeriodButtonIcon {
+  padding: 0;
+}
+
+.currentPeriodLabel {
+  color: #52555f;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.48px;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.currentPeriodDate {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.28px;
+  margin: 0;
+  text-align: center;
+}
