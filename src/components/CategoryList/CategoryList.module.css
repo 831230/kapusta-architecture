@@ -1,45 +1,71 @@
-@import '../../styles/vars.css';
+@import "../../styles/vars.css";
 
 .CategoryContainer {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .CategoryWrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    margin: 20px;
-    max-width: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  margin: 20px;
+  max-width: 100px;
 }
 
 .CategoryTotalText {
-    color: var(--text-gray);
-    font-size: 12px;
-    letter-spacing: 0.48px;
-    margin: 0;
-    text-align: center;
+  color: var(--text-gray);
+  font-size: 12px;
+  letter-spacing: 0.48px;
+  margin: 0;
+  text-align: center;
 }
 
-.CategoryIcon {}
+.CategoryIcon {
+  width: 58px;
+  height: 56px;
+}
+
+.CategoryIcon:hover svg path {
+  fill: #ff751d;
+}
+
+.CategoryIcon:hover svg rect {
+  fill: #ffdac0;
+}
+
+.CategoryIcon:focus svg path {
+  fill: #ff751d;
+}
+
+.CategoryIcon:focus svg rect {
+  fill: #ffdac0;
+}
 
 .CategoryLabel {
-    color: var(--text-gray);
-    font-size: 12px;
-    letter-spacing: 0.24px;
-    margin: 0;
-    text-transform: uppercase;
+  color: var(--text-gray);
+  font-size: 12px;
+  letter-spacing: 0.24px;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {
-    .CategoryContainer {}
+  .CategoryContainer {
+  }
 }
 
 @media screen and (max-width: 576px) {
+<<<<<<< category-icons-svg
+  .CategoryWrapper {
+    max-width: 75px;
+  }
+}
+=======
     .CategoryWrapper {
         max-width: 75px;
     }
@@ -48,3 +74,4 @@
         border-bottom: 1px solid var(--border-category)
     }
 }
+>>>>>>> development-new
