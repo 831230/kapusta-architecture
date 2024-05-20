@@ -1,7 +1,7 @@
 import React from "react";
 import leftIcon from "../../assets/arrow-left.svg"
 import rightIcon from "../../assets/arrow-right.svg";
-import styles from "./CurrentPeriodStyles.module.css";
+import styles from "./CurrentPeriod.module.css";
 
 const CurrentPeriod = ({ currentPeriod, setCurrentPeriod }) => {
   const goToPreviousMonth = () => {

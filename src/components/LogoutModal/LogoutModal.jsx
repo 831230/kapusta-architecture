@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/user/operations";
-import styles from "./LogoutModalStyles.module.css";
+import styles from "./LogoutModal.module.css";
 
 const LogoutModal = ({ modalText, isOpen, toggleModal }) => {
   const dispatch = useDispatch();

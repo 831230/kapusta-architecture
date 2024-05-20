@@ -23,7 +23,7 @@ const BalanceModal = () => {
           <p className={css.ModalTitle}>
             Hello! To get started, enter the current balance of your account!
           </p>
-          <p className={css.ModalText}>You can't spend money until you have it</p>
+          <p className={css.ModalText}>You can't spend money until you have it :)</p>
         </div>
       </div>
     )
