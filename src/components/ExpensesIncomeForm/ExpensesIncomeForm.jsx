@@ -27,12 +27,13 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!date || !description || !category || !amount) {
-      alert("Please fill out all required fields.");
-      return;
-    }
+    // if (!date || !description || !category || !amount) {
+    //   alert("Please fill out all required fields.");
+    //   return;
+    // }
 
-    const data = { date, description, category, amount };
+    const data = { date, description, category:"products", amount };
+    console.log(data)
     dispatch(callback(data));
 
     clearFormFields();
@@ -97,7 +98,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
 >
   <option value="">Select Category</option>
   {categoryOptions.map((option) => (
-    <option key={option.value} value={option.value}>
+    <option key={option.value} value={option.value} onChange={()=>setCategory(option.value)}>
       {option.label}
     </option>
   ))}

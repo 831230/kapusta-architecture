@@ -16,7 +16,7 @@ import {
 import { ReactComponent as GoogleIcon } from "../../assets/Google.svg";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/user/operations";
+import { login, register } from "../../redux/user/operations";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -71,7 +71,7 @@ const LoginForm = () => {
 
   const onSignup = (e) => {
     handleSubmit(e);
-    dispatch(login(formData));
+    dispatch(register(formData));
   };
 
   return (

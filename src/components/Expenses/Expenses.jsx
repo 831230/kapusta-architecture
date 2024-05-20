@@ -17,7 +17,7 @@ import css from "./Expenses.module.css"
 
 const Expenses = () => {
   const { expenses, expensesMonthStats } = useExpenses();
-  // console.log("Expenses: ",{expenses, expensesMonthStats});
+  console.log("Expenses: ",{expenses, expensesMonthStats});
 
   const dispatch = useDispatch()
 

@@ -19,7 +19,8 @@ const expensesSlice = createSlice({
       })
       .addCase(getExpenseStats.fulfilled, (state, action) => {
         state.loadingExpenses = false;
-        state.userExpenses = action.payload.userExpenses;
+        console.log(action.payload);
+        state.userExpenses = action.payload.expenses;
         state.monthStats = action.payload.monthStats;
       })
       .addCase(getExpenseStats.rejected, (state) => {
