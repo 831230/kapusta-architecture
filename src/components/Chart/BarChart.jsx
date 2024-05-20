@@ -14,7 +14,7 @@ const { innerWidth: width } = window;
 console.log(width)
 const test = expenseStats.userExpenses;
 
-const widthBar = width < 576 ? 15 : 38;
+const widthBar = width < 576 ? 15 : 15;
 
 const data = {
   labels: test.map(e => e.category),
@@ -88,6 +88,7 @@ const BarChart = () => {
       <Bar
         data={data}
         options={{
+          indexAxis: 'y',
           layout: {
             padding: {
               top: 50,
@@ -103,23 +104,22 @@ const BarChart = () => {
             },
             datalabels: {
               anchor: 'end',
-              offset: true,
               align: 'top',
               color: '#52555F',
+
             },
 
           },
-          indexAxis: 'y',
-          scales: {
-            x: {
 
+          scales: {
+            y: {
               border: { display: false },
               grid: {
                 display: false,
                 drawBorder: true,
               },
             },
-            y: {
+            x: {
               grid: {
                 color: "#F5F6FB"
               },
