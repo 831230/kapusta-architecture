@@ -5,7 +5,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
+@media screen and (max-width: 480px) {
+    .CategoryContainer {
+        border-bottom: 1px solid var(--border-category);
+       
+    }
+};
 
 .CategoryWrapper {
     align-items: center;
@@ -15,8 +22,16 @@
     justify-content: center;
     margin: 20px;
     max-width: 100px;
+
 }
 
+@media screen and (max-width: 576px) {
+    .CategoryWrapper {
+        max-width: 75px;
+       
+    }
+   
+}
 .CategoryTotalText {
     color: var(--text-gray);
     font-size: 12px;
@@ -35,12 +50,5 @@
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 768px) {
-    .CategoryContainer {}
-}
 
-@media screen and (max-width: 576px) {
-    .CategoryWrapper {
-        max-width: 75px;
-    }
-}
+
