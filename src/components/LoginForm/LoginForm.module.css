@@ -1,0 +1,205 @@
+@import '../../styles/vars.css';
+
+.LoginFormContainer {
+    z-index: 1;
+    max-height: 552px;
+    max-width: 426px;
+    border-radius: 30px;
+    box-shadow: rgba(170, 178, 197, 0.2) 0px 10px 60px 0px;
+    background: rgb(255, 255, 255);
+    fill: #fff;
+    box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+    padding: 56px 84px 56px 84px;
+}
+
+.LoginFormWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.LoginFirstParagraph {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-gray);
+    text-align: center;
+}
+
+.LoginSecondParagraph {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-gray);
+    width: 258px;
+}
+
+.ButtonGoogle {
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 26px;
+    width: 119px;
+    height: 40px;
+    background: #f6f7fb;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    box-shadow: 1px 2px 3px 0 rgba(170, 178, 197, 0.2);
+}
+
+.InputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 258px;
+}
+
+.Label {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-black);
+    margin-bottom: 12px;
+    text-align: start;
+    display: flex;
+    align-items: flex-end;
+}
+
+.InputField {
+    border-radius: 30px;
+    border: 0px;
+    padding: 17px 19px;
+    background: #f6f7fb;
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #a6abb9;
+}
+
+.InputField:hover {
+    background: #e0e3eb;
+}
+
+.InputField:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.InputValidation {
+    text-align: start;
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: #eb5757;
+    margin-top: 4px;
+    margin-bottom: -12px;
+}
+
+.GroupButton {
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ButtonLogin {
+    border-radius: 16px;
+    border: none;
+    width: 122px;
+    height: 44px;
+    background: var(--button-input);
+    box-shadow: 1px 3px 5px 0 rgba(255, 107, 8, 0.35);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+
+.ButtonLogin:hover {
+    background: #ff8c3b;
+    cursor: pointer;
+}
+
+
+.ButtonLogin:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 117, 29, 0.5);
+}
+
+.ButtonSignup {
+    background: #f5f6fb;
+    border: none;
+    border-radius: 16px;
+    width: 122px;
+    height: 44px;
+    box-shadow: 1px 3px 5px 0 rgba(82, 85, 95, 0.15);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #52555f;
+}
+
+
+.ButtonSignup:hover {
+    background: #e8e9f3;
+    cursor: pointer;
+
+}
+
+.ButtonSignup:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(82, 85, 95, 0.5);
+}
+
+.Form {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    align-items: start;
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 576px) {
+    .From {
+        gap: 20px;
+    }
+
+    .ButtonSignup {
+        width: 116px;
+    }
+
+    .ButtonLogin {
+        width: 116px;
+    }
+
+    .InputContainer {
+        width: 240px;
+    }
+
+    .LoginSecondParagraph {
+        width: 240px;
+    }
+
+    .LoginFormContainer {
+        max-width: 280px;
+        max-height: 496px;
+        padding: 40px 20px 40px 20px;
+    }
+
+}
