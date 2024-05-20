@@ -18,6 +18,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/user/operations";
 
+//CSS
+import css from "./LoginForm.module.css"
+
 const LoginForm = () => {
   const dispatch = useDispatch();
 
@@ -75,11 +78,11 @@ const LoginForm = () => {
   };
 
   return (
-    <LoginFormContainer>
-      <LoginFormWrapper>
-        <LoginFirstParagraph>
+    <div className={css.LoginFormContainer}>
+      <div className={css.LoginFormWrapper}>
+        <p className={css.LoginFirstParagraph}>
           You can log in with your Google Account:
-        </LoginFirstParagraph>
+        </p>
         <ButtonGoogle>
           <GoogleIcon />
           Google
@@ -149,8 +152,8 @@ const LoginForm = () => {
             </ButtonSignup>
           </GroupButton>
         </Form>
-      </LoginFormWrapper>
-    </LoginFormContainer>
+      </div>
+    </div>
   );
 };
 
