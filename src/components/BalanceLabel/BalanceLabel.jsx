@@ -21,7 +21,7 @@ const BalanceLabel = () => {
         <p className={css.BalanceLabelParagraph}>
           Expenses:{" "}
           <span>
-            <span className={css.BalanceLabelSpanGreen}>
+            <span className={css.BalanceLabelSpanRed}>
               - {expensesReport.total}
             </span>{" "}
             <span>USD</span>
@@ -31,7 +31,7 @@ const BalanceLabel = () => {
         <p className={css.BalanceLabelParagraph}>
           Income:{" "}
           <span>
-            <span className={css.BalanceLabelSpanRed}>+ {incomesReport.total}</span>
+            <span className={css.BalanceLabelSpanGreen}>+ {incomesReport.total}</span>
             <span> USD</span>
           </span>
         </p>
