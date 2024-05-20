@@ -1,16 +1,6 @@
 import React, { useEffect } from "react";
 import TrashIcon from "../../assets/icons_trash.svg";
-import {
-  TableBox,
-  TableContainerItem,
-  TableHeadItem,
-  TableBodys,
-  SumCell,
-  StyledImg,
-  TableHead,
-  TableContainer,
-  TrashButton,
-} from "./TableStyles";
+import css from "./Table.module.css";
 import { useDispatch } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 import useIncomes from "../../hooks/useIncomes";
@@ -76,56 +66,77 @@ export default function IncomeTable() {
   const dataRows = [...incomes, ...rows].slice(0, 9);
 
   return (
-    <TableBox>
-      <TableHead>
-        <TableHeadItem $width="15%">Date</TableHeadItem>
-        <TableHeadItem $width="35%">Description</TableHeadItem>
-        <TableHeadItem $width="25%">Category</TableHeadItem>
-        <TableHeadItem $width="18%">Sum</TableHeadItem>
-        <TableHeadItem $width="7%"></TableHeadItem>
-      </TableHead>
-      <TableBodys>
+    <table className={css.tableBox}>
+      <tr className={css.tableHead}>
+        <td className={css.tableHeadItem} style={{ width: "15%" }}>
+          Date
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "33%" }}>
+          Description
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "25%" }}>
+          Category
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "20%" }}>
+          Sum
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "7%" }}></td>
+      </tr>
+      <tbody className={css.tableBodys}>
         {loadingUser || incomesLoading || loadingReports ? (
-          <TableContainerItem colSpan={5} align="center">
+          <td className={css.tableContainerItem} colSpan={5} align="center">
             Loading...
-          </TableContainerItem>
+          </td>
         ) : (
           dataRows.map((income, index) => (
-            <TableContainer key={income ? income.id : index}>
-              <TableContainerItem>
+            <tr className={css.tableContainer} key={income ? income.id : index}>
+              <td className={css.tableContainerItem} style={{ width: "15%" }}>
                 {income ? formatDate(income.date) : ""}
-              </TableContainerItem>
-              <TableContainerItem $textAlign="left" $paddingLeft="20px">
+              </td>
+              <td
+                className={css.tableContainerItem}
+                style={{ textAlign: "left", paddingLeft: "20px" }}
+              >
                 {income ? income.description : ""}
-              </TableContainerItem>
-              <TableContainerItem>
+              </td>
+              <td className={css.tableContainerItem}>
                 {income ? income.category : ""}
-              </TableContainerItem>
-              <TableContainerItem>
+              </td>
+              <td className={css.tableContainerItem}>
                 {income ? (
-                  <SumCell value={income.amount}>
+                  <span
+                    className={css.sumCell}
+                    style={{
+                      color: income.amount >= 0 ? "#407946" : "#E7192E",
+                    }}
+                  >
                     {formatPositiveNumber(income.amount)}
-                  </SumCell>
+                  </span>
                 ) : (
                   ""
                 )}
-              </TableContainerItem>
-              <TableContainerItem>
+              </td>
+              <td className={css.tableContainerItem}>
                 {income ? (
-                  <TrashButton
+                  <button
+                    className={css.trashButton}
                     onClick={handleDelete}
                     style={{ cursor: "pointer" }}
                   >
-                    <StyledImg src={TrashIcon} alt="Delete" />
-                  </TrashButton>
+                    <img
+                      className={css.trashIcon}
+                      src={TrashIcon}
+                      alt="Delete"
+                    />
+                  </button>
                 ) : (
                   ""
                 )}
-              </TableContainerItem>
-            </TableContainer>
+              </td>
+            </tr>
           ))
         )}
-      </TableBodys>
-    </TableBox>
+      </tbody>
+    </table>
   );
 }

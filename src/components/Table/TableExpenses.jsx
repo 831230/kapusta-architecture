@@ -1,17 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import TrashIcon from "../../assets/icons_trash.svg";
-import {
-  TableBox,
-  TableContainerItem,
-  TableHeadItem,
-  TableBodys,
-  SumCell,
-  StyledImg,
-  TableHead,
-  TableContainer,
-  TrashButton,
-} from "./TableStyles";
+import css from "./Table.module.css";
 import useAuth from "../../hooks/useAuth";
 import useExpenses from "../../hooks/useExpenses";
 import useReports from "../../hooks/useReports";
@@ -56,68 +46,83 @@ export default function DenseTable() {
       .catch((error) => {});
   };
 
-  // const handleAdd = () => {
-  //   const newExpenseData = {
-  //     description: "New Expense",
-  //     amount: 100,
-  //     date: new Date(),
-  //     category: "Other",
-  //   };
-  //   dispatch(setNewExpense(newExpenseData));
-  //  };
-
   const rows = new Array(9).fill(null);
   const dataRows = [...expenses, ...rows].slice(0, 9);
 
   return (
-    <TableBox>
-      <TableHead>
-        <TableHeadItem $width="15%">Date</TableHeadItem>
-        <TableHeadItem $width="35%">Description</TableHeadItem>
-        <TableHeadItem $width="25%">Category</TableHeadItem>
-        <TableHeadItem $width="18%">Sum</TableHeadItem>
-        <TableHeadItem $width="7%"></TableHeadItem>
-      </TableHead>
-      <TableBodys>
+    <table className={css.tableBox}>
+      <tr className={css.tableHead}>
+        <td className={css.tableHeadItem} style={{ width: "15%" }}>
+          Date
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "33%" }}>
+          Description
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "25%" }}>
+          Category
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "20%" }}>
+          Sum
+        </td>
+        <td className={css.tableHeadItem} style={{ width: "7%" }}></td>
+      </tr>
+      <tbody className={css.tableBodys}>
         {loadingUser || loadingReports ? (
-          <TableContainerItem colSpan={5} align="center">
+          <td className={css.tableContainerItem} colSpan={5} align="center">
             Loading...
-          </TableContainerItem>
+          </td>
         ) : (
           dataRows.map((expense, index) => (
-            <TableContainer key={expense ? expense.id : index}>
-              <TableContainerItem>
+            <tr
+              className={css.tableContainer}
+              key={expense ? expense.id : index}
+            >
+              <td className={css.tableContainerItem}>
                 {expense ? formatDate(expense.date) : ""}
-              </TableContainerItem>
-              <TableContainerItem $textAlign="left" $paddingLeft="20px">
+              </td>
+              <td
+                className={css.tableContainerItem}
+                style={{ textAlign: "left", paddingLeft: "20px" }}
+              >
                 {expense ? expense.description : ""}
-              </TableContainerItem>
-              <TableContainerItem>
+              </td>
+              <td className={css.tableContainerItem}>
                 {expense ? expense.category : ""}
-              </TableContainerItem>
-              <TableContainerItem>
+              </td>
+              <td className={css.tableContainerItem}>
                 {expense ? (
-                  <SumCell>{formatNegativeNumber(expense.amount)}</SumCell>
-                ) : (
-                  ""
-                )}
-              </TableContainerItem>
-              <TableContainerItem>
-                {expense ? (
-                  <TrashButton
-                    onClick={() => handleDelete(expense.id)}
-                    style={{ cursor: "pointer" }}
+                  <span
+                    className={css.sumCell}
+                    style={{
+                      color: expense.amount >= 0 ? "#E7192E" : "#407946",
+                    }}
                   >
-                    <StyledImg src={TrashIcon} alt="Delete" />
-                  </TrashButton>
+                    {formatNegativeNumber(expense.amount)}
+                  </span>
                 ) : (
                   ""
                 )}
-              </TableContainerItem>
-            </TableContainer>
+              </td>
+              <td className={css.tableContainerItem}>
+                {expense ? (
+                  <button
+                    onClick={() => handleDelete(expense.id)}
+                    className={css.trashButton}
+                  >
+                    <img
+                      src={TrashIcon}
+                      alt="Delete"
+                      className={css.trashIcon}
+                    />
+                  </button>
+                ) : (
+                  ""
+                )}
+              </td>
+            </tr>
           ))
         )}
-      </TableBodys>
-    </TableBox>
+      </tbody>
+    </table>
   );
 }
