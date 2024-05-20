@@ -2,7 +2,7 @@ import { Chart } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { expenseStats } from '../../redux/fakeDb'
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+// import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 //CSS 
 import css from "./BarChart.module.css"
@@ -32,7 +32,9 @@ const data = {
         "#FF751D",
       ],
       borderRadius: 10,
+      barPercentage: 0.1,
       barThickness: widthBar,
+
     }
   ]
 }
@@ -45,14 +47,14 @@ const barOptions = {
     padding: {
       top: 50,
       bottom: 20,
-      left: 10,
-      right: 10,
+      left: 20,
+      right: 30,
     }
   },
   responsive: true,
   plugins: {
     legend: {
-      display: false
+      display: false,
     },
     datalabels: {
       anchor: 'end',
@@ -76,7 +78,6 @@ const barOptions = {
       border: { display: false },
       ticks: {
         display: false,
-        maxTicksLimit: 10,
       },
     }
   }
@@ -91,28 +92,33 @@ const BarChart = () => {
           indexAxis: 'y',
           layout: {
             padding: {
-              top: 50,
-              bottom: 20,
-              left: 10,
-              right: 10,
+              top: 20,
+              bottom: 10,
+              left: 5,
+              right: 20,
             }
           },
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: {
-              display: false
+              display: false,
             },
             datalabels: {
               anchor: 'end',
               align: 'top',
               color: '#52555F',
-
+              offset: 5,
             },
 
           },
-
           scales: {
             y: {
+              ticks: {
+                labelOffset: -12,
+                mirror: true,
+                align: 'end',
+              },
               border: { display: false },
               grid: {
                 display: false,
@@ -120,14 +126,8 @@ const BarChart = () => {
               },
             },
             x: {
-              grid: {
-                color: "#F5F6FB"
-              },
-              border: { display: false },
-              ticks: {
-                display: false,
-                maxTicksLimit: 10,
-              },
+
+              display: false,
             }
           }
         }
