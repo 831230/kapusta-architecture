@@ -14,7 +14,7 @@ const { innerWidth: width } = window;
 console.log(width)
 const test = expenseStats.userExpenses;
 
-const widthBar = width < 576 ? 15 : 15;
+const widthBar = width < 576 ? 15 : 38;
 
 const data = {
   labels: test.map(e => e.category),
@@ -32,14 +32,54 @@ const data = {
         "#FF751D",
       ],
       borderRadius: 10,
-      barPercentage: 0.1,
       barThickness: widthBar,
-
+      barPercentage: 0.5,
     }
   ]
 }
 const barOptionsPhone = {
+  categoryPercentage: 0.5,
   indexAxis: 'y',
+  layout: {
+    padding: {
+      top: 20,
+      bottom: 10,
+      left: 5,
+      right: 20,
+    }
+  },
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    datalabels: {
+      anchor: 'end',
+      align: 'top',
+      color: '#52555F',
+      offset: 5,
+    },
+
+  },
+  scales: {
+    y: {
+      ticks: {
+        labelOffset: -12,
+        mirror: true,
+        align: 'end',
+      },
+      border: { display: false },
+      grid: {
+        display: false,
+        drawBorder: true,
+      },
+    },
+    x: {
+      display: false,
+    }
+  }
+
 }
 const barOptions = {
 
@@ -88,50 +128,7 @@ const BarChart = () => {
     <div className={css.ChartContainer}>
       <Bar
         data={data}
-        options={{
-          indexAxis: 'y',
-          layout: {
-            padding: {
-              top: 20,
-              bottom: 10,
-              left: 5,
-              right: 20,
-            }
-          },
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false,
-            },
-            datalabels: {
-              anchor: 'end',
-              align: 'top',
-              color: '#52555F',
-              offset: 5,
-            },
-
-          },
-          scales: {
-            y: {
-              ticks: {
-                labelOffset: -12,
-                mirror: true,
-                align: 'end',
-              },
-              border: { display: false },
-              grid: {
-                display: false,
-                drawBorder: true,
-              },
-            },
-            x: {
-
-              display: false,
-            }
-          }
-        }
-        }
+        options={width > 576 ? barOptions : barOptionsPhone}
       />
     </div>
   );

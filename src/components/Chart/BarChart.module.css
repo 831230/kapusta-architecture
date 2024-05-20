@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 576px) {
     .ChartContainer {
-        max-width: 300px;
-        min-height: 422px;
+        max-width: 390px;
+        min-height: 300px;
     }
 }
