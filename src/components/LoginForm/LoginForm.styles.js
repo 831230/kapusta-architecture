@@ -11,7 +11,8 @@ export const LoginFormContainer = styled.div`
   background: rgb(255, 255, 255);
   border-radius: 30px;
 fill: #fff;
-box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2),
+rgba(0, 0, 0, 0.4) 0px 20px 15px -10px;;
 
 
 
