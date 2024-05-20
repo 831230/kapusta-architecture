@@ -54,13 +54,11 @@
     box-shadow: 1px 2px 3px 0 rgba(170, 178, 197, 0.2);
 }
 
-
 .InputContainer {
     display: flex;
     flex-direction: column;
     width: 258px;
 }
-
 
 .Label {
     font-family: "Roboto", sans-serif;
@@ -86,12 +84,10 @@
     color: #a6abb9;
 }
 
-/* Efekt hover */
 .InputField:hover {
     background: #e0e3eb;
 }
 
-/* Efekt focus */
 .InputField:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
@@ -131,7 +127,6 @@
     color: #fff;
 }
 
-
 .ButtonLogin:hover {
     background: #ff8c3b;
     cursor: pointer;
@@ -162,11 +157,9 @@
 
 .ButtonSignup:hover {
     background: #e8e9f3;
-
     cursor: pointer;
 
 }
-
 
 .ButtonSignup:focus {
     outline: none;
