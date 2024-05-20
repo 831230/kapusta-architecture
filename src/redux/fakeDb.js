@@ -27,7 +27,8 @@ export const loginResponse = {
         category: "Products",
         amount: 50,
         date: "2024-05-26",
-      }
+      },
+
     ]
   }
 };
