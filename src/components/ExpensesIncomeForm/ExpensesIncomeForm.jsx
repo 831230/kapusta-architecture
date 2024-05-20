@@ -4,7 +4,6 @@ import CreateDatePicker from "../DatePickerForm/DatePicker";
 
 import Select from "react-select";
 
-
 import styles from "./ExpensesIncomeForm.module.css";
 
 import calculator from "../../assets/calculator.svg";
@@ -69,18 +68,19 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
 
   return (
     <form className={styles.ExpensesIncomeForm} onSubmit={handleFormSubmit}>
-      <CreateDatePicker onDateChange={setDate} />
-
-      <div className={styles.ExpensesIncomeFormInputContainer}>
-        <input
-          className={styles.ExpensesIncomeFormInputDesc}
-          type="text"
-          placeholder="Product description"
-          onChange={(e) => setDescription(e.target.value)}
-          value={description}
-          required
-        />
-        {/* <Select
+      <div className={styles.wrapper}>
+        {" "}
+        <CreateDatePicker onDateChange={setDate} />
+        <div className={styles.ExpensesIncomeFormInputContainer}>
+          <input
+            className={styles.ExpensesIncomeFormInputDesc}
+            type="text"
+            placeholder="Product description"
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+            required
+          />
+          {/* <Select
           className={styles.ExpensesIncomeFormInputSelectCategory}
           options={categoryOptions}
           onChange={handleCategoryChange}
@@ -89,38 +89,47 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           styles={customSelectStyles}
           required
         /> */}
-        <select
-  className={styles.ExpensesIncomeFormInputSelectCategory}
-  value={category}
-  onChange={(e) => handleCategoryChange(e.target.value)}
-  required
->
-  <option value="">Product Category</option>
-  {categoryOptions.map((option) => (
-    <option key={option.value} value={option.value}>
-      {option.label}
-    </option>
-  ))}
-</select>
-        <div className={styles.ExpensesIncomeFormInputValueContainer}>
-          <input
-            className={styles.ExpensesIncomeFormInputValue}
-            type="number"
-            placeholder="0,00"
-            onChange={(e) => setAmount(e.target.value)}
-            value={amount}
-            min="0"
+          <select
+            className={styles.ExpensesIncomeFormInputSelectCategory}
+            value={category}
+            onChange={(e) => handleCategoryChange(e.target.value)}
             required
-          />
-          <img className={styles.ExpensesIncomeFormInputValueIcon} src={calculator} alt="calculator icon" />
+          >
+            <option value="">Product Category</option>
+            {categoryOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <div className={styles.ExpensesIncomeFormInputValueContainer}>
+            <input
+              className={styles.ExpensesIncomeFormInputValue}
+              type="number"
+              placeholder="0,00"
+              onChange={(e) => setAmount(e.target.value)}
+              value={amount}
+              min="0"
+              required
+            />
+            <img
+              className={styles.ExpensesIncomeFormInputValueIcon}
+              src={calculator}
+              alt="calculator icon"
+            />
+          </div>
         </div>
       </div>
-      
+
       <div className={styles.ExpensesIncomeFormButtonContainer}>
         <button className={styles.ExpensesIncomeFormButtonInput} type="submit">
           Input
         </button>
-        <button className={styles.ExpensesIncomeFormButtonClear} type="button" onClick={clearFormFields}>
+        <button
+          className={styles.ExpensesIncomeFormButtonClear}
+          type="button"
+          onClick={clearFormFields}
+        >
           Clear
         </button>
       </div>
