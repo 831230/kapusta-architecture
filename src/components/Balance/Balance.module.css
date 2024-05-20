@@ -1,11 +1,11 @@
 @import '../../styles/vars.css';
 
 .BalanceForm {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
 
 }
 
@@ -51,6 +51,11 @@
   width: 125px;
 }
 
+.wrapper {
+  display: flex;
+  gap: 16px
+}
+
 @media screen and (max-width: 576px) {
   .BalanceForm {
     flex-direction: column;
@@ -64,4 +69,9 @@
   .BalanceButton {
     border-radius: 0 16px 16px 0;
   }
+
+  .wrapper {
+    gap: 0;
+  }
+
 }

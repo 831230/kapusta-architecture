@@ -21,11 +21,9 @@
     .expensesIncomeContainer {
         max-width: 704px;
     }
-}
 
-@media screen and (max-width: 576px) {
-    .expensesIncomeContainer {
-        width: 320px;
+    .expensesIncome {
+        flex-direction: column;
     }
 }
 
@@ -34,4 +32,3 @@
         width: 320px;
     }
 }
-

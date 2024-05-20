@@ -1,7 +1,7 @@
 import React from "react";
 import arrowLeft from "../../assets/arrow-left.svg";
 import arrowRight from "../../assets/arrow-right.svg";
-import styles from "./ReportsCategoriesNavStyles.module.css";
+import styles from "./ReportsCategoriesNav.module.css";
 
 const ReportsCategoriesNav = ({ currentView, toggleView }) => {
   return (

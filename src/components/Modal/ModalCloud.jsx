@@ -7,7 +7,7 @@ const ModalCloud = () => {
       <div className={styles.speechBubbleContainer}>
         <div className={styles.speechBubbleWrapper}>
           <p>Hello! To get started, enter the current balance of your account!</p>
-          <p>You can't spend money until you have it :)</p>
+          <p>You can't spend money until you have it :D</p>
         </div>
       </div>
     </>
