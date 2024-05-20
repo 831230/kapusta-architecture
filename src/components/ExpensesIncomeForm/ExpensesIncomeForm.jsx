@@ -80,7 +80,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           value={description}
           required
         />
-        <Select
+        {/* <Select
           className={styles.ExpensesIncomeFormInputSelectCategory}
           options={categoryOptions}
           onChange={handleCategoryChange}
@@ -88,8 +88,20 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           placeholder="Product Category"
           styles={customSelectStyles}
           required
-        />
-
+        /> */}
+        <select
+  className={styles.ExpensesIncomeFormInputSelectCategory}
+  value={category}
+  onChange={(e) => handleCategoryChange(e.target.value)}
+  required
+>
+  <option value="">Select Category</option>
+  {categoryOptions.map((option) => (
+    <option key={option.value} value={option.value}>
+      {option.label}
+    </option>
+  ))}
+</select>
         <div className={styles.ExpensesIncomeFormInputValueContainer}>
           <input
             className={styles.ExpensesIncomeFormInputValue}

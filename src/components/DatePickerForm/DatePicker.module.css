@@ -23,7 +23,9 @@
 {
 	background: none;
 	border: none;
-	color: vars(--text-gray);
+  font-family: Roboto;
+	color: #52555F;
+  letter-spacing: 4%;
 	cursor: pointer;
 	font-size: 12px;
 	font-weight: 900;
