@@ -95,7 +95,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   onChange={(e) => handleCategoryChange(e.target.value)}
   required
 >
-  <option value="">Select Category</option>
+  <option value="">Product Category</option>
   {categoryOptions.map((option) => (
     <option key={option.value} value={option.value}>
       {option.label}
@@ -115,7 +115,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           <img className={styles.ExpensesIncomeFormInputValueIcon} src={calculator} alt="calculator icon" />
         </div>
       </div>
-
+      
       <div className={styles.ExpensesIncomeFormButtonContainer}>
         <button className={styles.ExpensesIncomeFormButtonInput} type="submit">
           Input

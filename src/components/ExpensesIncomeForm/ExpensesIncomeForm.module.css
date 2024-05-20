@@ -27,7 +27,7 @@
 	border-radius: 16px 0px 0px 0px;
 	color: var(--description-color);
 	font-size: 12px;
-	height: 44px;
+	height: 40px;
 	letter-spacing: 0.24px;
 	margin-left: 10px;
 	padding: 10px;
@@ -50,7 +50,7 @@
 	color: var(--description-color);
 	font-size: 12px;
 	font-weight: 400;
-	height: 50px;
+	height: 46px;
 	letter-spacing: 0.24px;
 	width: 169px;
 }
@@ -71,7 +71,7 @@
 	border-radius: 20px, 0px, 0px, 20px;
 	color: var(--description-color);
 	font-size: 12px;
-	height: 44px;
+	height: 40px;
 	letter-spacing: 0.24px;
 	padding-right: 40px;
 	text-align: right;
@@ -154,6 +154,7 @@ input[type="number"]
 .ExpensesIncomeFormButtonClear
 {
 	border-radius: 16px;
+	border: 2px solid var(--border-light);
 	color: var(--text-gray);
 }
 .ExpensesIncomeFormButtonInput:hover
