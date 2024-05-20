@@ -3,12 +3,7 @@ import useExpenses from "../../hooks/useExpenses";
 import useIncomes from "../../hooks/useIncomes";
 import { useLocation } from "react-router-dom";
 import { isBefore, parse } from "date-fns";
-import {
-  SummaryBox,
-  SummaryItem,
-  SummaryList,
-  SummaryTitle,
-} from "./Summary.styles";
+import styles from './ExpensesIncomeSummary.module.css';
 
 const ExpensesIncomeSummary = () => {
   const location = useLocation();
@@ -40,20 +35,19 @@ const ExpensesIncomeSummary = () => {
         value: value,
       }));
   }
-
+  
   return (
-    <SummaryBox>
-      <SummaryTitle>Summary</SummaryTitle>
-      <SummaryList>
+    <div className={styles.SummaryBox}>
+      <div className={styles.SummaryTitle}>Summary</div>
+      <ul className={styles.SummaryList}>
         {data.map((item, index) => (
-          <SummaryItem key={index}>
+          <li key={index} className={styles.SummaryItem}>
             <div>{item.month}</div>
             <div>{item.value}</div>
-          </SummaryItem>
+          </li>
         ))}
-      </SummaryList>
-    </SummaryBox>
+      </ul>
+    </div>
   );
 };
-
 export default ExpensesIncomeSummary;
