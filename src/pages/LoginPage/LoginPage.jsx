@@ -15,34 +15,37 @@ import { ReactComponent as BackgroundImage } from "../../assets/Background.svg";
 import { ReactComponent as PairKapusta } from "../../assets/SmallBackground.svg";
 import { ReactComponent as SingleKapusta } from "../../assets/singleKapusta.svg";
 
+//CSS
+import css from "./LoginPage.module.css"
+
 const LoginPage = () => {
   return (
-    <HomePageContainer>
-      <LoginPageMobileBackground>
-        <SingleMainIcon>
+    <div className={css.HomePageContainer}>
+      <div className={css.LoginPageMobileBackground}>
+        <div className={css.SingleMainIcon}>
           <SingleKapusta />
-        </SingleMainIcon>
-      </LoginPageMobileBackground>
-      <LoginPageBackground>
+        </div>
+      </div>
+      <div className={css.LoginPageBackground}>
         <BackgroundImage style={{ width: "100%" }} />
-      </LoginPageBackground>
-      <Box>
-        <HomePageContent>
-          <Logo>
+      </div>
+      <div className={css.Box}>
+        <div className={css.HomePageContent}>
+          <div className={css.Logo}>
             <LogoSVG />
-          </Logo>
+          </div>
           <LoginForm />
-        </HomePageContent>
-      </Box>
+        </div>
+      </div>
 
-      <SingleIcon>
+      <div className={css.SingleIcon}>
         <SingleKapusta />
-      </SingleIcon>
-      <PairIcon>
+      </div>
+      <div className={css.PairIcon}>
         <PairKapusta />
-      </PairIcon>
-    </HomePageContainer>
+      </div>
+    </div>
   );
-}; 
+};
 
 export default LoginPage;

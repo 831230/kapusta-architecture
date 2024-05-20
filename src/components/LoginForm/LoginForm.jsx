@@ -1,18 +1,3 @@
-import {
-  LoginFormContainer,
-  LoginFormWrapper,
-  ButtonGoogle,
-  InputContainer,
-  Label,
-  InputField,
-  GroupButton,
-  ButtonLogin,
-  ButtonSignup,
-  LoginSecondParagraph,
-  LoginFirstParagraph,
-  InputValidation,
-  Form,
-} from "./LoginForm.styles";
 import { ReactComponent as GoogleIcon } from "../../assets/Google.svg";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -83,55 +68,53 @@ const LoginForm = () => {
         <p className={css.LoginFirstParagraph}>
           You can log in with your Google Account:
         </p>
-        <ButtonGoogle>
+        <div className={css.ButtonGoogle}>
           <GoogleIcon />
           Google
-        </ButtonGoogle>
-        <LoginSecondParagraph>
+        </div>
+        <p className={css.LoginSecondParagraph}>
           Or log in using an email and password,
           <br /> after registering:
-        </LoginSecondParagraph>
-
-        <Form>
-          <InputContainer>
-            <Label
+        </p>
+        <form className={css.Form}>
+          <div className={css.InputContainer}>
+            <label className={css.Label}
               required
               // formSubmitted={formSubmitted}
               value={formData.email}
             >
               {errors.email && (
-                <InputValidation style={{ margin: "0" }}>
+                <span className={css.InputValidation} style={{ margin: "0" }}>
                   {errors.star}
-                </InputValidation>
+                </span>
               )}
               Email
-            </Label>
-
-            <InputField
+            </label>
+            <input className={css.InputField}
               type="text"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="your@email.com"
             />
-            {errors.email && <InputValidation>{errors.email}</InputValidation>}
-          </InputContainer>
+            {errors.email && <span className={css.InputValidation}>{errors.email}</span>}
+          </div>
 
-          <InputContainer>
-            <Label
+          <div className={css.InputContainer}>
+            <label className={css.Label}
               required
               // formSubmitted={formSubmitted}
               value={formData.password}
             >
               {errors.password && (
-                <InputValidation style={{ margin: "0" }}>
+                <span className={css.InputValidation} style={{ margin: "0" }}>
                   {errors.star}
-                </InputValidation>
+                </span>
               )}
               Password
-            </Label>
+            </label>
 
-            <InputField
+            <input className={css.InputField}
               type="password"
               name="password"
               value={formData.password}
@@ -139,19 +122,19 @@ const LoginForm = () => {
               placeholder="your password"
             />
             {errors.password && (
-              <InputValidation>{errors.password}</InputValidation>
+              <span className={css.InputValidation}>{errors.password}</span>
             )}
-          </InputContainer>
+          </div>
 
-          <GroupButton>
-            <ButtonLogin type="submit" onClick={onLogin}>
+          <div className={css.GroupButton}>
+            <button className={css.ButtonLogin} type="submit" onClick={onLogin}>
               Log in
-            </ButtonLogin>
-            <ButtonSignup type="submit" onClick={onSignup}>
+            </button>
+            <button className={css.ButtonSignup} type="submit" onClick={onSignup}>
               Registration
-            </ButtonSignup>
-          </GroupButton>
-        </Form>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

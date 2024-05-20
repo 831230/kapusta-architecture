@@ -1,31 +1,23 @@
 @import '../../styles/vars.css';
 
 .LoginFormContainer {
-    display: flex;
-    z-index: 100;
-    align-items: center;
+    z-index: 1;
     max-height: 552px;
     max-width: 426px;
     border-radius: 30px;
     box-shadow: rgba(170, 178, 197, 0.2) 0px 10px 60px 0px;
     background: rgb(255, 255, 255);
-    border-radius: 30px;
     fill: #fff;
     box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
-
+    padding: 56px 84px 56px 84px;
 }
 
 .LoginFormWrapper {
-    padding: 56px 83.5px;
-    width: 259px;
-    height: 440px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
     justify-content: space-between;
-    align-items: center;
-
-
-
+    align-items: start;
 }
 
 .LoginFirstParagraph {
@@ -37,7 +29,6 @@
     text-align: center;
 }
 
-
 .LoginSecondParagraph {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -45,11 +36,10 @@
     letter-spacing: 0.04em;
     color: var(--text-gray);
     width: 258px;
-
 }
 
-
 .ButtonGoogle {
+    margin: 0 auto;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -58,11 +48,9 @@
     width: 119px;
     height: 40px;
     background: #f6f7fb;
-    font-family: var(--primary-font);
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 0.02em;
-    color: var(--text-black);
     box-shadow: 1px 2px 3px 0 rgba(170, 178, 197, 0.2);
 }
 
@@ -71,8 +59,6 @@
     display: flex;
     flex-direction: column;
     width: 258px;
-
-
 }
 
 
@@ -111,7 +97,6 @@
     box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
 }
 
-
 .InputValidation {
     text-align: start;
     font-family: var(--primary-font);
@@ -135,7 +120,7 @@
     border: none;
     width: 122px;
     height: 44px;
-    background: #ff751d;
+    background: var(--button-input);
     box-shadow: 1px 3px 5px 0 rgba(255, 107, 8, 0.35);
     font-family: "Roboto", sans-serif;
     font-weight: 700;
@@ -147,23 +132,16 @@
 }
 
 
-/* Efekt hover */
 .ButtonLogin:hover {
     background: #ff8c3b;
-    /* zmiana koloru tła */
     cursor: pointer;
-    /* zmiana kursora */
 }
 
-/* Efekt focus */
+
 .ButtonLogin:focus {
     outline: none;
-    /* usuwa domyślny efekt outline */
     box-shadow: 0 0 0 3px rgba(255, 117, 29, 0.5);
-    /* dodaje cień */
 }
-
-
 
 .ButtonSignup {
     background: #f5f6fb;
@@ -179,33 +157,27 @@
     text-transform: uppercase;
     text-align: center;
     color: #52555f;
-
 }
 
-/* Efekt hover */
+
 .ButtonSignup:hover {
     background: #e8e9f3;
-    /* zmiana koloru tła */
+
     cursor: pointer;
-    /* zmiana kursora */
+
 }
 
-/* Efekt focus */
+
 .ButtonSignup:focus {
     outline: none;
-    /* usuwa domyślny efekt outline */
     box-shadow: 0 0 0 3px rgba(82, 85, 95, 0.5);
-    /* dodaje cień */
 }
-
 
 .Form {
     display: flex;
     gap: 32px;
     flex-direction: column;
     align-items: start;
-
-
 }
 
 @media screen and (max-width: 768px) {}
@@ -231,14 +203,10 @@
         width: 240px;
     }
 
-    .LoginFormWrapper {
-        padding: 20px 10px;
-        width: 240px;
-        height: 416px;
-    }
-
     .LoginFormContainer {
         max-width: 280px;
         max-height: 496px;
+        padding: 40px 20px 40px 20px;
     }
+
 }
