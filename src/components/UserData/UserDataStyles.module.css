@@ -1,0 +1,30 @@
+.headerUserData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerUserIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.headerUserName {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.48px;
+}
+
+@media screen and (max-width: 768px) {
+  .headerUserData {
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .headerUserName {
+    display: none;
+  }
+}

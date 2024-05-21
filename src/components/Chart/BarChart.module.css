@@ -1,0 +1,29 @@
+@import '../../styles/vars.css';
+
+
+.ChartContainer {
+    background: var(--primary-bg-color);
+    border-radius: 30px;
+    box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+    box-shadow: rgba(170, 178, 197, 0.2) 0px 10px 60px 0px;
+    fill: #fff;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 2rem;
+    max-width: 1034px;
+    min-height: 422px;
+}
+
+@media screen and (max-width: 768ppx) {
+    .ChartContainer {
+        max-width: 704px;
+        min-height: 422px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ChartContainer {
+        min-width: 390px;
+        min-height: 300px;
+    }
+}

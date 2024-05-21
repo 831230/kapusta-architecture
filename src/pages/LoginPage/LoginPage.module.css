@@ -1,0 +1,117 @@
+.PairIcon {
+    display: none;
+}
+
+.SingleIcon {
+    display: block;
+    position: absolute;
+    left: 35px;
+    top: 767px;
+}
+
+.Logo svg {
+    width: 183px;
+}
+
+.HomePageContainer {
+    width: 100%;
+
+}
+
+.HomePageContent {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.Box {
+    position: absolute;
+    top: 142px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2;
+}
+
+.LoginPageBackground {
+    display: none;
+}
+
+.LoginPageMobileBackground {
+    display: block;
+    height: 500px;
+    width: 100%;
+    background: var(--secondary-bg-color);
+    border-radius: 0 0 0 55px;
+}
+
+.SingleMainIcon {
+    display: block;
+    position: absolute;
+    left: 275px;
+    top: 160px;
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width: 769px) {
+    .PairIcon {
+        left: 230px;
+        top: 677px;
+    }
+
+    .Box {
+        top: 136px;
+    }
+
+    .HomePageContent {
+        flex-direction: row;
+        align-items: center;
+        gap: 155px;
+    }
+
+    .Logo svg {
+        width: 377px;
+    }
+}
+
+@media screen and (m-width: 576px) {
+
+    .LoginPageMobileBackground {
+        display: none;
+    }
+
+    .SingleMainIcon {
+        display: none;
+    }
+
+    .LoginPageBackground {
+        display: block;
+        padding-top: 28px;
+        background: var(--secondary-bg-color);
+        border-radius: 0 0 0 55px;
+        height: 582.5px;
+    }
+
+    .Box {
+        top: 177px;
+    }
+
+    .HomePageContent {
+        align-items: start;
+        gap: 80px;
+    }
+
+    .SingleIcon {
+        display: none;
+    }
+
+    .PairIcon {
+        display: block;
+        position: absolute;
+        left: 103px;
+        top: 826px;
+    }
+
+    .Logo svg {
+        width: 306px;
+    }
+}

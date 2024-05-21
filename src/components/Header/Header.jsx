@@ -1,27 +1,30 @@
+import React from "react";
 import { Link } from "react-router-dom";
-
-// HOOKS:
 import useAuth from "../../hooks/useAuth";
-
-// COMPONENTS:
-import ToggleTheme from "../ToggleTheme/ToggleTheme";
-import UserData from "../UserData/UserData";
-import ExitButton from "../ExitButton/ExitButton";
+import UserData from "../UserData/UserData.jsx";
+import ExitButton from "../ExitButton/ExitButton.jsx";
+import logo from "../../assets/header-logo.svg";
+import styles from "./HeaderStyles.module.css";
 
 const Header = () => {
-  const { isLoggedIn } = useAuth(); 
-  return ( 
-    <header>
-      <Link to="/"><img src="" alt="logo_kapusta" /></Link>
-      <ToggleTheme />
-      <div className="header-user-space">
-        {isLoggedIn && <UserData/>}
-        {isLoggedIn && <ExitButton/>}
+  const { isLoggedIn } = useAuth();
+
+  return (
+    <header className={styles.headerContainer}>
+      <div className={styles.headerWrapper}>
+        <Link to="/" className={styles.headerLogoLink}>
+          <img src={logo} alt="Logo" />
+        </Link>
+        {isLoggedIn && (
+          <div className={styles.headerUserContainer}>
+            <UserData />
+            <div className={styles.headerUserDivider} />
+            <ExitButton />
+          </div>
+        )}
       </div>
-      
-      
     </header>
-   );
-}
- 
+  );
+};
+
 export default Header;

@@ -1,0 +1,62 @@
+@import '../../styles/vars.css';
+
+.navWrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+
+}
+
+.income {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: var(--not-active-link-bg);
+    padding: 10px 20px 10px 20px;
+    border-radius: 18px 18px 0 0;
+
+    &:global.active {
+        color: var(--text-orange);
+        background-color: var(--active-link-bg);
+    }
+}
+
+.expenses {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .navWrapper {
+        width: 704px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navWrapper {
+        z-index: 1;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .income {
+        border-radius: 0;
+        text-align: center;
+        width: 100%;
+        height: 30px;
+        padding-top: 20px;
+        background-color: var(--secondary-bg-color);
+
+        &:global.active {
+            color: var(--text-white);
+            background-color: var(--text-orange);
+        }
+    }
+}

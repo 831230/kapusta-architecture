@@ -1,0 +1,71 @@
+.logoutModalContainer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.logoutModalWrapper {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  border-radius: 30px;
+  z-index: 9999;
+  width: 380px;
+  height: 194px;
+  background-color: var(--primary-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 10px 10px 30px var(--box-shadow);
+}
+
+@media screen and (max-width: 768px) {
+  .logoutModalWrapper {
+    right: 50%;
+    top: 30%;
+    transform: translate(50%, -50%);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logoutModalWrapper {
+    width: 300px;
+  }
+}
+
+.logoutModalText {
+  margin: 0;
+}
+
+.logoutModalButtonContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.logoutModalButton {
+  color: var(--text-gray);
+  background-color: var(--primary-bg-color);
+  border: none;
+  padding: 10px;
+  width: 125px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.logoutModalButton:hover {
+  color: var(--text-white);
+  background-color: var(--text-orange);
+  transition: background-color 0.3s ease;
+}
+
+.logoutModalButtonText {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+}

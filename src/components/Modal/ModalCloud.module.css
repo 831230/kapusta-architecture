@@ -1,0 +1,51 @@
+.speechBubbleContainer {
+  position: relative;
+  color: #000;
+  background: #1d346a;
+  background-image: linear-gradient(to bottom right, #1d346a, #031634);
+  border-radius: 30px;
+  width: 288px;
+  height: 152px;
+
+  z-index: 1000;
+}
+
+.speechBubbleContainer::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  top: -15px;
+  right: 210px;
+  bottom: auto;
+  left: auto;
+  border-width: 0 15px 15px;
+  border-color: #1d346a transparent;
+
+  z-index: 1000;
+}
+
+.speechBubbleWrapper {
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  line-height: 1.42857;
+  color: #fff;
+
+  z-index: 1000;
+}
+
+.speechBubbleWrapper > :first-child {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.speechBubbleWrapper > :last-child {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 16px;
+  line-height: 1.33333;
+}
