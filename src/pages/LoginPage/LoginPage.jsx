@@ -1,14 +1,3 @@
-import {
-  Box,
-  HomePageContainer,
-  HomePageContent,
-  LoginPageBackground,
-  LoginPageMobileBackground,
-  Logo,
-  PairIcon,
-  SingleIcon,
-  SingleMainIcon,
-} from "./LoginPage.styles";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import { ReactComponent as LogoSVG } from "../../assets/Logo.svg";
 import { ReactComponent as BackgroundImage } from "../../assets/Background.svg";

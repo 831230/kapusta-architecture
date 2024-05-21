@@ -38,7 +38,7 @@ const ReportsPage = () => {
   };
 
   return (
-    <>
+    <div className="background">
       <div className="reports-header">
         <ReturnMainpage />
         <Balance />
@@ -54,7 +54,7 @@ const ReportsPage = () => {
         </div>
         <BarChart />
       </div>
-    </>
+    </div>
   );
 };
 

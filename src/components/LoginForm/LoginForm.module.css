@@ -172,6 +172,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .LoginFormContainer {
+    margin-bottom: 10rem;
+  }
 }
 
 @media screen and (max-width: 576px) {

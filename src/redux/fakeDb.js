@@ -10,7 +10,7 @@ export const loginResponse = {
   refreshToken: "refresh-secret-token-mada-faka",
   userData: {
     id: "507f1f77bcf86cd799439012",
-    email: "zenio@mail.com",
+    email: "Zenio",
     balance: 0,
     firstLogin: true,
     transactions: [
@@ -47,7 +47,7 @@ export const expenseStats = {
       id: "507f1f77bcf86cd799439014",
       description: "description 2",
       category: "Products",
-      amount: 50,
+      amount: 500,
       date: "2024-05-26",
     },
     {
@@ -74,16 +74,16 @@ export const expenseStats = {
   ],
   monthStats: {
     January: "150",
-    February: "",
+    February: "200",
     March: "250",
     April: "500",
     May: "7500",
-    June: "",
+    June: "1000",
     July: "600",
     September: "",
     October: "5000",
     November: "200",
-    December: "",
+    December: "100",
   }
 };
 
@@ -121,16 +121,16 @@ export const incomeStats = {
   ],
   monthStats: {
     January: "2500",
-    February: "",
+    February: "200",
     March: "4500",
     April: "2800",
     May: "7200",
     June: "3500",
-    July: "",
+    July: "100",
     September: "",
     October: "8700",
     November: "4900",
-    December: "",
+    December: "100",
   }
 };
 

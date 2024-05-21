@@ -17,14 +17,15 @@
 	display: flex;
 	justify-content: center;
 	margin-right: 8px;
+
 }
 
 .CalendarInput {
 	background: none;
 	border: none;
-  font-family: Roboto;
+	size: 12px;
 	color: #52555F;
-  letter-spacing: 4%;
+	letter-spacing: 4%;
 	cursor: pointer;
 	font-size: 12px;
 	font-weight: 900;
