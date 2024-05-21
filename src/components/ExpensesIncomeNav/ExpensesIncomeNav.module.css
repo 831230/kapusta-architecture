@@ -19,8 +19,6 @@
         color: var(--text-orange);
         background-color: var(--active-link-bg);
     }
-
-
 }
 
 .expenses {
@@ -37,7 +35,7 @@
 
 @media screen and (max-width: 576px) {
     .navWrapper {
-
+        z-index: 1;
         width: 100%;
         position: fixed;
         bottom: 0px;

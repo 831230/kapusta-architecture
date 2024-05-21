@@ -6,13 +6,17 @@
   justify-content: space-around;
   margin-bottom: 60px;
 }
+
 .wrapper {
   display: flex;
   justify-content: space-between;
 }
+
 .ExpensesIncomeFormInputContainer {
   display: flex;
+  margin-left: 20px;
 }
+
 .ExpensesIncomeFormInputDesc {
   background: none;
   border: 2px solid var(--border-light);
@@ -23,9 +27,11 @@
   margin-left: 10px;
   padding: 1px 2px 1px 10px;
 }
+
 .ExpensesIncomeFormInputDesc::placeholder {
   color: var(--description-color);
 }
+
 .ExpensesIncomeFormInputSelectCategory {
   border-bottom: 2px solid var(--border-light);
   border-left: none;
@@ -38,10 +44,12 @@
   letter-spacing: 0.24px;
   width: 186px;
 }
+
 .ExpensesIncomeFormInputValueContainer {
   display: flex;
   position: relative;
 }
+
 .ExpensesIncomeFormInputValue {
   background: none;
   border: 2px solid var(--border-light);
@@ -54,6 +62,7 @@
   text-align: center;
   width: 108px;
 }
+
 .ExpensesIncomeFormInputValueIcon {
   left: 73px;
   pointer-events: none;
@@ -61,11 +70,13 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
 .ExpensesIncomeFormButtonContainer {
   display: flex;
   gap: 16px;
   justify-content: center;
 }
+
 .ExpensesIncomeFormButtonInput,
 .ExpensesIncomeFormButtonClear {
   background: none;
@@ -81,61 +92,73 @@
   transition: background-color 0.3s ease;
   width: 136px;
 }
+
 .ExpensesIncomeFormButtonInput {
   background-color: var(--text-orange);
   color: var(--text-white);
 }
+
 .ExpensesIncomeFormButtonClear {
   border: 2px solid var(--border-light);
   border-radius: 16px;
   color: var(--text-gray);
 }
+
 .ExpensesIncomeFormButtonInput:hover {
   background-color: var(--button-input);
 }
+
 @media screen and (max-width: 768px) {
   .ExpensesIncomeForm {
     flex-direction: column;
     gap: 32px;
     margin-bottom: 48px;
   }
+
   .wrapper {
     display: flex;
     justify-content: space-between;
   }
+
   .ExpensesIncomeFormInputDesc {
     margin-left: 10px;
     padding: 10px 2px 10px 10px;
   }
+
   .ExpensesIncomeFormInputValueIcon {
     left: 73px;
   }
+
   .ExpensesIncomeFormButtonContainer {
     justify-content: center;
   }
 }
+
 @media screen and (max-width: 576px) {
   .ExpensesIncomeForm {
     align-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    height: 286px;
+    margin: 10px;
   }
+
   .ExpensesIncomeFormInputContainer {
     display: flex;
     flex-direction: column;
   }
+
   .wrapper {
     align-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
   }
-  .wrapper > :first-child {
+
+  .wrapper> :first-child {
     display: none;
   }
+
   .ExpensesIncomeFormInputValueContainer {
     border: #fff;
     border: 2px solid var(--border-light);
@@ -143,15 +166,18 @@
     margin-top: 32px;
     width: 183px;
   }
+
   .ExpensesIncomeFormInputContainer {
     align-items: center;
     width: 280px;
   }
+
   .ExpensesIncomeFormInputSelectCategory {
     border: 2px solid var(--border-light);
     border-bottom-right-radius: 20px;
     width: 280px;
   }
+
   .ExpensesIncomeFormInputDesc {
     border-bottom: none;
     border-top-right-radius: 20px;
@@ -159,12 +185,14 @@
     padding: 12px 2px 10px 10px;
     width: 264px;
   }
+
   .ExpensesIncomeFormInputValue {
     border: none;
     border-radius: 0;
     border-right: 2px solid var(--border-light);
     width: 115px;
   }
+
   .ExpensesIncomeFormInputValueIcon {
     left: 80%;
   }

@@ -4,11 +4,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #f2f5fc;
+  background-color: var(--primary-bg-color);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.background {
+  background-color: var(--secondary-bg-color);
+  padding-bottom: 200px;
 }
 
 .header-user-space {
@@ -36,38 +41,26 @@ code {
   display: flex;
   padding-top: 3rem;
   padding-bottom: 1rem;
-  width: 1098px;
-  margin: 0 auto;
   justify-content: flex-end;
   align-items: center;
   align-content: center;
   gap: 300px;
 }
 
-@media screen and (max-width: 768px) {
-  .expenses-page__header {
-    padding-bottom: 50px;
-    gap: 0;
-    justify-content: space-between;
-    width: var(--container-width-tablet);
-  }
+.container {
+  max-width: 1098px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 576px) {
-  .expenses-page__header {
-    gap: 1.5rem;
-    flex-direction: column-reverse;
-    width: var(--container-width-phone);
-  }
-
-
-  .reports-header {
-    flex-direction: column-reverse;
-    gap: 2rem;
-    position: relative;
-  }
-
-}
+/* background-color: var(--primary-bg-color);
+border-radius: 0px 30px 30px 30px;
+box-shadow: 0px 10px 60px 0px #AAB2C533;
+box-sizing: border-box;
+margin: 0 auto;
+margin-top: 9px;
+max-width: 1098px;
+padding: 30px 30px 0 30px; */
 
 .expenses-income {
   display: flex;
@@ -78,12 +71,12 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  margin: 40px auto;
-
+  margin: 0 auto;
+  padding: 40px;
   max-width: 1034px;
 
 }
+
 
 .reports-content {
   text-align: center;
@@ -113,4 +106,34 @@ code {
   width: 100%;
   max-width: 1034px;
   padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .expenses-page__header {
+    padding-bottom: 50px;
+    gap: 0;
+    justify-content: space-between;
+    width: var(--container-width-tablet);
+
+  }
+
+  .container {
+    max-width: 704px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .expenses-page__header {
+    gap: 1.5rem;
+    flex-direction: column-reverse;
+    width: var(--container-width-phone);
+  }
+
+
+  .reports-header {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    position: relative;
+  }
+
 }
