@@ -1,9 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import CreateDatePicker from "../DatePickerForm/DatePicker";
-
-import Select from "react-select";
-
 
 import styles from "./ExpensesIncomeForm.module.css";
 
@@ -12,7 +9,7 @@ import calculator from "../../assets/calculator.svg";
 const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("products");
   const [amount, setAmount] = useState("");
 
   const dispatch = useDispatch();
@@ -32,8 +29,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
     //   return;
     // }
 
-    const data = { date, description, category:"products", amount };
-    console.log(data)
+    const data = { date, description, category, amount };
     dispatch(callback(data));
 
     clearFormFields();
@@ -81,15 +77,6 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
           value={description}
           required
         />
-        {/* <Select
-          className={styles.ExpensesIncomeFormInputSelectCategory}
-          options={categoryOptions}
-          onChange={handleCategoryChange}
-          value={categoryOptions.find((option) => option.value === category)}
-          placeholder="Product Category"
-          styles={customSelectStyles}
-          required
-        /> */}
         <select
   className={styles.ExpensesIncomeFormInputSelectCategory}
   value={category}
@@ -98,7 +85,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
 >
   <option value="">Select Category</option>
   {categoryOptions.map((option) => (
-    <option key={option.value} value={option.value} onChange={()=>setCategory(option.value)}>
+    <option key={option.value} value={option.value}>
       {option.label}
     </option>
   ))}

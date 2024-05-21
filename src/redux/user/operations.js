@@ -1,9 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { loginResponse, getNewBalance } from "../fakeDb";
-
 axios.defaults.baseURL = "http://kapusta-api.tomasz-bielecki.pl/";
+// axios.defaults.baseURL = "http://localhost:8000/";
 
 
 const setAuthHeader = (token) => {
@@ -20,7 +19,6 @@ const register = createAsyncThunk(
     const { email, password } = data;
     try {
       const res = await axios.post("user/register", { email, password });
-      // console.log(res);
       return res
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -34,7 +32,6 @@ const login = createAsyncThunk(
     const { email, password } = data;
     try {
       const res = await axios.post("user/login", { email, password });
-      // console.log(res);
       setAuthHeader(res.data.data.accessToken);
       return res.data.data
     } catch (error) {
@@ -47,10 +44,8 @@ const updateBalance = createAsyncThunk(
   "user/updateBalance",
   async (balanceValue, thunkAPI) => {
     const newBalance = balanceValue;
-    console.log({newBalance});
     try {
       const res = await axios.patch("user/balance", { newBalance });
-      console.log(res);
       return res.data
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -61,8 +56,9 @@ const updateBalance = createAsyncThunk(
 const logout = createAsyncThunk(
   "user/logout",
   async (data, thunkAPI) => {
+    const state = thunkAPI.getState();
     try {
-      await axios.get("user/logout");
+      await axios.post("user/logout", {email:state.user.userData.email});
       clearAuthHeader()
       return
     } catch (error) {

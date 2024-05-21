@@ -29,8 +29,6 @@ const ReportsPage = () => {
 
   useEffect(() => {
     dispatch(getTransactionsData(currentPeriod));
-
-    console.log(currentPeriod);
   }, [dispatch, currentPeriod]);
 
   const toggleView = () => {

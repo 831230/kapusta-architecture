@@ -22,7 +22,7 @@ const userSlice = createSlice({
   reducers: {
     loadNewBalance: {
       reducer: (state, action) => {
-        state.userData.balance = action.payload
+        state.userData.balance = action.payloa
       }
     }
   },
@@ -59,7 +59,6 @@ const userSlice = createSlice({
       })
       .addCase(updateBalance.fulfilled, (state, action) => {
         state.loadingUser = false;
-        console.log(action.payload);
         state.userData.balance = action.payload.newBalance
       })
       .addCase(updateBalance.rejected, (state) => {

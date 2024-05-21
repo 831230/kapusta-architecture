@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-
 // REDUX HOOKS:
 import useExpenses from "../../hooks/useExpenses";
 
@@ -16,8 +15,7 @@ import ExpensesIncomeSummary from "../ExpensesIncomeSummary/ExpensesIncomeSummar
 import css from "./Expenses.module.css"
 
 const Expenses = () => {
-  const { expenses, expensesMonthStats } = useExpenses();
-  console.log("Expenses: ",{expenses, expensesMonthStats});
+  const { expensesMonthStats } = useExpenses();
 
   const dispatch = useDispatch()
 

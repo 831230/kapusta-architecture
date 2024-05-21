@@ -78,7 +78,7 @@ export default function DenseTable() {
           ) : (
             expenses.map(expense => (
               <tr key={expense.id}>
-                <td>{formatDate(expense.date)}</td>
+                <td>{formatDate(expense.createdAt)}</td>
                 <td>{expense.description}</td>
                 <td>{expense.category}</td>
                 <SumCell>{formatNegativeNumber(expense.amount)}</SumCell>
