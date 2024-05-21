@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { userReducer } from "./user/userSlice";
-import { expensesReducer } from "./expenses/expensesSlice";
-import { incomesReducer } from "./incomes/incomeSlice";
-import { reportsReducer } from "./reports/reportsSlice";
+import { userReducer } from "./user/userSlice.js";
+import { expensesReducer } from "./expenses/expensesSlice.js";
+import { incomesReducer } from "./incomes/incomeSlice.js";
+import { reportsReducer } from "./reports/reportsSlice.js";
 
 const store = configureStore({
   reducer: {

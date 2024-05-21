@@ -22,7 +22,7 @@ const userSlice = createSlice({
   reducers: {
     loadNewBalance: {
       reducer: (state, action) => {
-        state.userData.balance = action.payloa
+        state.userData.balance = action.payload
       }
     }
   },

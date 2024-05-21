@@ -26,7 +26,7 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!date || !description || !category || !amount) {
+    if (!date || !description  || !amount) {
       alert("Please fill out all required fields.");
       return;
     }
