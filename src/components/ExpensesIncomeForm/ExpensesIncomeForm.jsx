@@ -69,7 +69,6 @@ const ExpensesIncomeForm = ({ callback, actionType, categories }) => {
   return (
     <form className={styles.ExpensesIncomeForm} onSubmit={handleFormSubmit}>
       <div className={styles.wrapper}>
-        {" "}
         <CreateDatePicker onDateChange={setDate} />
         <div className={styles.ExpensesIncomeFormInputContainer}>
           <input
