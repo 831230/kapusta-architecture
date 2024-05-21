@@ -82,7 +82,7 @@ export default function DenseTable() {
               </td>
               <td
                 className={css.tableContainerItem}
-                style={{ textAlign: "left", paddingLeft: "20px" }}
+                style={{ textAlign: "left" }}
               >
                 {expense ? expense.description : ""}
               </td>
