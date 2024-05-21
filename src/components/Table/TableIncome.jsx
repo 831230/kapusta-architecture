@@ -95,7 +95,7 @@ export default function IncomeTable() {
               </td>
               <td
                 className={css.tableContainerItem}
-                style={{ textAlign: "left", paddingLeft: "20px" }}
+                style={{ textAlign: "left" }}
               >
                 {income ? income.description : ""}
               </td>
