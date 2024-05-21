@@ -16,14 +16,14 @@ export const loginResponse = {
     transactions: [
       {
         id: "507f1f77bcf86cd799439013",
-        description: "Transaction's description",
+        description: "description",
         category: "Alcochol",
         amount: 500,
         date: "2024-05-25",
       },
       {
         id: "507f1f77bcf86cd799439014",
-        description: "Transaction's description 2",
+        description: "description 2",
         category: "Products",
         amount: 50,
         date: "2024-05-26",
@@ -38,35 +38,35 @@ export const expenseStats = {
   userExpenses: [
     {
       id: "507f1f77bcf86cd799439013",
-      description: "Transaction's description",
+      description: "description",
       category: "Alcochol",
       amount: 500,
       date: "2024-05-25",
     },
     {
       id: "507f1f77bcf86cd799439014",
-      description: "Transaction's description 2",
+      description: "description 2",
       category: "Products",
       amount: 50,
       date: "2024-05-26",
     },
     {
       id: "507f1f77bcf86cd799439015",
-      description: "Transaction's description 3",
+      description: "description 3",
       category: "Health",
       amount: 450,
       date: "2024-05-26",
     },
     {
       id: "507f1f77bcf86cd799439016",
-      description: "Transaction's description 4",
+      description: "description 4",
       category: "Other",
       amount: 320,
       date: "2024-05-26",
     },
     {
       id: "507f1f77bcf86cd799439017",
-      description: "Transaction's description 5",
+      description: "description 5",
       category: "Education",
       amount: 1200,
       date: "2024-05-26",

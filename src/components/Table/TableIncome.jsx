@@ -48,8 +48,8 @@ export default function IncomeTable() {
 
   const handleDelete = (id) => {
     dispatch(deleteIncome(id))
-      .then(() => {})
-      .catch((error) => {});
+      .then(() => { })
+      .catch((error) => { });
   };
 
   // const handleAdd = () => {
@@ -90,7 +90,7 @@ export default function IncomeTable() {
         ) : (
           dataRows.map((income, index) => (
             <tr className={css.tableContainer} key={income ? income.id : index}>
-              <td className={css.tableContainerItem} style={{ width: "15%" }}>
+              <td className={css.tableContainerItem} >
                 {income ? formatDate(income.date) : ""}
               </td>
               <td
